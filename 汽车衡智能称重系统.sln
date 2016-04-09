@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Project for Graduating", "Project for Graduating\Project for Graduating.vbproj", "{44D14E1D-4932-4118-93C2-67C37CC9F1AE}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "汽车衡智能称重系统", "Project for Graduating\汽车衡智能称重系统.vbproj", "{44D14E1D-4932-4118-93C2-67C37CC9F1AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

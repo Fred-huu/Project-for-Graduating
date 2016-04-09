@@ -108,7 +108,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         Dim com As MySqlCommand
 
         Try
-            conn = New MySqlConnection("Data source=localhost;Initial Catalog=driver;" + "User ID=root;PWD=admin")
+            conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
             conn.Open()
             com = New MySqlCommand("Select * From users Where user_id='" & USERTextBox.Text & "' And password='" & PasswordTextBox.Text & "'", conn)
             dr = com.ExecuteReader()
@@ -167,7 +167,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         Dim com As MySqlCommand
 
         Try
-            conn = New MySqlConnection("Data source=localhost;Initial Catalog=driver;" + "User ID=root;PWD=admin")
+            conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
             conn.Open()
             com = New MySqlCommand("Select * From users Where user_id='" & newuserTextBox.Text & "'", conn)
             dr = com.ExecuteReader()
@@ -210,7 +210,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
         '数据库连接与操作
         Try
-            conn = New MySqlConnection("Data source=localhost;Initial Catalog=driver;" + "User ID=root;PWD=admin")
+            conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
             conn.Open()
             com = New MySqlCommand("INSERT INTO driver.users (username,user_id,password,perm) VALUES ('" & newnameTextBox.Text & "','" & newuserTextBox.Text & "','" & newapasswTextBox.Text & "',' 0 ')", conn)
             dr = com.ExecuteReader
@@ -312,19 +312,19 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
         '数据库连接与操作
         Try
-            conn = New MySqlConnection("Data source=localhost;Initial Catalog=driver;" + "User ID=root;PWD=admin")
+            conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
             conn.Open()
-            com = New MySqlCommand("Select * From 车辆,司机 Where 驾驶证号=(Select 驾驶证号 From 驾驶 Where 车牌号='" & TextBox7.Text & "') And 车牌号='" & TextBox7.Text & "'", conn)
+            com = New MySqlCommand("Select * From car,driver Where carnum='" & TextBox7.Text & "'", conn)
             dr = com.ExecuteReader()
             While dr.Read()
-                TextBox1.AppendText(dr!驾驶证号 & vbCrLf)
-                TextBox2.AppendText(dr!姓名 & vbCrLf)
-                TextBox3.AppendText(dr!出生日期 & vbCrLf)
-                TextBox4.AppendText(dr!部门 & vbCrLf)
-                TextBox5.AppendText(dr!驾照类型 & vbCrLf)
-                TextBox6.AppendText(dr!联系电话 & vbCrLf)
-                TextBox8.AppendText(dr!车型 & vbCrLf)
-                TextBox10.AppendText(dr!车重 & vbCrLf)
+                TextBox1.AppendText(dr!driver_id & vbCrLf)
+                TextBox2.AppendText(dr!name & vbCrLf)
+                TextBox3.AppendText(dr!bday & vbCrLf)
+                TextBox4.AppendText(dr!part & vbCrLf)
+                TextBox5.AppendText(dr!dkind & vbCrLf)
+                TextBox6.AppendText(dr!telnum & vbCrLf)
+                TextBox8.AppendText(dr!model & vbCrLf)
+                TextBox10.AppendText(dr!fload & vbCrLf)
             End While
             conn.Close()
         Catch myerror As MySqlException
@@ -346,7 +346,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
     End Sub
 
     Private Sub SerialPort1_DataReceived(sender As System.Object, e As System.IO.Ports.SerialDataReceivedEventArgs) Handles SerialPort1.DataReceived
-
+        ReceivedText(SerialPort1.ReadExisting())
     End Sub
 
     Private Sub ReceivedText(ByVal [text] As String) 'input from ReadExisting
