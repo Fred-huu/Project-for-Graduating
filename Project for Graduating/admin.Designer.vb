@@ -241,6 +241,10 @@ Partial Class admin
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.OpenDlg = New System.Windows.Forms.OpenFileDialog()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.logintime = New System.Windows.Forms.Label()
+        Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
+        Me.logtime = New System.Windows.Forms.Label()
         Me.aboutPanel.SuspendLayout()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.开发人员PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -2000,6 +2004,7 @@ Partial Class admin
         '
         Me.loginPanel.BackgroundImage = CType(resources.GetObject("loginPanel.BackgroundImage"), System.Drawing.Image)
         Me.loginPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.loginPanel.Controls.Add(Me.logtime)
         Me.loginPanel.Controls.Add(Me.账号注册LinkLabel)
         Me.loginPanel.Controls.Add(Me.offButton)
         Me.loginPanel.Controls.Add(Me.忘记密码LinkLabel)
@@ -2011,7 +2016,7 @@ Partial Class admin
         Me.loginPanel.Controls.Add(Me.USERTextBox)
         Me.loginPanel.Location = New System.Drawing.Point(0, 0)
         Me.loginPanel.Name = "loginPanel"
-        Me.loginPanel.Size = New System.Drawing.Size(1280, 628)
+        Me.loginPanel.Size = New System.Drawing.Size(1280, 720)
         Me.loginPanel.TabIndex = 129
         '
         '账号注册LinkLabel
@@ -2114,6 +2119,7 @@ Partial Class admin
         '
         Me.newuserPanel.BackgroundImage = CType(resources.GetObject("newuserPanel.BackgroundImage"), System.Drawing.Image)
         Me.newuserPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.newuserPanel.Controls.Add(Me.logintime)
         Me.newuserPanel.Controls.Add(Me.newcancelButton)
         Me.newuserPanel.Controls.Add(Me.newokButton)
         Me.newuserPanel.Controls.Add(Me.newpasswTextBox)
@@ -2127,7 +2133,7 @@ Partial Class admin
         Me.newuserPanel.Controls.Add(Me.Label62)
         Me.newuserPanel.Location = New System.Drawing.Point(0, 0)
         Me.newuserPanel.Name = "newuserPanel"
-        Me.newuserPanel.Size = New System.Drawing.Size(1280, 628)
+        Me.newuserPanel.Size = New System.Drawing.Size(1280, 720)
         Me.newuserPanel.TabIndex = 130
         '
         'newcancelButton
@@ -2524,7 +2530,7 @@ Partial Class admin
         '
         'downPanel
         '
-        Me.downPanel.BackColor = System.Drawing.SystemColors.MenuHighlight
+        Me.downPanel.BackColor = System.Drawing.Color.Transparent
         Me.downPanel.Controls.Add(Me.time)
         Me.downPanel.Location = New System.Drawing.Point(0, 628)
         Me.downPanel.Name = "downPanel"
@@ -2535,7 +2541,7 @@ Partial Class admin
         '
         Me.time.AutoSize = True
         Me.time.BackColor = System.Drawing.Color.Transparent
-        Me.time.Location = New System.Drawing.Point(1154, 9)
+        Me.time.Location = New System.Drawing.Point(1070, 10)
         Me.time.Name = "time"
         Me.time.Size = New System.Drawing.Size(62, 18)
         Me.time.TabIndex = 13
@@ -2546,9 +2552,42 @@ Partial Class admin
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1000
         '
+        'SerialPort1
+        '
+        '
         'OpenDlg
         '
         Me.OpenDlg.FileName = "OpenDlg"
+        '
+        'Timer2
+        '
+        Me.Timer2.Enabled = True
+        Me.Timer2.Interval = 1000
+        '
+        'logintime
+        '
+        Me.logintime.AutoSize = True
+        Me.logintime.BackColor = System.Drawing.Color.Transparent
+        Me.logintime.Location = New System.Drawing.Point(1070, 638)
+        Me.logintime.Name = "logintime"
+        Me.logintime.Size = New System.Drawing.Size(62, 18)
+        Me.logintime.TabIndex = 14
+        Me.logintime.Text = "Label4"
+        '
+        'Timer3
+        '
+        Me.Timer3.Enabled = True
+        Me.Timer3.Interval = 1000
+        '
+        'logtime
+        '
+        Me.logtime.AutoSize = True
+        Me.logtime.BackColor = System.Drawing.Color.Transparent
+        Me.logtime.Location = New System.Drawing.Point(1070, 638)
+        Me.logtime.Name = "logtime"
+        Me.logtime.Size = New System.Drawing.Size(62, 18)
+        Me.logtime.TabIndex = 115
+        Me.logtime.Text = "Label4"
         '
         'admin
         '
@@ -2572,8 +2611,8 @@ Partial Class admin
         Me.Controls.Add(Me.cmPanel)
         Me.Controls.Add(Me.caddPanel)
         Me.Controls.Add(Me.daddPanel)
-        Me.Controls.Add(Me.loginPanel)
         Me.Controls.Add(Me.newuserPanel)
+        Me.Controls.Add(Me.loginPanel)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "admin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -2877,4 +2916,8 @@ Partial Class admin
     Friend WithEvents Timer1 As Timer
     Friend WithEvents SerialPort1 As IO.Ports.SerialPort
     Friend WithEvents OpenDlg As OpenFileDialog
+    Friend WithEvents logintime As Label
+    Friend WithEvents Timer2 As Timer
+    Friend WithEvents logtime As Label
+    Friend WithEvents Timer3 As Timer
 End Class

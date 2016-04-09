@@ -43,6 +43,11 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
     Private Sub admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Interval = 1000
         time.Text = Now
+        Timer2.Interval = 1000
+        logintime.Text = Now
+        Timer3.Interval = 1000
+        logtime.Text = Now
+
 
         myPort = IO.Ports.SerialPort.GetPortNames()
         ComboBox1.Items.AddRange(myPort)
@@ -85,6 +90,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         suggestPanel.Visible = False
         aboutPanel.Visible = False
 
+        downPanel.Visible = False
+
 
         myPort = IO.Ports.SerialPort.GetPortNames()
         ComboBox1.Items.AddRange(myPort)
@@ -109,7 +116,9 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
                 loginPanel.Visible = False
                 menuPanel.Visible = True
                 adminPanel.Visible = True
+                downPanel.Visible = True
                 UserLabel.Text = dr!username & vbCrLf
+
             Else
                 'MessageBox.Show("密码或用户名错误，请重新输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 MessageBox.Show("你这个笨蛋！居然把密码（用户名）输错了!Orz", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -138,6 +147,9 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '进入注册界面
         newuserPanel.Visible = True
         loginPanel.Visible = False
+
+        '底部颜色
+        downPanel.BackColor = Color.Transparent
 
         '清除注册界面数据
         newuserTextBox.Text = ""
@@ -1079,6 +1091,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         addPanel.Visible = False
         userPanel.Visible = False
         includingPanel.Visible = False
+
+        downPanel.Visible = False
 
         '清空登录界面数据
         USERTextBox.Text = ""
