@@ -245,6 +245,10 @@ Partial Class admin
         Me.logintime = New System.Windows.Forms.Label()
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.logtime = New System.Windows.Forms.Label()
+        Me.Label67 = New System.Windows.Forms.Label()
+        Me.kindTextBox = New System.Windows.Forms.TextBox()
+        Me.Label68 = New System.Windows.Forms.Label()
+        Me.adminremarkTextBox = New System.Windows.Forms.TextBox()
         Me.aboutPanel.SuspendLayout()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.开发人员PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -579,6 +583,10 @@ Partial Class admin
         '
         'adminPanel
         '
+        Me.adminPanel.Controls.Add(Me.Label68)
+        Me.adminPanel.Controls.Add(Me.adminremarkTextBox)
+        Me.adminPanel.Controls.Add(Me.Label67)
+        Me.adminPanel.Controls.Add(Me.kindTextBox)
         Me.adminPanel.Controls.Add(Me.修改LinkLabel)
         Me.adminPanel.Controls.Add(Me.modifyPanel)
         Me.adminPanel.Controls.Add(Me.复位LinkLabel)
@@ -620,13 +628,13 @@ Partial Class admin
         Me.adminPanel.Controls.Add(Me.TextBox3)
         Me.adminPanel.Location = New System.Drawing.Point(200, 0)
         Me.adminPanel.Name = "adminPanel"
-        Me.adminPanel.Size = New System.Drawing.Size(1060, 575)
+        Me.adminPanel.Size = New System.Drawing.Size(1060, 608)
         Me.adminPanel.TabIndex = 113
         '
         '修改LinkLabel
         '
         Me.修改LinkLabel.AutoSize = True
-        Me.修改LinkLabel.Location = New System.Drawing.Point(540, 515)
+        Me.修改LinkLabel.Location = New System.Drawing.Point(276, 512)
         Me.修改LinkLabel.Name = "修改LinkLabel"
         Me.修改LinkLabel.Size = New System.Drawing.Size(44, 18)
         Me.修改LinkLabel.TabIndex = 108
@@ -689,7 +697,7 @@ Partial Class admin
         '复位LinkLabel
         '
         Me.复位LinkLabel.AutoSize = True
-        Me.复位LinkLabel.Location = New System.Drawing.Point(600, 515)
+        Me.复位LinkLabel.Location = New System.Drawing.Point(336, 512)
         Me.复位LinkLabel.Name = "复位LinkLabel"
         Me.复位LinkLabel.Size = New System.Drawing.Size(44, 18)
         Me.复位LinkLabel.TabIndex = 106
@@ -772,7 +780,7 @@ Partial Class admin
         Me.updateButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.updateButton.Enabled = False
         Me.updateButton.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.updateButton.Location = New System.Drawing.Point(430, 515)
+        Me.updateButton.Location = New System.Drawing.Point(401, 510)
         Me.updateButton.Name = "updateButton"
         Me.updateButton.Size = New System.Drawing.Size(94, 33)
         Me.updateButton.TabIndex = 70
@@ -816,7 +824,7 @@ Partial Class admin
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(695, 405)
+        Me.Label20.Location = New System.Drawing.Point(695, 440)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(17, 18)
         Me.Label20.TabIndex = 97
@@ -834,7 +842,7 @@ Partial Class admin
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(695, 440)
+        Me.Label4.Location = New System.Drawing.Point(695, 475)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(17, 18)
         Me.Label4.TabIndex = 96
@@ -852,7 +860,7 @@ Partial Class admin
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(695, 475)
+        Me.Label3.Location = New System.Drawing.Point(695, 510)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(17, 18)
         Me.Label3.TabIndex = 95
@@ -889,7 +897,7 @@ Partial Class admin
         '
         Me.TextBox12.Enabled = False
         Me.TextBox12.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.TextBox12.Location = New System.Drawing.Point(605, 470)
+        Me.TextBox12.Location = New System.Drawing.Point(605, 505)
         Me.TextBox12.Name = "TextBox12"
         Me.TextBox12.Size = New System.Drawing.Size(89, 28)
         Me.TextBox12.TabIndex = 93
@@ -906,7 +914,7 @@ Partial Class admin
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(520, 405)
+        Me.Label19.Location = New System.Drawing.Point(520, 440)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(80, 18)
         Me.Label19.TabIndex = 92
@@ -926,7 +934,7 @@ Partial Class admin
         '
         Me.TextBox11.Enabled = False
         Me.TextBox11.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.TextBox11.Location = New System.Drawing.Point(605, 435)
+        Me.TextBox11.Location = New System.Drawing.Point(605, 470)
         Me.TextBox11.Name = "TextBox11"
         Me.TextBox11.Size = New System.Drawing.Size(89, 28)
         Me.TextBox11.TabIndex = 91
@@ -934,7 +942,7 @@ Partial Class admin
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(520, 440)
+        Me.Label10.Location = New System.Drawing.Point(520, 475)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(80, 18)
         Me.Label10.TabIndex = 80
@@ -943,7 +951,7 @@ Partial Class admin
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(520, 475)
+        Me.Label17.Location = New System.Drawing.Point(520, 510)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(80, 18)
         Me.Label17.TabIndex = 90
@@ -961,7 +969,7 @@ Partial Class admin
         'TextBox10
         '
         Me.TextBox10.Enabled = False
-        Me.TextBox10.Location = New System.Drawing.Point(605, 400)
+        Me.TextBox10.Location = New System.Drawing.Point(605, 435)
         Me.TextBox10.Name = "TextBox10"
         Me.TextBox10.Size = New System.Drawing.Size(89, 28)
         Me.TextBox10.TabIndex = 89
@@ -2589,6 +2597,38 @@ Partial Class admin
         Me.logtime.TabIndex = 115
         Me.logtime.Text = "Label4"
         '
+        'Label67
+        '
+        Me.Label67.AutoSize = True
+        Me.Label67.Location = New System.Drawing.Point(520, 405)
+        Me.Label67.Name = "Label67"
+        Me.Label67.Size = New System.Drawing.Size(80, 18)
+        Me.Label67.TabIndex = 110
+        Me.Label67.Text = "货物类型"
+        '
+        'kindTextBox
+        '
+        Me.kindTextBox.Location = New System.Drawing.Point(605, 400)
+        Me.kindTextBox.Name = "kindTextBox"
+        Me.kindTextBox.Size = New System.Drawing.Size(89, 28)
+        Me.kindTextBox.TabIndex = 109
+        '
+        'Label68
+        '
+        Me.Label68.AutoSize = True
+        Me.Label68.Location = New System.Drawing.Point(520, 545)
+        Me.Label68.Name = "Label68"
+        Me.Label68.Size = New System.Drawing.Size(44, 18)
+        Me.Label68.TabIndex = 112
+        Me.Label68.Text = "备注"
+        '
+        'adminremarkTextBox
+        '
+        Me.adminremarkTextBox.Location = New System.Drawing.Point(605, 540)
+        Me.adminremarkTextBox.Name = "adminremarkTextBox"
+        Me.adminremarkTextBox.Size = New System.Drawing.Size(107, 28)
+        Me.adminremarkTextBox.TabIndex = 111
+        '
         'admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
@@ -2920,4 +2960,8 @@ Partial Class admin
     Friend WithEvents Timer2 As Timer
     Friend WithEvents logtime As Label
     Friend WithEvents Timer3 As Timer
+    Friend WithEvents Label67 As Label
+    Friend WithEvents kindTextBox As TextBox
+    Friend WithEvents Label68 As Label
+    Friend WithEvents adminremarkTextBox As TextBox
 End Class

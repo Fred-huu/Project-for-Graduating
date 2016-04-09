@@ -26,6 +26,8 @@ Public Class admin
     Dim myPort As Array
     Delegate Sub SetTextCallback(ByVal [text] As String)
 
+    Dim num As Integer = 0
+
     Sub RecieveRefreshMethod(ByVal str As String) '定义一个实例方法
         ShowRecieveData(str)
     End Sub
@@ -295,7 +297,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         updateButton.Enabled = True
 
         '清空数据
-        If TextBox1.Text <> "" And TextBox2.Text <> "" And TextBox3.Text <> "" And TextBox4.Text <> "" And TextBox5.Text <> "" And TextBox6.Text <> "" And TextBox8.Text <> "" And TextBox10.Text <> "" And TextBox12.Text <> "" Then
+        If TextBox1.Text <> "" And TextBox2.Text <> "" And TextBox3.Text <> "" And TextBox4.Text <> "" And TextBox5.Text <> "" And TextBox6.Text <> "" And TextBox8.Text <> "" And TextBox10.Text <> "" And TextBox12.Text <> "" And kindTextBox.Text = "" And adminremarkTextBox.Text = "" Then
             TextBox1.Text = ""
             TextBox2.Text = ""
             TextBox3.Text = ""
@@ -308,6 +310,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             TextBox10.Text = ""
             TextBox11.Text = ""
             TextBox12.Text = ""
+            kindTextBox.Text = ""
+            adminremarkTextBox.Text = ""
         End If
 
         '数据库连接与操作
@@ -369,6 +373,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
     '上传按钮
     Private Sub updateButton_Click(sender As Object, e As EventArgs) Handles updateButton.Click
+        num = num + 1
+
         '二级菜单
         messPanel.Visible = False
         addPanel.Visible = False
@@ -380,9 +386,9 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
         '数据库连接与操作
         Try
-            conn = New MySqlConnection("Data source=localhost;Initial Catalog=driver;" + "User ID=root;PWD=admin")
+            conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
             conn.Open()
-            com = New MySqlCommand("INSERT INTO driver.称重管理 (车牌号,净重,时间,管理账户) VALUES ('" & TextBox7.Text & "','" & TextBox12.Text & "','" & TextBox9.Text & "','" & USERTextBox.Text & "')", conn)
+            com = New MySqlCommand("INSERT INTO car.manage (carnum,weight,time,user_id,manage_id,kind,remarks) VALUES ('" & TextBox7.Text & "','" & TextBox12.Text & "','" & TextBox9.Text & "','" & USERTextBox.Text & "','num','" & kindTextBox.Text & "','" & adminremarkTextBox.Text & "')", conn)
             dr = com.ExecuteReader
 
             conn.Close()
@@ -415,6 +421,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         TextBox10.Text = ""
         TextBox11.Text = ""
         TextBox12.Text = ""
+        kindTextBox.Text = ""
+        adminremarkTextBox.Text = ""
         ComboBox1.Text = ""
         ComboBox2.Text = ""
     End Sub
@@ -447,7 +455,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             TextBox7.Text = modifyTextBox.Text
 
             '清空管理界面的值
-            If TextBox1.Text <> "" And TextBox2.Text <> "" And TextBox3.Text <> "" And TextBox4.Text <> "" And TextBox5.Text <> "" And TextBox6.Text <> "" And TextBox8.Text <> "" And TextBox10.Text <> "" And TextBox12.Text <> "" Then
+            If TextBox1.Text <> "" And TextBox2.Text <> "" And TextBox3.Text <> "" And TextBox4.Text <> "" And TextBox5.Text <> "" And TextBox6.Text <> "" And TextBox8.Text <> "" And TextBox10.Text <> "" And TextBox12.Text <> "" And kindTextBox.Text = "" And adminremarkTextBox.Text = "" Then
                 TextBox1.Text = ""
                 TextBox2.Text = ""
                 TextBox3.Text = ""
@@ -457,11 +465,13 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
                 TextBox8.Text = ""
                 TextBox10.Text = ""
                 TextBox12.Text = ""
+                kindTextBox.Text = ""
+                adminremarkTextBox.Text = ""
             End If
 
             '管理界面数据库操作
             Try
-                conn = New MySqlConnection("Data source=localhost;Initial Catalog=driver;" + "User ID=root;PWD=admin")
+                conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
                 conn.Open()
                 com = New MySqlCommand("Select * From 车辆,司机 Where 驾驶证号=(Select 驾驶证号 From 驾驶 Where 车牌号='" & TextBox7.Text & "') And 车牌号='" & TextBox7.Text & "'", conn)
                 dr = com.ExecuteReader()
