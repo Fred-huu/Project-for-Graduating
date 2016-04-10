@@ -75,6 +75,17 @@ Namespace My
                 Return CType(Me("carConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("server=vps.dieling.cc;user id=test;password=1004426187;persistsecurityinfo=True;d"& _ 
+            "atabase=qicheheng")>  _
+        Public ReadOnly Property qichehengConnectionString() As String
+            Get
+                Return CType(Me("qichehengConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 
