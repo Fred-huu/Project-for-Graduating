@@ -104,6 +104,8 @@ Partial Class admin
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.pwdPanel = New System.Windows.Forms.Panel()
         Me.newpwdagainTextBox = New System.Windows.Forms.TextBox()
@@ -158,6 +160,9 @@ Partial Class admin
         Me.carPictureBox = New System.Windows.Forms.PictureBox()
         Me.clearLinkLabel = New System.Windows.Forms.LinkLabel()
         Me.carupdateButton = New System.Windows.Forms.Button()
+        Me.TextBox28 = New System.Windows.Forms.TextBox()
+        Me.Label39 = New System.Windows.Forms.Label()
+        Me.Label40 = New System.Windows.Forms.Label()
         Me.TextBox26 = New System.Windows.Forms.TextBox()
         Me.TextBox24 = New System.Windows.Forms.TextBox()
         Me.TextBox25 = New System.Windows.Forms.TextBox()
@@ -238,11 +243,6 @@ Partial Class admin
         Me.OpenDlg = New System.Windows.Forms.OpenFileDialog()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
-        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Label40 = New System.Windows.Forms.Label()
-        Me.TextBox28 = New System.Windows.Forms.TextBox()
-        Me.Label39 = New System.Windows.Forms.Label()
         Me.aboutPanel.SuspendLayout()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.开发人员PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1129,6 +1129,15 @@ Partial Class admin
         Me.ColumnHeader4.Text = "货物净重(t)"
         Me.ColumnHeader4.Width = 80
         '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "货物类型"
+        '
+        'ColumnHeader6
+        '
+        Me.ColumnHeader6.Text = "称量时间"
+        Me.ColumnHeader6.Width = 130
+        '
         'PictureBox3
         '
         Me.PictureBox3.BackColor = System.Drawing.SystemColors.HotTrack
@@ -1688,6 +1697,33 @@ Partial Class admin
         Me.carupdateButton.TabIndex = 115
         Me.carupdateButton.Text = "上传"
         Me.carupdateButton.UseVisualStyleBackColor = True
+        '
+        'TextBox28
+        '
+        Me.TextBox28.Location = New System.Drawing.Point(346, 259)
+        Me.TextBox28.Name = "TextBox28"
+        Me.TextBox28.Size = New System.Drawing.Size(170, 28)
+        Me.TextBox28.TabIndex = 113
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label39.Location = New System.Drawing.Point(253, 259)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(94, 21)
+        Me.Label39.TabIndex = 122
+        Me.Label39.Text = "汽车皮重"
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label40.Location = New System.Drawing.Point(522, 259)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(32, 21)
+        Me.Label40.TabIndex = 121
+        Me.Label40.Text = "kg"
         '
         'TextBox26
         '
@@ -2514,42 +2550,6 @@ Partial Class admin
         Me.Timer3.Enabled = True
         Me.Timer3.Interval = 1000
         '
-        'ColumnHeader5
-        '
-        Me.ColumnHeader5.Text = "货物类型"
-        '
-        'ColumnHeader6
-        '
-        Me.ColumnHeader6.Text = "称量时间"
-        Me.ColumnHeader6.Width = 130
-        '
-        'Label40
-        '
-        Me.Label40.AutoSize = True
-        Me.Label40.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label40.Location = New System.Drawing.Point(522, 259)
-        Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(32, 21)
-        Me.Label40.TabIndex = 121
-        Me.Label40.Text = "kg"
-        '
-        'TextBox28
-        '
-        Me.TextBox28.Location = New System.Drawing.Point(346, 259)
-        Me.TextBox28.Name = "TextBox28"
-        Me.TextBox28.Size = New System.Drawing.Size(170, 28)
-        Me.TextBox28.TabIndex = 113
-        '
-        'Label39
-        '
-        Me.Label39.AutoSize = True
-        Me.Label39.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label39.Location = New System.Drawing.Point(253, 259)
-        Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(94, 21)
-        Me.Label39.TabIndex = 122
-        Me.Label39.Text = "汽车皮重"
-        '
         'admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
@@ -2575,6 +2575,7 @@ Partial Class admin
         Me.Controls.Add(Me.loginPanel)
         Me.Controls.Add(Me.adminPanel)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "admin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "汽车衡智能称重系统数据采集"

@@ -44,12 +44,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
     '窗口界面
     Private Sub admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Interval = 1000
-        time.Text = Now
-        Timer2.Interval = 1000
-        logintime.Text = Now
-        Timer3.Interval = 1000
-        logtime.Text = Now
-
 
         myPort = IO.Ports.SerialPort.GetPortNames()
         ComboBox1.Items.AddRange(myPort)
@@ -98,6 +92,12 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         myPort = IO.Ports.SerialPort.GetPortNames()
         ComboBox1.Items.AddRange(myPort)
 
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        time.Text = Now
+        logintime.Text = Now
+        logtime.Text = Now
     End Sub
 
     '-------------------------------------------
@@ -201,7 +201,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
     Private Sub insertuser()
         Dim dr As MySqlDataReader
         Dim com As MySqlCommand
-        Dim coo As MySqlCommand
 
         '数据库连接与操作
         Try
