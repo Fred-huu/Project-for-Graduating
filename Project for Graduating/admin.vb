@@ -883,12 +883,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         userPanel.Visible = False
         includingPanel.Visible = False
 
-        '插入图片
-        ' Dim mstream As New System.IO.MemoryStream()
-        'PictureBox1.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
-        'Dim arrImage() As Byte = mstream.GetBuffer()
-        ' mstream.Close()
-
         Dim com As MySqlCommand
         Dim dr As MySqlDataReader
 
@@ -898,8 +892,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
             conn.Open()
             com = New MySqlCommand("INSERT INTO car (carnum,model,pdtime,fload) VALUES ('" & TextBox24.Text & "','" & TextBox25.Text & "','" & TextBox26.Text & "','" & TextBox28.Text & "')", conn)
-            'com = New MySqlCommand("INSERT INTO driver.车辆 (carnum,model,pdtime,fload,照片) VALUES ('" & TextBox24.Text & "','" & TextBox25.Text & "','" & TextBox26.Text & "','" & TextBox28.Text & "'，@Photo)", conn)
-            'com.Parameters.AddWithValue("@Photo", arrImage)
             dr = com.ExecuteReader
 
             MessageBox.Show("数据存储成功！")
@@ -909,20 +901,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             'MsgBox("Error connecting to the server:" & myerror.Message)
             MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
         End Try
-    End Sub
-
-    '照片添加按钮
-    Private Sub pictureButton_Click(sender As Object, e As EventArgs) Handles pictureButton.Click
-        '二级菜单
-        messPanel.Visible = False
-        addPanel.Visible = False
-        userPanel.Visible = False
-        includingPanel.Visible = False
-
-        OpenDlg.Filter = "图片文件(*.jpg,*.gif,*.bmp)|*.jpg|*.gif|*.bmp"  '这是限定图片的格式
-        If OpenDlg.ShowDialog() = DialogResult.OK Then
-            Me.carPictureBox.Image = Image.FromFile(OpenDlg.FileName)
-        End If
     End Sub
 
     '清空数据
@@ -980,6 +958,12 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         userPanel.Visible = False
         includingPanel.Visible = False
 
+        '插入图片
+        'Dim mstream As New System.IO.MemoryStream()
+        'PictureBox1.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg)
+        'Dim arrImage() As Byte = mstream.GetBuffer()
+        'mstream.Close()
+
         Dim com As MySqlCommand
         Dim dr As MySqlDataReader
 
@@ -989,6 +973,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
             conn.Open()
             com = New MySqlCommand("INSERT INTO driver (driver_id,name,bday,dkind,part,telnum) VALUES ('" & TextBox29.Text & "','" & TextBox30.Text & "','" & TextBox31.Text & "','" & TextBox32.Text & "','" & TextBox33.Text & "','" & TextBox34.Text & "')", conn)
+            'com = New MySqlCommand("INSERT INTO driver (driver_id,name,bday,dkind,part,telnum,photo) VALUES ('" & TextBox29.Text & "','" & TextBox30.Text & "','" & TextBox31.Text & "','" & TextBox32.Text & "','" & TextBox33.Text & "','" & TextBox34.Text & "'，@Photo)", conn)
+            'com.Parameters.AddWithValue("@Photo", arrImage)
             dr = com.ExecuteReader
 
             MessageBox.Show("存储成功！")
@@ -999,6 +985,20 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
         End Try
 
+    End Sub
+
+    '照片添加按钮
+    Private Sub pictureButton_Click(sender As Object, e As EventArgs)
+        '二级菜单
+        messPanel.Visible = False
+        addPanel.Visible = False
+        userPanel.Visible = False
+        includingPanel.Visible = False
+
+        OpenDlg.Filter = "图片文件(*.jpg,*.gif,*.bmp)|*.jpg|*.gif|*.bmp"  '这是限定图片的格式
+        If OpenDlg.ShowDialog() = DialogResult.OK Then
+            Me.driverPictureBox.Image = Image.FromFile(OpenDlg.FileName)
+        End If
     End Sub
 
     '清空数据

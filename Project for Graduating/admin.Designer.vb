@@ -155,9 +155,6 @@ Partial Class admin
         Me.Label35 = New System.Windows.Forms.Label()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.caddPanel = New System.Windows.Forms.Panel()
-        Me.pictureButton = New System.Windows.Forms.Button()
-        Me.Label36 = New System.Windows.Forms.Label()
-        Me.carPictureBox = New System.Windows.Forms.PictureBox()
         Me.clearLinkLabel = New System.Windows.Forms.LinkLabel()
         Me.carupdateButton = New System.Windows.Forms.Button()
         Me.TextBox28 = New System.Windows.Forms.TextBox()
@@ -241,6 +238,9 @@ Partial Class admin
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.OpenDlg = New System.Windows.Forms.OpenFileDialog()
+        Me.pictureButton = New System.Windows.Forms.Button()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.driverPictureBox = New System.Windows.Forms.PictureBox()
         Me.aboutPanel.SuspendLayout()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.开发人员PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -275,7 +275,6 @@ Partial Class admin
         Me.dmPanel.SuspendLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.caddPanel.SuspendLayout()
-        CType(Me.carPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.daddPanel.SuspendLayout()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -306,6 +305,7 @@ Partial Class admin
         CType(Me.suggest1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.about1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.downPanel.SuspendLayout()
+        CType(Me.driverPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'aboutPanel
@@ -328,7 +328,7 @@ Partial Class admin
         Me.版本信息Label.Name = "版本信息Label"
         Me.版本信息Label.Size = New System.Drawing.Size(125, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.6.160410.10"
+        Me.版本信息Label.Text = "2.6.160410.12"
         '
         '人员姓名Label
         '
@@ -1623,9 +1623,6 @@ Partial Class admin
         '
         'caddPanel
         '
-        Me.caddPanel.Controls.Add(Me.pictureButton)
-        Me.caddPanel.Controls.Add(Me.Label36)
-        Me.caddPanel.Controls.Add(Me.carPictureBox)
         Me.caddPanel.Controls.Add(Me.clearLinkLabel)
         Me.caddPanel.Controls.Add(Me.carupdateButton)
         Me.caddPanel.Controls.Add(Me.TextBox28)
@@ -1644,42 +1641,10 @@ Partial Class admin
         Me.caddPanel.Size = New System.Drawing.Size(1060, 481)
         Me.caddPanel.TabIndex = 120
         '
-        'pictureButton
-        '
-        Me.pictureButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.pictureButton.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.pictureButton.Location = New System.Drawing.Point(716, 433)
-        Me.pictureButton.Name = "pictureButton"
-        Me.pictureButton.Size = New System.Drawing.Size(94, 33)
-        Me.pictureButton.TabIndex = 127
-        Me.pictureButton.Text = "浏览"
-        Me.pictureButton.UseVisualStyleBackColor = True
-        '
-        'Label36
-        '
-        Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(560, 440)
-        Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(80, 18)
-        Me.Label36.TabIndex = 126
-        Me.Label36.Text = "车辆照片"
-        '
-        'carPictureBox
-        '
-        Me.carPictureBox.BackColor = System.Drawing.Color.Silver
-        Me.carPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.carPictureBox.Image = CType(resources.GetObject("carPictureBox.Image"), System.Drawing.Image)
-        Me.carPictureBox.Location = New System.Drawing.Point(560, 109)
-        Me.carPictureBox.Name = "carPictureBox"
-        Me.carPictureBox.Size = New System.Drawing.Size(250, 318)
-        Me.carPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.carPictureBox.TabIndex = 125
-        Me.carPictureBox.TabStop = False
-        '
         'clearLinkLabel
         '
         Me.clearLinkLabel.AutoSize = True
-        Me.clearLinkLabel.Location = New System.Drawing.Point(346, 294)
+        Me.clearLinkLabel.Location = New System.Drawing.Point(499, 295)
         Me.clearLinkLabel.Name = "clearLinkLabel"
         Me.clearLinkLabel.Size = New System.Drawing.Size(80, 18)
         Me.clearLinkLabel.TabIndex = 114
@@ -1689,7 +1654,7 @@ Partial Class admin
         'carupdateButton
         '
         Me.carupdateButton.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.carupdateButton.Location = New System.Drawing.Point(345, 380)
+        Me.carupdateButton.Location = New System.Drawing.Point(498, 381)
         Me.carupdateButton.Name = "carupdateButton"
         Me.carupdateButton.Size = New System.Drawing.Size(94, 33)
         Me.carupdateButton.TabIndex = 115
@@ -1698,7 +1663,7 @@ Partial Class admin
         '
         'TextBox28
         '
-        Me.TextBox28.Location = New System.Drawing.Point(346, 259)
+        Me.TextBox28.Location = New System.Drawing.Point(499, 260)
         Me.TextBox28.Name = "TextBox28"
         Me.TextBox28.Size = New System.Drawing.Size(170, 28)
         Me.TextBox28.TabIndex = 113
@@ -1707,7 +1672,7 @@ Partial Class admin
         '
         Me.Label39.AutoSize = True
         Me.Label39.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label39.Location = New System.Drawing.Point(253, 259)
+        Me.Label39.Location = New System.Drawing.Point(406, 260)
         Me.Label39.Name = "Label39"
         Me.Label39.Size = New System.Drawing.Size(94, 21)
         Me.Label39.TabIndex = 122
@@ -1717,7 +1682,7 @@ Partial Class admin
         '
         Me.Label40.AutoSize = True
         Me.Label40.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label40.Location = New System.Drawing.Point(522, 259)
+        Me.Label40.Location = New System.Drawing.Point(675, 260)
         Me.Label40.Name = "Label40"
         Me.Label40.Size = New System.Drawing.Size(32, 21)
         Me.Label40.TabIndex = 121
@@ -1725,21 +1690,21 @@ Partial Class admin
         '
         'TextBox26
         '
-        Me.TextBox26.Location = New System.Drawing.Point(346, 224)
+        Me.TextBox26.Location = New System.Drawing.Point(499, 225)
         Me.TextBox26.Name = "TextBox26"
         Me.TextBox26.Size = New System.Drawing.Size(170, 28)
         Me.TextBox26.TabIndex = 111
         '
         'TextBox24
         '
-        Me.TextBox24.Location = New System.Drawing.Point(346, 154)
+        Me.TextBox24.Location = New System.Drawing.Point(499, 155)
         Me.TextBox24.Name = "TextBox24"
         Me.TextBox24.Size = New System.Drawing.Size(170, 28)
         Me.TextBox24.TabIndex = 109
         '
         'TextBox25
         '
-        Me.TextBox25.Location = New System.Drawing.Point(346, 189)
+        Me.TextBox25.Location = New System.Drawing.Point(499, 190)
         Me.TextBox25.Name = "TextBox25"
         Me.TextBox25.Size = New System.Drawing.Size(170, 28)
         Me.TextBox25.TabIndex = 110
@@ -1748,7 +1713,7 @@ Partial Class admin
         '
         Me.Label41.AutoSize = True
         Me.Label41.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label41.Location = New System.Drawing.Point(250, 154)
+        Me.Label41.Location = New System.Drawing.Point(403, 155)
         Me.Label41.Name = "Label41"
         Me.Label41.Size = New System.Drawing.Size(73, 21)
         Me.Label41.TabIndex = 120
@@ -1758,7 +1723,7 @@ Partial Class admin
         '
         Me.Label42.AutoSize = True
         Me.Label42.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label42.Location = New System.Drawing.Point(250, 224)
+        Me.Label42.Location = New System.Drawing.Point(403, 225)
         Me.Label42.Name = "Label42"
         Me.Label42.Size = New System.Drawing.Size(94, 21)
         Me.Label42.TabIndex = 119
@@ -1768,7 +1733,7 @@ Partial Class admin
         '
         Me.Label43.AutoSize = True
         Me.Label43.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label43.Location = New System.Drawing.Point(250, 189)
+        Me.Label43.Location = New System.Drawing.Point(403, 190)
         Me.Label43.Name = "Label43"
         Me.Label43.Size = New System.Drawing.Size(52, 21)
         Me.Label43.TabIndex = 118
@@ -1778,7 +1743,7 @@ Partial Class admin
         '
         Me.Label44.AutoSize = True
         Me.Label44.Font = New System.Drawing.Font("微软雅黑", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label44.Location = New System.Drawing.Point(250, 109)
+        Me.Label44.Location = New System.Drawing.Point(403, 110)
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(137, 39)
         Me.Label44.TabIndex = 117
@@ -1798,6 +1763,9 @@ Partial Class admin
         '
         'daddPanel
         '
+        Me.daddPanel.Controls.Add(Me.pictureButton)
+        Me.daddPanel.Controls.Add(Me.Label36)
+        Me.daddPanel.Controls.Add(Me.driverPictureBox)
         Me.daddPanel.Controls.Add(Me.clearLinkLabel2)
         Me.daddPanel.Controls.Add(Me.driverupdateButton)
         Me.daddPanel.Controls.Add(Me.TextBox34)
@@ -1822,7 +1790,7 @@ Partial Class admin
         'clearLinkLabel2
         '
         Me.clearLinkLabel2.AutoSize = True
-        Me.clearLinkLabel2.Location = New System.Drawing.Point(485, 367)
+        Me.clearLinkLabel2.Location = New System.Drawing.Point(369, 359)
         Me.clearLinkLabel2.Name = "clearLinkLabel2"
         Me.clearLinkLabel2.Size = New System.Drawing.Size(80, 18)
         Me.clearLinkLabel2.TabIndex = 121
@@ -1832,7 +1800,7 @@ Partial Class admin
         'driverupdateButton
         '
         Me.driverupdateButton.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.driverupdateButton.Location = New System.Drawing.Point(474, 428)
+        Me.driverupdateButton.Location = New System.Drawing.Point(358, 420)
         Me.driverupdateButton.Name = "driverupdateButton"
         Me.driverupdateButton.Size = New System.Drawing.Size(94, 33)
         Me.driverupdateButton.TabIndex = 112
@@ -1841,42 +1809,42 @@ Partial Class admin
         '
         'TextBox34
         '
-        Me.TextBox34.Location = New System.Drawing.Point(488, 327)
+        Me.TextBox34.Location = New System.Drawing.Point(372, 319)
         Me.TextBox34.Name = "TextBox34"
         Me.TextBox34.Size = New System.Drawing.Size(170, 28)
         Me.TextBox34.TabIndex = 111
         '
         'TextBox33
         '
-        Me.TextBox33.Location = New System.Drawing.Point(488, 292)
+        Me.TextBox33.Location = New System.Drawing.Point(372, 284)
         Me.TextBox33.Name = "TextBox33"
         Me.TextBox33.Size = New System.Drawing.Size(170, 28)
         Me.TextBox33.TabIndex = 110
         '
         'TextBox32
         '
-        Me.TextBox32.Location = New System.Drawing.Point(488, 257)
+        Me.TextBox32.Location = New System.Drawing.Point(372, 249)
         Me.TextBox32.Name = "TextBox32"
         Me.TextBox32.Size = New System.Drawing.Size(170, 28)
         Me.TextBox32.TabIndex = 109
         '
         'TextBox31
         '
-        Me.TextBox31.Location = New System.Drawing.Point(488, 222)
+        Me.TextBox31.Location = New System.Drawing.Point(372, 214)
         Me.TextBox31.Name = "TextBox31"
         Me.TextBox31.Size = New System.Drawing.Size(170, 28)
         Me.TextBox31.TabIndex = 108
         '
         'TextBox30
         '
-        Me.TextBox30.Location = New System.Drawing.Point(488, 187)
+        Me.TextBox30.Location = New System.Drawing.Point(372, 179)
         Me.TextBox30.Name = "TextBox30"
         Me.TextBox30.Size = New System.Drawing.Size(170, 28)
         Me.TextBox30.TabIndex = 107
         '
         'TextBox29
         '
-        Me.TextBox29.Location = New System.Drawing.Point(488, 152)
+        Me.TextBox29.Location = New System.Drawing.Point(372, 144)
         Me.TextBox29.MaxLength = 18
         Me.TextBox29.Multiline = True
         Me.TextBox29.Name = "TextBox29"
@@ -1887,7 +1855,7 @@ Partial Class admin
         '
         Me.Label45.AutoSize = True
         Me.Label45.Font = New System.Drawing.Font("微软雅黑", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label45.Location = New System.Drawing.Point(403, 112)
+        Me.Label45.Location = New System.Drawing.Point(287, 104)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(137, 39)
         Me.Label45.TabIndex = 120
@@ -1896,7 +1864,7 @@ Partial Class admin
         'Label46
         '
         Me.Label46.AutoSize = True
-        Me.Label46.Location = New System.Drawing.Point(403, 157)
+        Me.Label46.Location = New System.Drawing.Point(287, 149)
         Me.Label46.Name = "Label46"
         Me.Label46.Size = New System.Drawing.Size(80, 18)
         Me.Label46.TabIndex = 119
@@ -1905,7 +1873,7 @@ Partial Class admin
         'Label47
         '
         Me.Label47.AutoSize = True
-        Me.Label47.Location = New System.Drawing.Point(403, 192)
+        Me.Label47.Location = New System.Drawing.Point(287, 184)
         Me.Label47.Name = "Label47"
         Me.Label47.Size = New System.Drawing.Size(44, 18)
         Me.Label47.TabIndex = 118
@@ -1914,7 +1882,7 @@ Partial Class admin
         'Label48
         '
         Me.Label48.AutoSize = True
-        Me.Label48.Location = New System.Drawing.Point(403, 227)
+        Me.Label48.Location = New System.Drawing.Point(287, 219)
         Me.Label48.Name = "Label48"
         Me.Label48.Size = New System.Drawing.Size(80, 18)
         Me.Label48.TabIndex = 117
@@ -1923,7 +1891,7 @@ Partial Class admin
         'Label49
         '
         Me.Label49.AutoSize = True
-        Me.Label49.Location = New System.Drawing.Point(403, 262)
+        Me.Label49.Location = New System.Drawing.Point(287, 254)
         Me.Label49.Name = "Label49"
         Me.Label49.Size = New System.Drawing.Size(80, 18)
         Me.Label49.TabIndex = 116
@@ -1932,7 +1900,7 @@ Partial Class admin
         'Label50
         '
         Me.Label50.AutoSize = True
-        Me.Label50.Location = New System.Drawing.Point(403, 332)
+        Me.Label50.Location = New System.Drawing.Point(287, 324)
         Me.Label50.Name = "Label50"
         Me.Label50.Size = New System.Drawing.Size(80, 18)
         Me.Label50.TabIndex = 115
@@ -1941,7 +1909,7 @@ Partial Class admin
         'Label51
         '
         Me.Label51.AutoSize = True
-        Me.Label51.Location = New System.Drawing.Point(403, 297)
+        Me.Label51.Location = New System.Drawing.Point(287, 289)
         Me.Label51.Name = "Label51"
         Me.Label51.Size = New System.Drawing.Size(44, 18)
         Me.Label51.TabIndex = 114
@@ -2538,6 +2506,38 @@ Partial Class admin
         '
         Me.OpenDlg.FileName = "OpenDlg"
         '
+        'pictureButton
+        '
+        Me.pictureButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.pictureButton.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.pictureButton.Location = New System.Drawing.Point(722, 420)
+        Me.pictureButton.Name = "pictureButton"
+        Me.pictureButton.Size = New System.Drawing.Size(94, 33)
+        Me.pictureButton.TabIndex = 130
+        Me.pictureButton.Text = "浏览"
+        Me.pictureButton.UseVisualStyleBackColor = True
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(566, 427)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(80, 18)
+        Me.Label36.TabIndex = 129
+        Me.Label36.Text = "司机照片"
+        '
+        'driverPictureBox
+        '
+        Me.driverPictureBox.BackColor = System.Drawing.Color.Silver
+        Me.driverPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.driverPictureBox.Image = CType(resources.GetObject("driverPictureBox.Image"), System.Drawing.Image)
+        Me.driverPictureBox.Location = New System.Drawing.Point(566, 96)
+        Me.driverPictureBox.Name = "driverPictureBox"
+        Me.driverPictureBox.Size = New System.Drawing.Size(250, 318)
+        Me.driverPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.driverPictureBox.TabIndex = 128
+        Me.driverPictureBox.TabStop = False
+        '
         'admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
@@ -2610,7 +2610,6 @@ Partial Class admin
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.caddPanel.ResumeLayout(False)
         Me.caddPanel.PerformLayout()
-        CType(Me.carPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.daddPanel.ResumeLayout(False)
         Me.daddPanel.PerformLayout()
@@ -2645,6 +2644,7 @@ Partial Class admin
         CType(Me.about1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.downPanel.ResumeLayout(False)
         Me.downPanel.PerformLayout()
+        CType(Me.driverPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2774,9 +2774,6 @@ Partial Class admin
     Friend WithEvents Label35 As Label
     Friend WithEvents PictureBox6 As PictureBox
     Friend WithEvents caddPanel As Panel
-    Friend WithEvents pictureButton As Button
-    Friend WithEvents Label36 As Label
-    Friend WithEvents carPictureBox As PictureBox
     Friend WithEvents clearLinkLabel As LinkLabel
     Friend WithEvents carupdateButton As Button
     Friend WithEvents TextBox26 As TextBox
@@ -2866,4 +2863,7 @@ Partial Class admin
     Friend WithEvents TextBox28 As TextBox
     Friend WithEvents Label39 As Label
     Friend WithEvents Label40 As Label
+    Friend WithEvents pictureButton As Button
+    Friend WithEvents Label36 As Label
+    Friend WithEvents driverPictureBox As PictureBox
 End Class
