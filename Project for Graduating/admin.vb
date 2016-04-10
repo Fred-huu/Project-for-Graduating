@@ -189,16 +189,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
                     MessageBox.Show("笨蛋！两次密码输入不一致，快重新输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Else
                     insertuser()
-                    'MessageBox.Show("账号注册成功！")
-                    MessageBox.Show("哇！账号居然注册成功啦~！恭喜入坑！")
-
-                    '清除登录界面的数据
-                    USERTextBox.Text = ""
-                    PasswordTextBox.Text = ""
-
-                    '返回登陆界面
-                    loginPanel.Visible = True
-                    newuserPanel.Visible = False
 
                 End If
             End If
@@ -221,6 +211,18 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             com = New MySqlCommand("INSERT INTO users (username,user_id,password,perm) VALUES ('" & newnameTextBox.Text & "','" & newuserTextBox.Text & "','" & newapasswTextBox.Text & "',' 0 ')", conn)
             dr = com.ExecuteReader
             conn.Close()
+
+            'MessageBox.Show("账号注册成功！")
+            MessageBox.Show("哇！账号居然注册成功啦~！恭喜入坑！")
+
+            '清除登录界面的数据
+            USERTextBox.Text = ""
+            PasswordTextBox.Text = ""
+
+            '返回登陆界面
+            loginPanel.Visible = True
+            newuserPanel.Visible = False
+
         Catch myerror As MySqlException
             'MsgBox("Error connecting to the server:" & myerror.Message)
             MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
@@ -391,9 +393,10 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
         '数据库连接与操作
         Try
-            conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
+            conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
+            'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
             conn.Open()
-            com = New MySqlCommand("INSERT INTO car.manage (carnum,weight,time,user_id,manage_id,kind,remarks) VALUES ('" & TextBox7.Text & "','" & TextBox12.Text & "','" & TextBox9.Text & "','" & USERTextBox.Text & "','num','" & kindTextBox.Text & "','" & adminremarkTextBox.Text & "')", conn)
+            com = New MySqlCommand("INSERT INTO manage (carnum,weight,time,user_id,manage_id,kind,remarks) VALUES ('" & TextBox7.Text & "','" & TextBox12.Text & "','" & TextBox9.Text & "','" & USERTextBox.Text & "','num','" & kindTextBox.Text & "','" & adminremarkTextBox.Text & "')", conn)
             dr = com.ExecuteReader
 
             conn.Close()
@@ -476,7 +479,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
             '管理界面数据库操作
             Try
-                conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
+                conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
+                'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
                 conn.Open()
                 com = New MySqlCommand("Select * From car,driver Where carnum='" & TextBox7.Text & "'", conn)
                 dr = com.ExecuteReader()
@@ -894,7 +898,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
             'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
             conn.Open()
-            com = New MySqlCommand("INSERT INTO car (carnum,model,pdtime,fload) VALUES ('" & TextBox24.Text & "','" & TextBox25.Text & "','" & TextBox26.Text & "','" & TextBox28.Text & "'')", conn)
+            com = New MySqlCommand("INSERT INTO car (carnum,model,pdtime,fload) VALUES ('" & TextBox24.Text & "','" & TextBox25.Text & "','" & TextBox26.Text & "','" & TextBox28.Text & "')", conn)
             'com = New MySqlCommand("INSERT INTO driver.车辆 (carnum,model,pdtime,fload,照片) VALUES ('" & TextBox24.Text & "','" & TextBox25.Text & "','" & TextBox26.Text & "','" & TextBox28.Text & "'，@Photo)", conn)
             'com.Parameters.AddWithValue("@Photo", arrImage)
             dr = com.ExecuteReader
