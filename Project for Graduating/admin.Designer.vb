@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class admin
     Inherits System.Windows.Forms.Form
 
     'Form 重写 Dispose，以清理组件列表。
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class admin
     '注意: 以下过程是 Windows 窗体设计器所必需的
     '可以使用 Windows 窗体设计器修改它。  
     '不要使用代码编辑器修改它。
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(admin))
@@ -48,6 +48,10 @@ Partial Class admin
         Me.suggestPanel = New System.Windows.Forms.Panel()
         Me.PictureBox12 = New System.Windows.Forms.PictureBox()
         Me.adminPanel = New System.Windows.Forms.Panel()
+        Me.Label68 = New System.Windows.Forms.Label()
+        Me.adminremarkTextBox = New System.Windows.Forms.TextBox()
+        Me.Label67 = New System.Windows.Forms.Label()
+        Me.kindTextBox = New System.Windows.Forms.TextBox()
         Me.修改LinkLabel = New System.Windows.Forms.LinkLabel()
         Me.modifyPanel = New System.Windows.Forms.Panel()
         Me.Cancel = New System.Windows.Forms.Button()
@@ -112,21 +116,16 @@ Partial Class admin
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.usermessPanel = New System.Windows.Forms.Panel()
         Me.signoutLinkLabel = New System.Windows.Forms.LinkLabel()
-        Me.accessTextBox = New System.Windows.Forms.TextBox()
         Me.usernameTextBox = New System.Windows.Forms.TextBox()
         Me.nameTextBox = New System.Windows.Forms.TextBox()
         Me.Label57 = New System.Windows.Forms.Label()
-        Me.Label58 = New System.Windows.Forms.Label()
         Me.Label59 = New System.Windows.Forms.Label()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.cmPanel = New System.Windows.Forms.Panel()
         Me.cmTextBox = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.carselectButton = New System.Windows.Forms.Button()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.TextBox16 = New System.Windows.Forms.TextBox()
         Me.TextBox17 = New System.Windows.Forms.TextBox()
-        Me.Label25 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.TextBox15 = New System.Windows.Forms.TextBox()
@@ -159,12 +158,6 @@ Partial Class admin
         Me.carPictureBox = New System.Windows.Forms.PictureBox()
         Me.clearLinkLabel = New System.Windows.Forms.LinkLabel()
         Me.carupdateButton = New System.Windows.Forms.Button()
-        Me.Label37 = New System.Windows.Forms.Label()
-        Me.TextBox27 = New System.Windows.Forms.TextBox()
-        Me.TextBox28 = New System.Windows.Forms.TextBox()
-        Me.Label38 = New System.Windows.Forms.Label()
-        Me.Label39 = New System.Windows.Forms.Label()
-        Me.Label40 = New System.Windows.Forms.Label()
         Me.TextBox26 = New System.Windows.Forms.TextBox()
         Me.TextBox24 = New System.Windows.Forms.TextBox()
         Me.TextBox25 = New System.Windows.Forms.TextBox()
@@ -191,6 +184,7 @@ Partial Class admin
         Me.Label51 = New System.Windows.Forms.Label()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.loginPanel = New System.Windows.Forms.Panel()
+        Me.logtime = New System.Windows.Forms.Label()
         Me.账号注册LinkLabel = New System.Windows.Forms.LinkLabel()
         Me.offButton = New System.Windows.Forms.Button()
         Me.忘记密码LinkLabel = New System.Windows.Forms.LinkLabel()
@@ -201,6 +195,7 @@ Partial Class admin
         Me.PasswordTextBox = New System.Windows.Forms.TextBox()
         Me.USERTextBox = New System.Windows.Forms.TextBox()
         Me.newuserPanel = New System.Windows.Forms.Panel()
+        Me.logintime = New System.Windows.Forms.Label()
         Me.newcancelButton = New System.Windows.Forms.Button()
         Me.newokButton = New System.Windows.Forms.Button()
         Me.newpasswTextBox = New System.Windows.Forms.TextBox()
@@ -242,13 +237,12 @@ Partial Class admin
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.OpenDlg = New System.Windows.Forms.OpenFileDialog()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.logintime = New System.Windows.Forms.Label()
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
-        Me.logtime = New System.Windows.Forms.Label()
-        Me.Label67 = New System.Windows.Forms.Label()
-        Me.kindTextBox = New System.Windows.Forms.TextBox()
-        Me.Label68 = New System.Windows.Forms.Label()
-        Me.adminremarkTextBox = New System.Windows.Forms.TextBox()
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Label40 = New System.Windows.Forms.Label()
+        Me.TextBox28 = New System.Windows.Forms.TextBox()
+        Me.Label39 = New System.Windows.Forms.Label()
         Me.aboutPanel.SuspendLayout()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.开发人员PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -630,6 +624,38 @@ Partial Class admin
         Me.adminPanel.Name = "adminPanel"
         Me.adminPanel.Size = New System.Drawing.Size(1060, 608)
         Me.adminPanel.TabIndex = 113
+        '
+        'Label68
+        '
+        Me.Label68.AutoSize = True
+        Me.Label68.Location = New System.Drawing.Point(520, 545)
+        Me.Label68.Name = "Label68"
+        Me.Label68.Size = New System.Drawing.Size(44, 18)
+        Me.Label68.TabIndex = 112
+        Me.Label68.Text = "备注"
+        '
+        'adminremarkTextBox
+        '
+        Me.adminremarkTextBox.Location = New System.Drawing.Point(605, 540)
+        Me.adminremarkTextBox.Name = "adminremarkTextBox"
+        Me.adminremarkTextBox.Size = New System.Drawing.Size(107, 28)
+        Me.adminremarkTextBox.TabIndex = 111
+        '
+        'Label67
+        '
+        Me.Label67.AutoSize = True
+        Me.Label67.Location = New System.Drawing.Point(520, 405)
+        Me.Label67.Name = "Label67"
+        Me.Label67.Size = New System.Drawing.Size(80, 18)
+        Me.Label67.TabIndex = 110
+        Me.Label67.Text = "货物类型"
+        '
+        'kindTextBox
+        '
+        Me.kindTextBox.Location = New System.Drawing.Point(605, 400)
+        Me.kindTextBox.Name = "kindTextBox"
+        Me.kindTextBox.Size = New System.Drawing.Size(89, 28)
+        Me.kindTextBox.TabIndex = 109
         '
         '修改LinkLabel
         '
@@ -1073,36 +1099,35 @@ Partial Class admin
         'ListView1
         '
         Me.ListView1.BackgroundImageTiled = True
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4})
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
         Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
-        Me.ListView1.Location = New System.Drawing.Point(230, 126)
+        Me.ListView1.Location = New System.Drawing.Point(100, 126)
         Me.ListView1.MinimumSize = New System.Drawing.Size(4, 4)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(600, 372)
+        Me.ListView1.Size = New System.Drawing.Size(700, 372)
         Me.ListView1.TabIndex = 106
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
         '
         'ColumnHeader1
         '
-        Me.ColumnHeader1.Text = "车牌号"
-        Me.ColumnHeader1.Width = 90
+        Me.ColumnHeader1.Text = "编号"
+        Me.ColumnHeader1.Width = 40
         '
         'ColumnHeader2
         '
-        Me.ColumnHeader2.Text = "货物净重(t)"
+        Me.ColumnHeader2.Text = "车牌号"
         Me.ColumnHeader2.Width = 90
         '
         'ColumnHeader3
         '
-        Me.ColumnHeader3.Text = "称量时间"
-        Me.ColumnHeader3.Width = 120
+        Me.ColumnHeader3.Text = "管理账户"
         '
         'ColumnHeader4
         '
-        Me.ColumnHeader4.Text = "管理帐户"
-        Me.ColumnHeader4.Width = 90
+        Me.ColumnHeader4.Text = "货物净重(t)"
+        Me.ColumnHeader4.Width = 80
         '
         'PictureBox3
         '
@@ -1212,11 +1237,9 @@ Partial Class admin
         'usermessPanel
         '
         Me.usermessPanel.Controls.Add(Me.signoutLinkLabel)
-        Me.usermessPanel.Controls.Add(Me.accessTextBox)
         Me.usermessPanel.Controls.Add(Me.usernameTextBox)
         Me.usermessPanel.Controls.Add(Me.nameTextBox)
         Me.usermessPanel.Controls.Add(Me.Label57)
-        Me.usermessPanel.Controls.Add(Me.Label58)
         Me.usermessPanel.Controls.Add(Me.Label59)
         Me.usermessPanel.Controls.Add(Me.PictureBox9)
         Me.usermessPanel.Location = New System.Drawing.Point(200, 0)
@@ -1227,20 +1250,12 @@ Partial Class admin
         'signoutLinkLabel
         '
         Me.signoutLinkLabel.AutoSize = True
-        Me.signoutLinkLabel.Location = New System.Drawing.Point(607, 322)
+        Me.signoutLinkLabel.Location = New System.Drawing.Point(607, 284)
         Me.signoutLinkLabel.Name = "signoutLinkLabel"
         Me.signoutLinkLabel.Size = New System.Drawing.Size(44, 18)
         Me.signoutLinkLabel.TabIndex = 158
         Me.signoutLinkLabel.TabStop = True
         Me.signoutLinkLabel.Text = "注销"
-        '
-        'accessTextBox
-        '
-        Me.accessTextBox.Enabled = False
-        Me.accessTextBox.Location = New System.Drawing.Point(481, 282)
-        Me.accessTextBox.Name = "accessTextBox"
-        Me.accessTextBox.Size = New System.Drawing.Size(170, 28)
-        Me.accessTextBox.TabIndex = 157
         '
         'usernameTextBox
         '
@@ -1267,16 +1282,6 @@ Partial Class admin
         Me.Label57.Size = New System.Drawing.Size(52, 21)
         Me.Label57.TabIndex = 148
         Me.Label57.Text = "姓名"
-        '
-        'Label58
-        '
-        Me.Label58.AutoSize = True
-        Me.Label58.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label58.Location = New System.Drawing.Point(384, 287)
-        Me.Label58.Name = "Label58"
-        Me.Label58.Size = New System.Drawing.Size(94, 21)
-        Me.Label58.TabIndex = 147
-        Me.Label58.Text = "管理权限"
         '
         'Label59
         '
@@ -1305,10 +1310,7 @@ Partial Class admin
         Me.cmPanel.Controls.Add(Me.cmTextBox)
         Me.cmPanel.Controls.Add(Me.Label12)
         Me.cmPanel.Controls.Add(Me.carselectButton)
-        Me.cmPanel.Controls.Add(Me.Label26)
-        Me.cmPanel.Controls.Add(Me.TextBox16)
         Me.cmPanel.Controls.Add(Me.TextBox17)
-        Me.cmPanel.Controls.Add(Me.Label25)
         Me.cmPanel.Controls.Add(Me.Label24)
         Me.cmPanel.Controls.Add(Me.Label22)
         Me.cmPanel.Controls.Add(Me.TextBox15)
@@ -1352,47 +1354,19 @@ Partial Class admin
         Me.carselectButton.Text = "确定"
         Me.carselectButton.UseVisualStyleBackColor = True
         '
-        'Label26
-        '
-        Me.Label26.AutoSize = True
-        Me.Label26.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label26.Location = New System.Drawing.Point(650, 371)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(21, 21)
-        Me.Label26.TabIndex = 145
-        Me.Label26.Text = "t"
-        '
-        'TextBox16
-        '
-        Me.TextBox16.Enabled = False
-        Me.TextBox16.Location = New System.Drawing.Point(474, 371)
-        Me.TextBox16.Name = "TextBox16"
-        Me.TextBox16.Size = New System.Drawing.Size(170, 28)
-        Me.TextBox16.TabIndex = 144
-        '
         'TextBox17
         '
         Me.TextBox17.Enabled = False
-        Me.TextBox17.Location = New System.Drawing.Point(474, 406)
+        Me.TextBox17.Location = New System.Drawing.Point(474, 371)
         Me.TextBox17.Name = "TextBox17"
         Me.TextBox17.Size = New System.Drawing.Size(170, 28)
         Me.TextBox17.TabIndex = 143
-        '
-        'Label25
-        '
-        Me.Label25.AutoSize = True
-        Me.Label25.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label25.Location = New System.Drawing.Point(381, 371)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(94, 21)
-        Me.Label25.TabIndex = 142
-        Me.Label25.Text = "额定载重"
         '
         'Label24
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label24.Location = New System.Drawing.Point(381, 406)
+        Me.Label24.Location = New System.Drawing.Point(381, 371)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(94, 21)
         Me.Label24.TabIndex = 141
@@ -1402,7 +1376,7 @@ Partial Class admin
         '
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label22.Location = New System.Drawing.Point(650, 406)
+        Me.Label22.Location = New System.Drawing.Point(650, 371)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(21, 21)
         Me.Label22.TabIndex = 140
@@ -1647,10 +1621,7 @@ Partial Class admin
         Me.caddPanel.Controls.Add(Me.carPictureBox)
         Me.caddPanel.Controls.Add(Me.clearLinkLabel)
         Me.caddPanel.Controls.Add(Me.carupdateButton)
-        Me.caddPanel.Controls.Add(Me.Label37)
-        Me.caddPanel.Controls.Add(Me.TextBox27)
         Me.caddPanel.Controls.Add(Me.TextBox28)
-        Me.caddPanel.Controls.Add(Me.Label38)
         Me.caddPanel.Controls.Add(Me.Label39)
         Me.caddPanel.Controls.Add(Me.Label40)
         Me.caddPanel.Controls.Add(Me.TextBox26)
@@ -1701,7 +1672,7 @@ Partial Class admin
         'clearLinkLabel
         '
         Me.clearLinkLabel.AutoSize = True
-        Me.clearLinkLabel.Location = New System.Drawing.Point(346, 329)
+        Me.clearLinkLabel.Location = New System.Drawing.Point(346, 294)
         Me.clearLinkLabel.Name = "clearLinkLabel"
         Me.clearLinkLabel.Size = New System.Drawing.Size(80, 18)
         Me.clearLinkLabel.TabIndex = 114
@@ -1717,60 +1688,6 @@ Partial Class admin
         Me.carupdateButton.TabIndex = 115
         Me.carupdateButton.Text = "上传"
         Me.carupdateButton.UseVisualStyleBackColor = True
-        '
-        'Label37
-        '
-        Me.Label37.AutoSize = True
-        Me.Label37.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label37.Location = New System.Drawing.Point(522, 259)
-        Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(32, 21)
-        Me.Label37.TabIndex = 124
-        Me.Label37.Text = "kg"
-        '
-        'TextBox27
-        '
-        Me.TextBox27.Location = New System.Drawing.Point(346, 259)
-        Me.TextBox27.Name = "TextBox27"
-        Me.TextBox27.Size = New System.Drawing.Size(170, 28)
-        Me.TextBox27.TabIndex = 112
-        '
-        'TextBox28
-        '
-        Me.TextBox28.Location = New System.Drawing.Point(346, 294)
-        Me.TextBox28.Name = "TextBox28"
-        Me.TextBox28.Size = New System.Drawing.Size(170, 28)
-        Me.TextBox28.TabIndex = 113
-        '
-        'Label38
-        '
-        Me.Label38.AutoSize = True
-        Me.Label38.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label38.Location = New System.Drawing.Point(253, 259)
-        Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(94, 21)
-        Me.Label38.TabIndex = 123
-        Me.Label38.Text = "额定载重"
-        '
-        'Label39
-        '
-        Me.Label39.AutoSize = True
-        Me.Label39.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label39.Location = New System.Drawing.Point(253, 294)
-        Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(94, 21)
-        Me.Label39.TabIndex = 122
-        Me.Label39.Text = "汽车皮重"
-        '
-        'Label40
-        '
-        Me.Label40.AutoSize = True
-        Me.Label40.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label40.Location = New System.Drawing.Point(522, 294)
-        Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(32, 21)
-        Me.Label40.TabIndex = 121
-        Me.Label40.Text = "kg"
         '
         'TextBox26
         '
@@ -2027,6 +1944,16 @@ Partial Class admin
         Me.loginPanel.Size = New System.Drawing.Size(1280, 720)
         Me.loginPanel.TabIndex = 129
         '
+        'logtime
+        '
+        Me.logtime.AutoSize = True
+        Me.logtime.BackColor = System.Drawing.Color.Transparent
+        Me.logtime.Location = New System.Drawing.Point(1070, 638)
+        Me.logtime.Name = "logtime"
+        Me.logtime.Size = New System.Drawing.Size(62, 18)
+        Me.logtime.TabIndex = 115
+        Me.logtime.Text = "Label4"
+        '
         '账号注册LinkLabel
         '
         Me.账号注册LinkLabel.AutoSize = True
@@ -2143,6 +2070,16 @@ Partial Class admin
         Me.newuserPanel.Name = "newuserPanel"
         Me.newuserPanel.Size = New System.Drawing.Size(1280, 720)
         Me.newuserPanel.TabIndex = 130
+        '
+        'logintime
+        '
+        Me.logintime.AutoSize = True
+        Me.logintime.BackColor = System.Drawing.Color.Transparent
+        Me.logintime.Location = New System.Drawing.Point(1070, 638)
+        Me.logintime.Name = "logintime"
+        Me.logintime.Size = New System.Drawing.Size(62, 18)
+        Me.logintime.TabIndex = 14
+        Me.logintime.Text = "Label4"
         '
         'newcancelButton
         '
@@ -2572,62 +2509,46 @@ Partial Class admin
         Me.Timer2.Enabled = True
         Me.Timer2.Interval = 1000
         '
-        'logintime
-        '
-        Me.logintime.AutoSize = True
-        Me.logintime.BackColor = System.Drawing.Color.Transparent
-        Me.logintime.Location = New System.Drawing.Point(1070, 638)
-        Me.logintime.Name = "logintime"
-        Me.logintime.Size = New System.Drawing.Size(62, 18)
-        Me.logintime.TabIndex = 14
-        Me.logintime.Text = "Label4"
-        '
         'Timer3
         '
         Me.Timer3.Enabled = True
         Me.Timer3.Interval = 1000
         '
-        'logtime
+        'ColumnHeader5
         '
-        Me.logtime.AutoSize = True
-        Me.logtime.BackColor = System.Drawing.Color.Transparent
-        Me.logtime.Location = New System.Drawing.Point(1070, 638)
-        Me.logtime.Name = "logtime"
-        Me.logtime.Size = New System.Drawing.Size(62, 18)
-        Me.logtime.TabIndex = 115
-        Me.logtime.Text = "Label4"
+        Me.ColumnHeader5.Text = "货物类型"
         '
-        'Label67
+        'ColumnHeader6
         '
-        Me.Label67.AutoSize = True
-        Me.Label67.Location = New System.Drawing.Point(520, 405)
-        Me.Label67.Name = "Label67"
-        Me.Label67.Size = New System.Drawing.Size(80, 18)
-        Me.Label67.TabIndex = 110
-        Me.Label67.Text = "货物类型"
+        Me.ColumnHeader6.Text = "称量时间"
+        Me.ColumnHeader6.Width = 130
         '
-        'kindTextBox
+        'Label40
         '
-        Me.kindTextBox.Location = New System.Drawing.Point(605, 400)
-        Me.kindTextBox.Name = "kindTextBox"
-        Me.kindTextBox.Size = New System.Drawing.Size(89, 28)
-        Me.kindTextBox.TabIndex = 109
+        Me.Label40.AutoSize = True
+        Me.Label40.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label40.Location = New System.Drawing.Point(522, 259)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(32, 21)
+        Me.Label40.TabIndex = 121
+        Me.Label40.Text = "kg"
         '
-        'Label68
+        'TextBox28
         '
-        Me.Label68.AutoSize = True
-        Me.Label68.Location = New System.Drawing.Point(520, 545)
-        Me.Label68.Name = "Label68"
-        Me.Label68.Size = New System.Drawing.Size(44, 18)
-        Me.Label68.TabIndex = 112
-        Me.Label68.Text = "备注"
+        Me.TextBox28.Location = New System.Drawing.Point(346, 259)
+        Me.TextBox28.Name = "TextBox28"
+        Me.TextBox28.Size = New System.Drawing.Size(170, 28)
+        Me.TextBox28.TabIndex = 113
         '
-        'adminremarkTextBox
+        'Label39
         '
-        Me.adminremarkTextBox.Location = New System.Drawing.Point(605, 540)
-        Me.adminremarkTextBox.Name = "adminremarkTextBox"
-        Me.adminremarkTextBox.Size = New System.Drawing.Size(107, 28)
-        Me.adminremarkTextBox.TabIndex = 111
+        Me.Label39.AutoSize = True
+        Me.Label39.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label39.Location = New System.Drawing.Point(253, 259)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(94, 21)
+        Me.Label39.TabIndex = 122
+        Me.Label39.Text = "汽车皮重"
         '
         'admin
         '
@@ -2640,12 +2561,6 @@ Partial Class admin
         Me.Controls.Add(Me.userPanel)
         Me.Controls.Add(Me.addPanel)
         Me.Controls.Add(Me.messPanel)
-        Me.Controls.Add(Me.adminPanel)
-        Me.Controls.Add(Me.aboutPanel)
-        Me.Controls.Add(Me.suggestPanel)
-        Me.Controls.Add(Me.helpPanel)
-        Me.Controls.Add(Me.wPanel)
-        Me.Controls.Add(Me.pwdPanel)
         Me.Controls.Add(Me.usermessPanel)
         Me.Controls.Add(Me.dmPanel)
         Me.Controls.Add(Me.cmPanel)
@@ -2653,6 +2568,12 @@ Partial Class admin
         Me.Controls.Add(Me.daddPanel)
         Me.Controls.Add(Me.newuserPanel)
         Me.Controls.Add(Me.loginPanel)
+        Me.Controls.Add(Me.adminPanel)
+        Me.Controls.Add(Me.aboutPanel)
+        Me.Controls.Add(Me.suggestPanel)
+        Me.Controls.Add(Me.helpPanel)
+        Me.Controls.Add(Me.wPanel)
+        Me.Controls.Add(Me.pwdPanel)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "admin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -2827,21 +2748,16 @@ Partial Class admin
     Friend WithEvents PictureBox10 As PictureBox
     Friend WithEvents usermessPanel As Panel
     Friend WithEvents signoutLinkLabel As LinkLabel
-    Friend WithEvents accessTextBox As TextBox
     Friend WithEvents usernameTextBox As TextBox
     Friend WithEvents nameTextBox As TextBox
     Friend WithEvents Label57 As Label
-    Friend WithEvents Label58 As Label
     Friend WithEvents Label59 As Label
     Friend WithEvents PictureBox9 As PictureBox
     Friend WithEvents cmPanel As Panel
     Friend WithEvents cmTextBox As TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents carselectButton As Button
-    Friend WithEvents Label26 As Label
-    Friend WithEvents TextBox16 As TextBox
     Friend WithEvents TextBox17 As TextBox
-    Friend WithEvents Label25 As Label
     Friend WithEvents Label24 As Label
     Friend WithEvents Label22 As Label
     Friend WithEvents TextBox15 As TextBox
@@ -2874,12 +2790,6 @@ Partial Class admin
     Friend WithEvents carPictureBox As PictureBox
     Friend WithEvents clearLinkLabel As LinkLabel
     Friend WithEvents carupdateButton As Button
-    Friend WithEvents Label37 As Label
-    Friend WithEvents TextBox27 As TextBox
-    Friend WithEvents TextBox28 As TextBox
-    Friend WithEvents Label38 As Label
-    Friend WithEvents Label39 As Label
-    Friend WithEvents Label40 As Label
     Friend WithEvents TextBox26 As TextBox
     Friend WithEvents TextBox24 As TextBox
     Friend WithEvents TextBox25 As TextBox
@@ -2964,4 +2874,9 @@ Partial Class admin
     Friend WithEvents kindTextBox As TextBox
     Friend WithEvents Label68 As Label
     Friend WithEvents adminremarkTextBox As TextBox
+    Friend WithEvents ColumnHeader5 As ColumnHeader
+    Friend WithEvents ColumnHeader6 As ColumnHeader
+    Friend WithEvents TextBox28 As TextBox
+    Friend WithEvents Label39 As Label
+    Friend WithEvents Label40 As Label
 End Class
