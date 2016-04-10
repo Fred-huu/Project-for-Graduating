@@ -330,7 +330,7 @@ Partial Class admin
         Me.版本信息Label.Name = "版本信息Label"
         Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.5.160409.3"
+        Me.版本信息Label.Text = "2.6.160410.4"
         '
         '人员姓名Label
         '
@@ -2561,6 +2561,11 @@ Partial Class admin
         Me.Controls.Add(Me.userPanel)
         Me.Controls.Add(Me.addPanel)
         Me.Controls.Add(Me.messPanel)
+        Me.Controls.Add(Me.aboutPanel)
+        Me.Controls.Add(Me.suggestPanel)
+        Me.Controls.Add(Me.helpPanel)
+        Me.Controls.Add(Me.wPanel)
+        Me.Controls.Add(Me.pwdPanel)
         Me.Controls.Add(Me.usermessPanel)
         Me.Controls.Add(Me.dmPanel)
         Me.Controls.Add(Me.cmPanel)
@@ -2569,11 +2574,6 @@ Partial Class admin
         Me.Controls.Add(Me.newuserPanel)
         Me.Controls.Add(Me.loginPanel)
         Me.Controls.Add(Me.adminPanel)
-        Me.Controls.Add(Me.aboutPanel)
-        Me.Controls.Add(Me.suggestPanel)
-        Me.Controls.Add(Me.helpPanel)
-        Me.Controls.Add(Me.wPanel)
-        Me.Controls.Add(Me.pwdPanel)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "admin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
