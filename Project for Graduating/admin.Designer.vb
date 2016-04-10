@@ -241,8 +241,6 @@ Partial Class admin
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.OpenDlg = New System.Windows.Forms.OpenFileDialog()
-        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.aboutPanel.SuspendLayout()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.开发人员PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -328,9 +326,9 @@ Partial Class admin
         Me.版本信息Label.AutoSize = True
         Me.版本信息Label.Location = New System.Drawing.Point(110, 385)
         Me.版本信息Label.Name = "版本信息Label"
-        Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
+        Me.版本信息Label.Size = New System.Drawing.Size(125, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.6.160410.9"
+        Me.版本信息Label.Text = "2.6.160410.10"
         '
         '人员姓名Label
         '
@@ -2540,16 +2538,6 @@ Partial Class admin
         '
         Me.OpenDlg.FileName = "OpenDlg"
         '
-        'Timer2
-        '
-        Me.Timer2.Enabled = True
-        Me.Timer2.Interval = 1000
-        '
-        'Timer3
-        '
-        Me.Timer3.Enabled = True
-        Me.Timer3.Interval = 1000
-        '
         'admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
@@ -2868,9 +2856,7 @@ Partial Class admin
     Friend WithEvents SerialPort1 As IO.Ports.SerialPort
     Friend WithEvents OpenDlg As OpenFileDialog
     Friend WithEvents logintime As Label
-    Friend WithEvents Timer2 As Timer
     Friend WithEvents logtime As Label
-    Friend WithEvents Timer3 As Timer
     Friend WithEvents Label67 As Label
     Friend WithEvents kindTextBox As TextBox
     Friend WithEvents Label68 As Label
