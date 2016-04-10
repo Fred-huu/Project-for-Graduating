@@ -110,8 +110,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         Dim com As MySqlCommand
 
         Try
-            'conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
-            conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;User ID=root;PWD=admin;pooling = True")
+            conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
+            'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;User ID=root;PWD=admin;pooling = True")
             conn.Open()
             com = New MySqlCommand("Select * From users Where user_id='" & USERTextBox.Text & "' And password='" & PasswordTextBox.Text & "'", conn)
             dr = com.ExecuteReader()
@@ -170,7 +170,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         Dim com As MySqlCommand
 
         Try
-            conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
+            conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
+            'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
             conn.Open()
             com = New MySqlCommand("Select * From users Where user_id='" & newuserTextBox.Text & "'", conn)
             dr = com.ExecuteReader()
@@ -210,12 +211,14 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
     Private Sub insertuser()
         Dim dr As MySqlDataReader
         Dim com As MySqlCommand
+        Dim coo As MySqlCommand
 
         '数据库连接与操作
         Try
-            conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
+            conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
+            'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
             conn.Open()
-            com = New MySqlCommand("INSERT INTO driver.users (username,user_id,password,perm) VALUES ('" & newnameTextBox.Text & "','" & newuserTextBox.Text & "','" & newapasswTextBox.Text & "',' 0 ')", conn)
+            com = New MySqlCommand("INSERT INTO users (username,user_id,password,perm) VALUES ('" & newnameTextBox.Text & "','" & newuserTextBox.Text & "','" & newapasswTextBox.Text & "',' 0 ')", conn)
             dr = com.ExecuteReader
             conn.Close()
         Catch myerror As MySqlException
@@ -317,7 +320,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
         '数据库连接与操作
         Try
-            conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
+            conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
+            'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
             conn.Open()
             com = New MySqlCommand("Select * From car,driver Where carnum='" & TextBox7.Text & "'", conn)
             dr = com.ExecuteReader()
@@ -612,7 +616,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         Dim adapter As New MySqlDataAdapter
 
         Try
-            conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
+            conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
+            'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
             conn.Open()
             com = New MySqlCommand("Select * From manage", conn)
 
@@ -694,7 +699,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
         '数据库连接与操作
         Try
-            conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
+            conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
+            'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
             conn.Open()
             com = New MySqlCommand("Select * From car Where carnum='" & cmTextBox.Text & "'", conn)
             dr = com.ExecuteReader()
@@ -771,7 +777,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
         '数据库连接与操作
         Try
-            conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
+            conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
+            'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
             conn.Open()
             com = New MySqlCommand("Select * From driver Where driver_id='" & dmTextBox.Text & "'", conn)
             dr = com.ExecuteReader()
@@ -884,9 +891,10 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
         '数据库连接与操作
         Try
-            conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
+            conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
+            'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
             conn.Open()
-            com = New MySqlCommand("INSERT INTO car.car (carnum,model,pdtime,fload) VALUES ('" & TextBox24.Text & "','" & TextBox25.Text & "','" & TextBox26.Text & "','" & TextBox28.Text & "'')", conn)
+            com = New MySqlCommand("INSERT INTO car (carnum,model,pdtime,fload) VALUES ('" & TextBox24.Text & "','" & TextBox25.Text & "','" & TextBox26.Text & "','" & TextBox28.Text & "'')", conn)
             'com = New MySqlCommand("INSERT INTO driver.车辆 (carnum,model,pdtime,fload,照片) VALUES ('" & TextBox24.Text & "','" & TextBox25.Text & "','" & TextBox26.Text & "','" & TextBox28.Text & "'，@Photo)", conn)
             'com.Parameters.AddWithValue("@Photo", arrImage)
             dr = com.ExecuteReader
@@ -974,9 +982,10 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
         '数据库连接与操作
         Try
-            conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
+            conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
+            'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
             conn.Open()
-            com = New MySqlCommand("INSERT INTO car.driver (driver_id,name,bday,dkind,part,telnum) VALUES ('" & TextBox29.Text & "','" & TextBox30.Text & "','" & TextBox31.Text & "','" & TextBox32.Text & "','" & TextBox33.Text & "','" & TextBox34.Text & "')", conn)
+            com = New MySqlCommand("INSERT INTO driver (driver_id,name,bday,dkind,part,telnum) VALUES ('" & TextBox29.Text & "','" & TextBox30.Text & "','" & TextBox31.Text & "','" & TextBox32.Text & "','" & TextBox33.Text & "','" & TextBox34.Text & "')", conn)
             dr = com.ExecuteReader
 
             MessageBox.Show("存储成功！")
@@ -1084,8 +1093,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
         '数据库连接与操作
         Try
-            'conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
-            conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
+            conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
+            'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
             conn.Open()
             com = New MySqlCommand("Select * From users Where username='" & USERTextBox.Text & "'", conn)
             dr = com.ExecuteReader()
@@ -1166,7 +1175,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         Dim dr As MySqlDataReader
 
         Try
-            conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
+            conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
+            'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
             conn.Open()
             com = New MySqlCommand("Select * From users Where user_id='" & USERTextBox.Text & "' And password='" & oldpwdTextBox.Text & "'", conn)
             dr = com.ExecuteReader()
@@ -1221,10 +1231,11 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         Dim dr As MySqlDataReader
 
         Try
-            conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
+            conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
+            'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
             conn.Open()
 
-            com = New MySqlCommand("UPDATE car.users SET password = '" & newpwdagainTextBox.Text & "' WHERE username='" & USERTextBox.Text & "'", conn)
+            com = New MySqlCommand("UPDATE users SET password = '" & newpwdagainTextBox.Text & "' WHERE username='" & USERTextBox.Text & "'", conn)
             dr = com.ExecuteReader
             conn.Close()
 
