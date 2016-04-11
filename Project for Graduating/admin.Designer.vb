@@ -169,6 +169,9 @@ Partial Class admin
         Me.Label44 = New System.Windows.Forms.Label()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.daddPanel = New System.Windows.Forms.Panel()
+        Me.pictureButton = New System.Windows.Forms.Button()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.driverPictureBox = New System.Windows.Forms.PictureBox()
         Me.clearLinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.driverupdateButton = New System.Windows.Forms.Button()
         Me.TextBox34 = New System.Windows.Forms.TextBox()
@@ -238,9 +241,6 @@ Partial Class admin
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.OpenDlg = New System.Windows.Forms.OpenFileDialog()
-        Me.pictureButton = New System.Windows.Forms.Button()
-        Me.Label36 = New System.Windows.Forms.Label()
-        Me.driverPictureBox = New System.Windows.Forms.PictureBox()
         Me.aboutPanel.SuspendLayout()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.开发人员PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -277,6 +277,7 @@ Partial Class admin
         Me.caddPanel.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.daddPanel.SuspendLayout()
+        CType(Me.driverPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.loginPanel.SuspendLayout()
         Me.newuserPanel.SuspendLayout()
@@ -305,7 +306,6 @@ Partial Class admin
         CType(Me.suggest1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.about1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.downPanel.SuspendLayout()
-        CType(Me.driverPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'aboutPanel
@@ -326,9 +326,9 @@ Partial Class admin
         Me.版本信息Label.AutoSize = True
         Me.版本信息Label.Location = New System.Drawing.Point(110, 385)
         Me.版本信息Label.Name = "版本信息Label"
-        Me.版本信息Label.Size = New System.Drawing.Size(125, 18)
+        Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.6.160410.12"
+        Me.版本信息Label.Text = "2.6.160411.2"
         '
         '人员姓名Label
         '
@@ -1787,6 +1787,38 @@ Partial Class admin
         Me.daddPanel.Size = New System.Drawing.Size(1060, 481)
         Me.daddPanel.TabIndex = 121
         '
+        'pictureButton
+        '
+        Me.pictureButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.pictureButton.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.pictureButton.Location = New System.Drawing.Point(722, 420)
+        Me.pictureButton.Name = "pictureButton"
+        Me.pictureButton.Size = New System.Drawing.Size(94, 33)
+        Me.pictureButton.TabIndex = 130
+        Me.pictureButton.Text = "浏览"
+        Me.pictureButton.UseVisualStyleBackColor = True
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(566, 427)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(80, 18)
+        Me.Label36.TabIndex = 129
+        Me.Label36.Text = "司机照片"
+        '
+        'driverPictureBox
+        '
+        Me.driverPictureBox.BackColor = System.Drawing.Color.Silver
+        Me.driverPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.driverPictureBox.Image = CType(resources.GetObject("driverPictureBox.Image"), System.Drawing.Image)
+        Me.driverPictureBox.Location = New System.Drawing.Point(566, 96)
+        Me.driverPictureBox.Name = "driverPictureBox"
+        Me.driverPictureBox.Size = New System.Drawing.Size(250, 318)
+        Me.driverPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.driverPictureBox.TabIndex = 128
+        Me.driverPictureBox.TabStop = False
+        '
         'clearLinkLabel2
         '
         Me.clearLinkLabel2.AutoSize = True
@@ -2506,38 +2538,6 @@ Partial Class admin
         '
         Me.OpenDlg.FileName = "OpenDlg"
         '
-        'pictureButton
-        '
-        Me.pictureButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.pictureButton.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.pictureButton.Location = New System.Drawing.Point(722, 420)
-        Me.pictureButton.Name = "pictureButton"
-        Me.pictureButton.Size = New System.Drawing.Size(94, 33)
-        Me.pictureButton.TabIndex = 130
-        Me.pictureButton.Text = "浏览"
-        Me.pictureButton.UseVisualStyleBackColor = True
-        '
-        'Label36
-        '
-        Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(566, 427)
-        Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(80, 18)
-        Me.Label36.TabIndex = 129
-        Me.Label36.Text = "司机照片"
-        '
-        'driverPictureBox
-        '
-        Me.driverPictureBox.BackColor = System.Drawing.Color.Silver
-        Me.driverPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.driverPictureBox.Image = CType(resources.GetObject("driverPictureBox.Image"), System.Drawing.Image)
-        Me.driverPictureBox.Location = New System.Drawing.Point(566, 96)
-        Me.driverPictureBox.Name = "driverPictureBox"
-        Me.driverPictureBox.Size = New System.Drawing.Size(250, 318)
-        Me.driverPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.driverPictureBox.TabIndex = 128
-        Me.driverPictureBox.TabStop = False
-        '
         'admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
@@ -2613,6 +2613,7 @@ Partial Class admin
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.daddPanel.ResumeLayout(False)
         Me.daddPanel.PerformLayout()
+        CType(Me.driverPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.loginPanel.ResumeLayout(False)
         Me.loginPanel.PerformLayout()
@@ -2644,7 +2645,6 @@ Partial Class admin
         CType(Me.about1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.downPanel.ResumeLayout(False)
         Me.downPanel.PerformLayout()
-        CType(Me.driverPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

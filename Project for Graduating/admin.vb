@@ -151,9 +151,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         newuserPanel.Visible = True
         loginPanel.Visible = False
 
-        '底部颜色
-        downPanel.BackColor = Color.Transparent
-
         '清除注册界面数据
         newuserTextBox.Text = ""
         newpasswTextBox.Text = ""
@@ -302,7 +299,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         updateButton.Enabled = True
 
         '清空数据
-        If TextBox1.Text <> "" And TextBox2.Text <> "" And TextBox3.Text <> "" And TextBox4.Text <> "" And TextBox5.Text <> "" And TextBox6.Text <> "" And TextBox8.Text <> "" And TextBox10.Text <> "" And TextBox12.Text <> "" And kindTextBox.Text = "" And adminremarkTextBox.Text = "" Then
+        If TextBox1.Text <> "" And TextBox2.Text <> "" And TextBox3.Text <> "" And TextBox4.Text <> "" And TextBox5.Text <> "" And TextBox6.Text <> "" And TextBox8.Text <> "" And TextBox10.Text <> "" And TextBox12.Text <> "" Then
             TextBox1.Text = ""
             TextBox2.Text = ""
             TextBox3.Text = ""
