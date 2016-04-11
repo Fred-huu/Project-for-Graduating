@@ -46,6 +46,9 @@ Partial Class admin
         Me.admin1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.suggestPanel = New System.Windows.Forms.Panel()
+        Me.suggestLabel = New System.Windows.Forms.Label()
+        Me.suggestTextBox = New System.Windows.Forms.TextBox()
+        Me.suggestButton = New System.Windows.Forms.Button()
         Me.PictureBox12 = New System.Windows.Forms.PictureBox()
         Me.adminPanel = New System.Windows.Forms.Panel()
         Me.Label68 = New System.Windows.Forms.Label()
@@ -227,9 +230,6 @@ Partial Class admin
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.OpenDlg = New System.Windows.Forms.OpenFileDialog()
-        Me.suggestButton = New System.Windows.Forms.Button()
-        Me.suggestTextBox = New System.Windows.Forms.TextBox()
-        Me.suggestLabel = New System.Windows.Forms.Label()
         Me.aboutPanel.SuspendLayout()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.开发人员PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -310,7 +310,7 @@ Partial Class admin
         Me.版本信息Label.Name = "版本信息Label"
         Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.7.160411.6"
+        Me.版本信息Label.Text = "2.7.160411.7"
         '
         '人员姓名Label
         '
@@ -319,7 +319,7 @@ Partial Class admin
         Me.人员姓名Label.Name = "人员姓名Label"
         Me.人员姓名Label.Size = New System.Drawing.Size(62, 54)
         Me.人员姓名Label.TabIndex = 109
-        Me.人员姓名Label.Text = "颜胜" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "胡永定" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "叶兴"
+        Me.人员姓名Label.Text = "颜月生" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "古月安" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "沈雅"
         '
         '开发人员Label
         '
@@ -545,6 +545,32 @@ Partial Class admin
         Me.suggestPanel.Name = "suggestPanel"
         Me.suggestPanel.Size = New System.Drawing.Size(1060, 493)
         Me.suggestPanel.TabIndex = 112
+        '
+        'suggestLabel
+        '
+        Me.suggestLabel.AutoSize = True
+        Me.suggestLabel.Location = New System.Drawing.Point(280, 165)
+        Me.suggestLabel.Name = "suggestLabel"
+        Me.suggestLabel.Size = New System.Drawing.Size(44, 18)
+        Me.suggestLabel.TabIndex = 110
+        Me.suggestLabel.Text = "意见"
+        '
+        'suggestTextBox
+        '
+        Me.suggestTextBox.Location = New System.Drawing.Point(280, 195)
+        Me.suggestTextBox.Multiline = True
+        Me.suggestTextBox.Name = "suggestTextBox"
+        Me.suggestTextBox.Size = New System.Drawing.Size(500, 200)
+        Me.suggestTextBox.TabIndex = 108
+        '
+        'suggestButton
+        '
+        Me.suggestButton.Location = New System.Drawing.Point(483, 428)
+        Me.suggestButton.Name = "suggestButton"
+        Me.suggestButton.Size = New System.Drawing.Size(94, 33)
+        Me.suggestButton.TabIndex = 106
+        Me.suggestButton.Text = "发送"
+        Me.suggestButton.UseVisualStyleBackColor = True
         '
         'PictureBox12
         '
@@ -2370,32 +2396,6 @@ Partial Class admin
         'OpenDlg
         '
         Me.OpenDlg.FileName = "OpenDlg"
-        '
-        'suggestButton
-        '
-        Me.suggestButton.Location = New System.Drawing.Point(483, 428)
-        Me.suggestButton.Name = "suggestButton"
-        Me.suggestButton.Size = New System.Drawing.Size(94, 33)
-        Me.suggestButton.TabIndex = 106
-        Me.suggestButton.Text = "发送"
-        Me.suggestButton.UseVisualStyleBackColor = True
-        '
-        'suggestTextBox
-        '
-        Me.suggestTextBox.Location = New System.Drawing.Point(280, 195)
-        Me.suggestTextBox.Multiline = True
-        Me.suggestTextBox.Name = "suggestTextBox"
-        Me.suggestTextBox.Size = New System.Drawing.Size(500, 200)
-        Me.suggestTextBox.TabIndex = 108
-        '
-        'suggestLabel
-        '
-        Me.suggestLabel.AutoSize = True
-        Me.suggestLabel.Location = New System.Drawing.Point(280, 165)
-        Me.suggestLabel.Name = "suggestLabel"
-        Me.suggestLabel.Size = New System.Drawing.Size(44, 18)
-        Me.suggestLabel.TabIndex = 110
-        Me.suggestLabel.Text = "意见"
         '
         'admin
         '
