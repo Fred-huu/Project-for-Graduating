@@ -328,7 +328,7 @@ Partial Class admin
         Me.版本信息Label.Name = "版本信息Label"
         Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.6.160411.2"
+        Me.版本信息Label.Text = "2.6.160411.3"
         '
         '人员姓名Label
         '
@@ -850,9 +850,9 @@ Partial Class admin
         Me.Label20.AutoSize = True
         Me.Label20.Location = New System.Drawing.Point(695, 440)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(17, 18)
+        Me.Label20.Size = New System.Drawing.Size(26, 18)
         Me.Label20.TabIndex = 97
-        Me.Label20.Text = "t"
+        Me.Label20.Text = "kg"
         '
         'Label13
         '
@@ -868,9 +868,9 @@ Partial Class admin
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(695, 475)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(17, 18)
+        Me.Label4.Size = New System.Drawing.Size(26, 18)
         Me.Label4.TabIndex = 96
-        Me.Label4.Text = "t"
+        Me.Label4.Text = "kg"
         '
         'Label5
         '
@@ -886,9 +886,9 @@ Partial Class admin
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(695, 510)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(17, 18)
+        Me.Label3.Size = New System.Drawing.Size(26, 18)
         Me.Label3.TabIndex = 95
-        Me.Label3.Text = "t"
+        Me.Label3.Text = "kg"
         '
         'Label6
         '
@@ -1124,7 +1124,7 @@ Partial Class admin
         '
         'ColumnHeader4
         '
-        Me.ColumnHeader4.Text = "货物净重(t)"
+        Me.ColumnHeader4.Text = "货物净重(kg)"
         Me.ColumnHeader4.Width = 80
         '
         'ColumnHeader5
@@ -1385,9 +1385,9 @@ Partial Class admin
         Me.Label22.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label22.Location = New System.Drawing.Point(650, 371)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(21, 21)
+        Me.Label22.Size = New System.Drawing.Size(32, 21)
         Me.Label22.TabIndex = 140
-        Me.Label22.Text = "t"
+        Me.Label22.Text = "kg"
         '
         'TextBox15
         '
