@@ -30,6 +30,10 @@ Public Class admin
 
     Dim num As Integer = 0
 
+    Option Explicit On
+
+    Dim oDocument As Object
+
     Sub RecieveRefreshMethod(ByVal str As String) '定义一个实例方法
         ShowRecieveData(str)
     End Sub
@@ -1123,6 +1127,21 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         helpPanel.Visible = True
         suggestPanel.Visible = False
         aboutPanel.Visible = False
+
+        Dim sFileName As String
+
+        ' Find an Office file...
+        With CommonDialog1
+            .FileName = ""
+            .ShowOpen
+            sFileName = .FileName
+        End With
+
+        ' If the user didn't cancel, open the file...
+        If Len(sFileName) Then
+      Set oDocument = Nothing
+      WebBrowser1.Navigate sFileName
+   End If
     End Sub
 
     '点击“使用帮助界面”（选中）
@@ -1234,4 +1253,13 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         includingPanel.Visible = False
     End Sub
 
+    Private Sub helpPanel_Paint(sender As Object, e As PaintEventArgs) Handles helpPanel.Paint
+        Command1.Caption = "Browse"
+        With CommonDialog1
+            .Filter = "Office Documents " &
+            "(*.doc, *.xls, *.ppt)|*.doc;*.xls;*.ppt"
+            .FilterIndex = 1
+            .Flags = cdlOFNFileMustExist Or cdlOFNHideReadOnly
+        End With
+    End Sub
 End Class

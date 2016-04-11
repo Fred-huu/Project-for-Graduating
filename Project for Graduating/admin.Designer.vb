@@ -99,6 +99,7 @@ Partial Class admin
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.helpPanel = New System.Windows.Forms.Panel()
+        Me.includingLabel = New System.Windows.Forms.Label()
         Me.PictureBox11 = New System.Windows.Forms.PictureBox()
         Me.wPanel = New System.Windows.Forms.Panel()
         Me.selectButton = New System.Windows.Forms.Button()
@@ -310,7 +311,7 @@ Partial Class admin
         Me.版本信息Label.Name = "版本信息Label"
         Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.7.160411.7"
+        Me.版本信息Label.Text = "2.7.160411.9"
         '
         '人员姓名Label
         '
@@ -1067,11 +1068,21 @@ Partial Class admin
         '
         'helpPanel
         '
+        Me.helpPanel.Controls.Add(Me.includingLabel)
         Me.helpPanel.Controls.Add(Me.PictureBox11)
         Me.helpPanel.Location = New System.Drawing.Point(200, 0)
         Me.helpPanel.Name = "helpPanel"
-        Me.helpPanel.Size = New System.Drawing.Size(1060, 231)
+        Me.helpPanel.Size = New System.Drawing.Size(1060, 628)
         Me.helpPanel.TabIndex = 114
+        '
+        'includingLabel
+        '
+        Me.includingLabel.AutoSize = True
+        Me.includingLabel.Location = New System.Drawing.Point(150, 120)
+        Me.includingLabel.Name = "includingLabel"
+        Me.includingLabel.Size = New System.Drawing.Size(764, 432)
+        Me.includingLabel.TabIndex = 106
+        Me.includingLabel.Text = resources.GetString("includingLabel.Text")
         '
         'PictureBox11
         '
@@ -2451,6 +2462,7 @@ Partial Class admin
         Me.modifyPanel.PerformLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.helpPanel.ResumeLayout(False)
+        Me.helpPanel.PerformLayout()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
         Me.wPanel.ResumeLayout(False)
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2705,4 +2717,5 @@ Partial Class admin
     Friend WithEvents suggestLabel As Label
     Friend WithEvents suggestTextBox As TextBox
     Friend WithEvents suggestButton As Button
+    Friend WithEvents includingLabel As Label
 End Class
