@@ -56,7 +56,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '二级菜单
         messPanel.Visible = False
         addPanel.Visible = False
-        userPanel.Visible = False
         includingPanel.Visible = False
 
         '一级菜单
@@ -81,7 +80,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         caddPanel.Visible = False
         daddPanel.Visible = False
         usermessPanel.Visible = False
-        pwdPanel.Visible = False
         helpPanel.Visible = False
         suggestPanel.Visible = False
         aboutPanel.Visible = False
@@ -121,6 +119,10 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
                 adminPanel.Visible = True
                 downPanel.Visible = True
                 UserLabel.Text = dr!username & vbCrLf
+
+                '用户信息界面
+                usernameTextBox.Text = dr!username & vbCrLf
+                nameTextBox.Text = dr!user_id & vbCrLf
 
             Else
                 'MessageBox.Show("密码或用户名错误，请重新输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -228,6 +230,10 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
     '返回登陆界面
     Private Sub newcancelButton_Click(sender As Object, e As EventArgs) Handles newcancelButton.Click
+        '清除登录界面的数据
+        USERTextBox.Text = ""
+        PasswordTextBox.Text = ""
+
         loginPanel.Visible = True
         newuserPanel.Visible = False
     End Sub
@@ -240,7 +246,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '二级菜单
         messPanel.Visible = False
         addPanel.Visible = False
-        userPanel.Visible = False
         includingPanel.Visible = False
 
         '一级菜单
@@ -263,7 +268,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         caddPanel.Visible = False
         daddPanel.Visible = False
         usermessPanel.Visible = False
-        pwdPanel.Visible = False
         helpPanel.Visible = False
         suggestPanel.Visible = False
         aboutPanel.Visible = False
@@ -275,7 +279,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '二级菜单
         messPanel.Visible = False
         addPanel.Visible = False
-        userPanel.Visible = False
         includingPanel.Visible = False
 
         '串口连接相关
@@ -381,7 +384,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '二级菜单
         messPanel.Visible = False
         addPanel.Visible = False
-        userPanel.Visible = False
         includingPanel.Visible = False
 
         Dim com As MySqlCommand
@@ -410,7 +412,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '二级菜单
         messPanel.Visible = False
         addPanel.Visible = False
-        userPanel.Visible = False
         includingPanel.Visible = False
 
         TextBox1.Text = ""
@@ -437,7 +438,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '二级菜单
         messPanel.Visible = False
         addPanel.Visible = False
-        userPanel.Visible = False
         includingPanel.Visible = False
 
         modifyPanel.Visible = True
@@ -448,7 +448,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '二级菜单
         messPanel.Visible = False
         addPanel.Visible = False
-        userPanel.Visible = False
         includingPanel.Visible = False
 
         Dim com As MySqlCommand
@@ -459,7 +458,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             TextBox7.Text = modifyTextBox.Text
 
             '清空管理界面的值
-            If TextBox1.Text <> "" And TextBox2.Text <> "" And TextBox3.Text <> "" And TextBox4.Text <> "" And TextBox5.Text <> "" And TextBox6.Text <> "" And TextBox8.Text <> "" And TextBox10.Text <> "" And TextBox12.Text <> "" And kindTextBox.Text = "" And adminremarkTextBox.Text = "" Then
+            If TextBox1.Text <> "" And TextBox2.Text <> "" And TextBox3.Text <> "" And TextBox4.Text <> "" And TextBox5.Text <> "" And TextBox6.Text <> "" And TextBox8.Text <> "" And TextBox10.Text <> "" And TextBox12.Text <> "" Then
                 TextBox1.Text = ""
                 TextBox2.Text = ""
                 TextBox3.Text = ""
@@ -522,7 +521,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '二级菜单
         messPanel.Visible = False
         addPanel.Visible = False
-        userPanel.Visible = False
         includingPanel.Visible = False
 
         modifyPanel.Visible = False
@@ -541,9 +539,9 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         dmess0.Visible = True
         dmess1.Visible = False
 
+        '二级菜单列表
         messPanel.Visible = True
         addPanel.Visible = False
-        userPanel.Visible = False
         includingPanel.Visible = False
 
         '一级菜单
@@ -591,7 +589,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         caddPanel.Visible = False
         daddPanel.Visible = False
         usermessPanel.Visible = False
-        pwdPanel.Visible = False
         helpPanel.Visible = False
         suggestPanel.Visible = False
         aboutPanel.Visible = False
@@ -607,7 +604,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '二级菜单
         messPanel.Visible = False
         addPanel.Visible = False
-        userPanel.Visible = False
         includingPanel.Visible = False
 
         Dim com As MySqlCommand
@@ -668,7 +664,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         caddPanel.Visible = False
         daddPanel.Visible = False
         usermessPanel.Visible = False
-        pwdPanel.Visible = False
         helpPanel.Visible = False
         suggestPanel.Visible = False
         aboutPanel.Visible = False
@@ -684,7 +679,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '二级菜单
         messPanel.Visible = False
         addPanel.Visible = False
-        userPanel.Visible = False
         includingPanel.Visible = False
 
         If cmTextBox.Text <> "" Then
@@ -744,7 +738,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         caddPanel.Visible = False
         daddPanel.Visible = False
         usermessPanel.Visible = False
-        pwdPanel.Visible = False
         helpPanel.Visible = False
         suggestPanel.Visible = False
         aboutPanel.Visible = False
@@ -760,7 +753,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '二级菜单
         messPanel.Visible = False
         addPanel.Visible = False
-        userPanel.Visible = False
         includingPanel.Visible = False
 
         If dmTextBox.Text <> "" Then
@@ -813,9 +805,9 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         adddmess0.Visible = True
         adddmess1.Visible = False
 
+        '二级菜单列表
         addPanel.Visible = True
         messPanel.Visible = False
-        userPanel.Visible = False
         includingPanel.Visible = False
 
         '一级菜单
@@ -861,7 +853,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         caddPanel.Visible = True
         daddPanel.Visible = False
         usermessPanel.Visible = False
-        pwdPanel.Visible = False
         helpPanel.Visible = False
         suggestPanel.Visible = False
         aboutPanel.Visible = False
@@ -877,7 +868,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '二级菜单
         messPanel.Visible = False
         addPanel.Visible = False
-        userPanel.Visible = False
         includingPanel.Visible = False
 
         Dim com As MySqlCommand
@@ -905,7 +895,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '二级菜单
         messPanel.Visible = False
         addPanel.Visible = False
-        userPanel.Visible = False
         includingPanel.Visible = False
 
         '清空数据
@@ -936,7 +925,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         caddPanel.Visible = False
         daddPanel.Visible = True
         usermessPanel.Visible = False
-        pwdPanel.Visible = False
         helpPanel.Visible = False
         suggestPanel.Visible = False
         aboutPanel.Visible = False
@@ -952,7 +940,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '二级菜单
         messPanel.Visible = False
         addPanel.Visible = False
-        userPanel.Visible = False
         includingPanel.Visible = False
 
         '插入图片
@@ -989,7 +976,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '二级菜单
         messPanel.Visible = False
         addPanel.Visible = False
-        userPanel.Visible = False
         includingPanel.Visible = False
 
         OpenDlg.Filter = "图片文件(*.jpg,*.gif,*.bmp)|*.jpg|*.gif|*.bmp"  '这是限定图片的格式
@@ -1003,7 +989,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '二级菜单
         messPanel.Visible = False
         addPanel.Visible = False
-        userPanel.Visible = False
         includingPanel.Visible = False
 
         '清空数据
@@ -1021,14 +1006,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
     '点击“个人中心界面”（未选中）
     Private Sub user0_Click(sender As Object, e As EventArgs) Handles user0.Click
         '二级菜单
-        usermess0.Visible = True
-        usermess1.Visible = False
-        PWD0.Visible = True
-        PWD1.Visible = False
-
         messPanel.Visible = False
         addPanel.Visible = False
-        userPanel.Visible = True
         includingPanel.Visible = False
 
         '一级菜单
@@ -1042,29 +1021,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         user1.Visible = True
         including0.Visible = True
         including1.Visible = False
-    End Sub
-
-    '点击“个人中心界面”（选中）
-    Private Sub user1_Click(sender As Object, e As EventArgs) Handles user1.Click
-        If userPanel.Visible = True Then
-            userPanel.Visible = False
-        Else
-            userPanel.Visible = True
-        End If
-    End Sub
-
-    '-------------------------------------------
-
-    '用户信息界面
-    '点击“用户信息界面”（未选中）
-    Private Sub usermess0_Click(sender As Object, e As EventArgs) Handles usermess0.Click
-        '二级菜单
-        usermess0.Visible = False
-        usermess1.Visible = True
-        PWD0.Visible = True
-        PWD1.Visible = False
-
-        userPanel.Visible = False
 
         'panel容器
         adminPanel.Visible = False
@@ -1074,39 +1030,9 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         caddPanel.Visible = False
         daddPanel.Visible = False
         usermessPanel.Visible = True
-        pwdPanel.Visible = False
         helpPanel.Visible = False
         suggestPanel.Visible = False
         aboutPanel.Visible = False
-
-    End Sub
-
-    '点击“用户信息界面”（选中）
-    Private Sub usermess1_Click(sender As Object, e As EventArgs) Handles usermess1.Click
-        userPanel.Visible = False
-    End Sub
-
-    '“用户信息界面”数据展现
-    Private Sub usermessPanel_Paint(sender As Object, e As PaintEventArgs) Handles usermessPanel.Paint
-        Dim com As MySqlCommand
-        Dim dr As MySqlDataReader
-
-        '数据库连接与操作
-        Try
-            conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
-            'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
-            conn.Open()
-            com = New MySqlCommand("Select * From users Where username='" & USERTextBox.Text & "'", conn)
-            dr = com.ExecuteReader()
-            While dr.Read()
-                usernameTextBox.Text = dr!username & vbCrLf
-                nameTextBox.Text = dr!user_id & vbCrLf
-            End While
-            dr.Close()
-        Catch myerror As MySqlException
-            'MsgBox("Error connecting to the server:" & myerror.Message)
-            MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
-        End Try
     End Sub
 
     '注销账号
@@ -1116,7 +1042,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '二级菜单
         messPanel.Visible = False
         addPanel.Visible = False
-        userPanel.Visible = False
         includingPanel.Visible = False
 
         downPanel.Visible = False
@@ -1132,121 +1057,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
     '-------------------------------------------
 
-    '修改密码界面
-    '点击“修改密码界面”（未选中）
-    Private Sub PWD0_Click(sender As Object, e As EventArgs) Handles PWD0.Click
-        '二级菜单
-        usermess0.Visible = True
-        usermess1.Visible = False
-        PWD0.Visible = False
-        PWD1.Visible = True
-
-        userPanel.Visible = False
-
-        'panel容器
-        adminPanel.Visible = False
-        wPanel.Visible = False
-        cmPanel.Visible = False
-        dmPanel.Visible = False
-        caddPanel.Visible = False
-        daddPanel.Visible = False
-        usermessPanel.Visible = False
-        pwdPanel.Visible = True
-        helpPanel.Visible = False
-        suggestPanel.Visible = False
-        aboutPanel.Visible = False
-    End Sub
-
-    '点击“修改密码界面”（选中）
-    Private Sub PWD1_Click(sender As Object, e As EventArgs) Handles PWD1.Click
-        userPanel.Visible = False
-    End Sub
-
-    '确认修改密码
-    Private Sub pwdOK_Click(sender As Object, e As EventArgs) Handles pwdOK.Click
-        '二级菜单
-        messPanel.Visible = False
-        addPanel.Visible = False
-        userPanel.Visible = False
-        includingPanel.Visible = False
-
-        '数据库操作
-        Dim com As MySqlCommand
-        Dim dr As MySqlDataReader
-
-        Try
-            conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
-            'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
-            conn.Open()
-            com = New MySqlCommand("Select * From users Where user_id='" & USERTextBox.Text & "' And password='" & oldpwdTextBox.Text & "'", conn)
-            dr = com.ExecuteReader()
-            If dr.Read() Then ' 表示有找到通过验证
-                conn.Close()
-                If newpwdagainTextBox.Text = newpwdTextBox.Text Then
-
-                    If newpwdagainTextBox.Text = oldpwdTextBox.Text Then
-                        MessageBox.Show("新密码与旧密码一致，请重新输入！", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                        oldpwdTextBox.TabIndex = 4
-                        newpwdTextBox.TabIndex = 1
-                        newpwdagainTextBox.TabIndex = 2
-                        pwdOK.TabIndex = 3
-                    Else
-                        change_password()
-
-                        'MessageBox.Show("恭喜，你居然能成功修改密码！")
-                        MessageBox.Show("修改密码成功！")
-
-                        oldpwdTextBox.Text = ""
-                        newpwdTextBox.Text = ""
-                        newpwdagainTextBox.Text = ""
-                        oldpwdTextBox.TabIndex = 1
-                        newpwdTextBox.TabIndex = 2
-                        newpwdagainTextBox.TabIndex = 3
-                        pwdOK.TabIndex = 4
-                    End If
-
-                Else
-                    MessageBox.Show("笨蛋，两次密码输入不一致，快重新输入！", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    'MessageBox.Show("两次密码输入不一致，请重新输入！", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    oldpwdTextBox.TabIndex = 4
-                    newpwdTextBox.TabIndex = 1
-                    newpwdagainTextBox.TabIndex = 2
-                    pwdOK.TabIndex = 3
-                End If
-
-            Else
-                MessageBox.Show("原密码错误，请重新输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End If
-
-            conn.Close()
-        Catch myerror As MySqlException
-            'MsgBox("Error connecting to the server:" & myerror.Message)
-            MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
-        End Try
-    End Sub
-
-    Private Sub change_password()
-        '数据库操作,修改密码
-        Dim com As MySqlCommand
-        Dim dr As MySqlDataReader
-
-        Try
-            conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
-            'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
-            conn.Open()
-
-            com = New MySqlCommand("UPDATE users SET password = '" & newpwdagainTextBox.Text & "' WHERE username='" & USERTextBox.Text & "'", conn)
-            dr = com.ExecuteReader
-            conn.Close()
-
-        Catch myerror As MySqlException
-            'MsgBox("Error connecting to the server:" & myerror.Message)
-            MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
-        End Try
-    End Sub
-
-    '-------------------------------------------
-
     '系统说明界面
     '点击“系统说明界面”（未选中）
     Private Sub including0_Click(sender As Object, e As EventArgs) Handles including0.Click
@@ -1258,9 +1068,9 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         about0.Visible = True
         about1.Visible = False
 
+        '二级菜单列表
         messPanel.Visible = False
         addPanel.Visible = False
-        userPanel.Visible = False
         includingPanel.Visible = True
 
         '一级菜单
@@ -1308,7 +1118,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         caddPanel.Visible = False
         daddPanel.Visible = False
         usermessPanel.Visible = False
-        pwdPanel.Visible = False
         helpPanel.Visible = True
         suggestPanel.Visible = False
         aboutPanel.Visible = False
@@ -1342,7 +1151,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         caddPanel.Visible = False
         daddPanel.Visible = False
         usermessPanel.Visible = False
-        pwdPanel.Visible = False
         helpPanel.Visible = False
         suggestPanel.Visible = True
         aboutPanel.Visible = False
@@ -1376,7 +1184,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         caddPanel.Visible = False
         daddPanel.Visible = False
         usermessPanel.Visible = False
-        pwdPanel.Visible = False
         helpPanel.Visible = False
         suggestPanel.Visible = False
         aboutPanel.Visible = True

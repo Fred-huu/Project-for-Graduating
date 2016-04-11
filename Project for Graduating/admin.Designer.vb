@@ -107,15 +107,6 @@ Partial Class admin
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.pwdPanel = New System.Windows.Forms.Panel()
-        Me.newpwdagainTextBox = New System.Windows.Forms.TextBox()
-        Me.Label53 = New System.Windows.Forms.Label()
-        Me.pwdOK = New System.Windows.Forms.Button()
-        Me.newpwdTextBox = New System.Windows.Forms.TextBox()
-        Me.oldpwdTextBox = New System.Windows.Forms.TextBox()
-        Me.Label54 = New System.Windows.Forms.Label()
-        Me.Label55 = New System.Windows.Forms.Label()
-        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.usermessPanel = New System.Windows.Forms.Panel()
         Me.signoutLinkLabel = New System.Windows.Forms.LinkLabel()
         Me.usernameTextBox = New System.Windows.Forms.TextBox()
@@ -224,11 +215,6 @@ Partial Class admin
         Me.addcmess0 = New System.Windows.Forms.PictureBox()
         Me.addcmess1 = New System.Windows.Forms.PictureBox()
         Me.adddmess1 = New System.Windows.Forms.PictureBox()
-        Me.userPanel = New System.Windows.Forms.Panel()
-        Me.PWD0 = New System.Windows.Forms.PictureBox()
-        Me.usermess0 = New System.Windows.Forms.PictureBox()
-        Me.usermess1 = New System.Windows.Forms.PictureBox()
-        Me.PWD1 = New System.Windows.Forms.PictureBox()
         Me.includingPanel = New System.Windows.Forms.Panel()
         Me.suggest0 = New System.Windows.Forms.PictureBox()
         Me.help0 = New System.Windows.Forms.PictureBox()
@@ -266,8 +252,6 @@ Partial Class admin
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.wPanel.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pwdPanel.SuspendLayout()
-        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.usermessPanel.SuspendLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.cmPanel.SuspendLayout()
@@ -293,11 +277,6 @@ Partial Class admin
         CType(Me.addcmess0, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.addcmess1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.adddmess1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.userPanel.SuspendLayout()
-        CType(Me.PWD0, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.usermess0, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.usermess1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PWD1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.includingPanel.SuspendLayout()
         CType(Me.suggest0, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.help0, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -328,7 +307,7 @@ Partial Class admin
         Me.版本信息Label.Name = "版本信息Label"
         Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.6.160411.3"
+        Me.版本信息Label.Text = "2.6.160411.5"
         '
         '人员姓名Label
         '
@@ -1125,7 +1104,7 @@ Partial Class admin
         'ColumnHeader4
         '
         Me.ColumnHeader4.Text = "货物净重(kg)"
-        Me.ColumnHeader4.Width = 80
+        Me.ColumnHeader4.Width = 90
         '
         'ColumnHeader5
         '
@@ -1134,7 +1113,7 @@ Partial Class admin
         'ColumnHeader6
         '
         Me.ColumnHeader6.Text = "称量时间"
-        Me.ColumnHeader6.Width = 130
+        Me.ColumnHeader6.Width = 120
         '
         'PictureBox3
         '
@@ -1147,99 +1126,6 @@ Partial Class admin
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox3.TabIndex = 105
         Me.PictureBox3.TabStop = False
-        '
-        'pwdPanel
-        '
-        Me.pwdPanel.Controls.Add(Me.newpwdagainTextBox)
-        Me.pwdPanel.Controls.Add(Me.Label53)
-        Me.pwdPanel.Controls.Add(Me.pwdOK)
-        Me.pwdPanel.Controls.Add(Me.newpwdTextBox)
-        Me.pwdPanel.Controls.Add(Me.oldpwdTextBox)
-        Me.pwdPanel.Controls.Add(Me.Label54)
-        Me.pwdPanel.Controls.Add(Me.Label55)
-        Me.pwdPanel.Controls.Add(Me.PictureBox10)
-        Me.pwdPanel.Location = New System.Drawing.Point(200, 0)
-        Me.pwdPanel.Name = "pwdPanel"
-        Me.pwdPanel.Size = New System.Drawing.Size(1060, 403)
-        Me.pwdPanel.TabIndex = 116
-        '
-        'newpwdagainTextBox
-        '
-        Me.newpwdagainTextBox.Location = New System.Drawing.Point(537, 272)
-        Me.newpwdagainTextBox.Name = "newpwdagainTextBox"
-        Me.newpwdagainTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.newpwdagainTextBox.Size = New System.Drawing.Size(170, 28)
-        Me.newpwdagainTextBox.TabIndex = 108
-        '
-        'Label53
-        '
-        Me.Label53.AutoSize = True
-        Me.Label53.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label53.Location = New System.Drawing.Point(353, 279)
-        Me.Label53.Name = "Label53"
-        Me.Label53.Size = New System.Drawing.Size(178, 21)
-        Me.Label53.TabIndex = 112
-        Me.Label53.Text = "请重新输入新密码"
-        '
-        'pwdOK
-        '
-        Me.pwdOK.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.pwdOK.Location = New System.Drawing.Point(496, 337)
-        Me.pwdOK.Name = "pwdOK"
-        Me.pwdOK.Size = New System.Drawing.Size(94, 33)
-        Me.pwdOK.TabIndex = 109
-        Me.pwdOK.Text = "确定"
-        Me.pwdOK.UseVisualStyleBackColor = True
-        '
-        'newpwdTextBox
-        '
-        Me.newpwdTextBox.Location = New System.Drawing.Point(537, 238)
-        Me.newpwdTextBox.Name = "newpwdTextBox"
-        Me.newpwdTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.newpwdTextBox.Size = New System.Drawing.Size(170, 28)
-        Me.newpwdTextBox.TabIndex = 107
-        '
-        'oldpwdTextBox
-        '
-        Me.oldpwdTextBox.Location = New System.Drawing.Point(536, 204)
-        Me.oldpwdTextBox.MaxLength = 13
-        Me.oldpwdTextBox.Multiline = True
-        Me.oldpwdTextBox.Name = "oldpwdTextBox"
-        Me.oldpwdTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.oldpwdTextBox.Size = New System.Drawing.Size(170, 28)
-        Me.oldpwdTextBox.TabIndex = 106
-        '
-        'Label54
-        '
-        Me.Label54.AutoSize = True
-        Me.Label54.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label54.Location = New System.Drawing.Point(394, 211)
-        Me.Label54.Name = "Label54"
-        Me.Label54.Size = New System.Drawing.Size(136, 21)
-        Me.Label54.TabIndex = 111
-        Me.Label54.Text = "请输入原密码"
-        '
-        'Label55
-        '
-        Me.Label55.AutoSize = True
-        Me.Label55.Font = New System.Drawing.Font("宋体", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label55.Location = New System.Drawing.Point(395, 245)
-        Me.Label55.Name = "Label55"
-        Me.Label55.Size = New System.Drawing.Size(136, 21)
-        Me.Label55.TabIndex = 110
-        Me.Label55.Text = "请输入新密码"
-        '
-        'PictureBox10
-        '
-        Me.PictureBox10.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PictureBox10.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.PictureBox10.Image = CType(resources.GetObject("PictureBox10.Image"), System.Drawing.Image)
-        Me.PictureBox10.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox10.Name = "PictureBox10"
-        Me.PictureBox10.Size = New System.Drawing.Size(1060, 60)
-        Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox10.TabIndex = 105
-        Me.PictureBox10.TabStop = False
         '
         'usermessPanel
         '
@@ -2362,65 +2248,6 @@ Partial Class admin
         Me.adddmess1.TabIndex = 111
         Me.adddmess1.TabStop = False
         '
-        'userPanel
-        '
-        Me.userPanel.Controls.Add(Me.PWD0)
-        Me.userPanel.Controls.Add(Me.usermess0)
-        Me.userPanel.Controls.Add(Me.usermess1)
-        Me.userPanel.Controls.Add(Me.PWD1)
-        Me.userPanel.Location = New System.Drawing.Point(200, 240)
-        Me.userPanel.Name = "userPanel"
-        Me.userPanel.Size = New System.Drawing.Size(175, 90)
-        Me.userPanel.TabIndex = 133
-        '
-        'PWD0
-        '
-        Me.PWD0.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.PWD0.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.PWD0.Image = CType(resources.GetObject("PWD0.Image"), System.Drawing.Image)
-        Me.PWD0.Location = New System.Drawing.Point(0, 45)
-        Me.PWD0.Name = "PWD0"
-        Me.PWD0.Size = New System.Drawing.Size(175, 45)
-        Me.PWD0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PWD0.TabIndex = 109
-        Me.PWD0.TabStop = False
-        '
-        'usermess0
-        '
-        Me.usermess0.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.usermess0.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.usermess0.Image = CType(resources.GetObject("usermess0.Image"), System.Drawing.Image)
-        Me.usermess0.Location = New System.Drawing.Point(0, 0)
-        Me.usermess0.Name = "usermess0"
-        Me.usermess0.Size = New System.Drawing.Size(175, 45)
-        Me.usermess0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.usermess0.TabIndex = 108
-        Me.usermess0.TabStop = False
-        '
-        'usermess1
-        '
-        Me.usermess1.BackColor = System.Drawing.SystemColors.Menu
-        Me.usermess1.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.usermess1.Image = CType(resources.GetObject("usermess1.Image"), System.Drawing.Image)
-        Me.usermess1.Location = New System.Drawing.Point(0, 0)
-        Me.usermess1.Name = "usermess1"
-        Me.usermess1.Size = New System.Drawing.Size(175, 45)
-        Me.usermess1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.usermess1.TabIndex = 110
-        Me.usermess1.TabStop = False
-        '
-        'PWD1
-        '
-        Me.PWD1.BackColor = System.Drawing.SystemColors.Menu
-        Me.PWD1.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.PWD1.Image = CType(resources.GetObject("PWD1.Image"), System.Drawing.Image)
-        Me.PWD1.Location = New System.Drawing.Point(0, 45)
-        Me.PWD1.Name = "PWD1"
-        Me.PWD1.Size = New System.Drawing.Size(175, 45)
-        Me.PWD1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PWD1.TabIndex = 111
-        Me.PWD1.TabStop = False
-        '
         'includingPanel
         '
         Me.includingPanel.BackColor = System.Drawing.SystemColors.Menu
@@ -2522,9 +2349,9 @@ Partial Class admin
         Me.time.BackColor = System.Drawing.Color.Transparent
         Me.time.Location = New System.Drawing.Point(1070, 10)
         Me.time.Name = "time"
-        Me.time.Size = New System.Drawing.Size(62, 18)
+        Me.time.Size = New System.Drawing.Size(44, 18)
         Me.time.TabIndex = 13
-        Me.time.Text = "Label4"
+        Me.time.Text = "时间"
         '
         'Timer1
         '
@@ -2546,14 +2373,12 @@ Partial Class admin
         Me.Controls.Add(Me.menuPanel)
         Me.Controls.Add(Me.downPanel)
         Me.Controls.Add(Me.includingPanel)
-        Me.Controls.Add(Me.userPanel)
         Me.Controls.Add(Me.addPanel)
         Me.Controls.Add(Me.messPanel)
         Me.Controls.Add(Me.aboutPanel)
         Me.Controls.Add(Me.suggestPanel)
         Me.Controls.Add(Me.helpPanel)
         Me.Controls.Add(Me.wPanel)
-        Me.Controls.Add(Me.pwdPanel)
         Me.Controls.Add(Me.usermessPanel)
         Me.Controls.Add(Me.dmPanel)
         Me.Controls.Add(Me.cmPanel)
@@ -2596,9 +2421,6 @@ Partial Class admin
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
         Me.wPanel.ResumeLayout(False)
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pwdPanel.ResumeLayout(False)
-        Me.pwdPanel.PerformLayout()
-        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         Me.usermessPanel.ResumeLayout(False)
         Me.usermessPanel.PerformLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2631,11 +2453,6 @@ Partial Class admin
         CType(Me.addcmess0, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.addcmess1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.adddmess1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.userPanel.ResumeLayout(False)
-        CType(Me.PWD0, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.usermess0, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.usermess1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PWD1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.includingPanel.ResumeLayout(False)
         CType(Me.suggest0, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.help0, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2726,15 +2543,6 @@ Partial Class admin
     Friend WithEvents ColumnHeader3 As ColumnHeader
     Friend WithEvents ColumnHeader4 As ColumnHeader
     Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents pwdPanel As Panel
-    Friend WithEvents newpwdagainTextBox As TextBox
-    Friend WithEvents Label53 As Label
-    Friend WithEvents pwdOK As Button
-    Friend WithEvents newpwdTextBox As TextBox
-    Friend WithEvents oldpwdTextBox As TextBox
-    Friend WithEvents Label54 As Label
-    Friend WithEvents Label55 As Label
-    Friend WithEvents PictureBox10 As PictureBox
     Friend WithEvents usermessPanel As Panel
     Friend WithEvents signoutLinkLabel As LinkLabel
     Friend WithEvents usernameTextBox As TextBox
@@ -2835,11 +2643,6 @@ Partial Class admin
     Friend WithEvents addcmess0 As PictureBox
     Friend WithEvents addcmess1 As PictureBox
     Friend WithEvents adddmess1 As PictureBox
-    Friend WithEvents userPanel As Panel
-    Friend WithEvents PWD0 As PictureBox
-    Friend WithEvents usermess0 As PictureBox
-    Friend WithEvents usermess1 As PictureBox
-    Friend WithEvents PWD1 As PictureBox
     Friend WithEvents includingPanel As Panel
     Friend WithEvents suggest0 As PictureBox
     Friend WithEvents help0 As PictureBox
