@@ -7,6 +7,8 @@ Imports System.IO.Ports
 Imports System.ComponentModel
 Imports System.IO
 
+Imports System.Net.Mail
+
 Public Class admin
     '定义全局变量
 
@@ -1159,6 +1161,44 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
     '点击“意见反馈界面”（选中）
     Private Sub suggest1_Click(sender As Object, e As EventArgs) Handles suggest1.Click
         includingPanel.Visible = False
+    End Sub
+
+    '发送邮件
+    Private Sub suggestButton_Click(sender As Object, e As EventArgs) Handles suggestButton.Click
+        '创建发件连接,根据你的发送邮箱的SMTP设置填充
+        Dim smtp As New System.Net.Mail.SmtpClient("smtp.163.com", 25)
+        '发件邮箱身份验证,参数分别为 发件邮箱登录名和密码
+        smtp.Credentials = New System.Net.NetworkCredential("huu_007@163.com", "huan19931224")
+        '创建邮件
+        Dim mail As New System.Net.Mail.MailMessage()
+        '邮件主题
+        mail.Subject = "意见反馈"
+        '主题编码
+        mail.SubjectEncoding = System.Text.Encoding.GetEncoding("GB2312")
+        '邮件正文件编码
+        mail.BodyEncoding = System.Text.Encoding.GetEncoding("GB2312")
+        '发件人邮箱
+        mail.From = New System.Net.Mail.MailAddress("huu_007@163.com")
+        '邮件优先级
+        mail.Priority = System.Net.Mail.MailPriority.Normal
+        'HTML格式的邮件,为false则发送纯文本邮箱
+        mail.IsBodyHtml = True
+        '邮件内容
+        mail.Body = suggestTextBox.Text
+        '添加收件人
+        mail.To.Add("369964831@qq.com")
+        '发送邮件
+        Try
+            smtp.Send(mail)
+            MessageBox.Show("发送成功")
+
+            '发送完成清除建议框中的内容
+            suggestTextBox.Text = ""
+        Catch
+            MessageBox.Show("发送失败")
+        Finally
+            mail.Dispose()
+        End Try
     End Sub
 
     '-------------------------------------------

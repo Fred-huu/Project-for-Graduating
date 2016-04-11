@@ -227,6 +227,9 @@ Partial Class admin
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.OpenDlg = New System.Windows.Forms.OpenFileDialog()
+        Me.suggestButton = New System.Windows.Forms.Button()
+        Me.suggestTextBox = New System.Windows.Forms.TextBox()
+        Me.suggestLabel = New System.Windows.Forms.Label()
         Me.aboutPanel.SuspendLayout()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.开发人员PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -307,7 +310,7 @@ Partial Class admin
         Me.版本信息Label.Name = "版本信息Label"
         Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.6.160411.5"
+        Me.版本信息Label.Text = "2.7.160411.6"
         '
         '人员姓名Label
         '
@@ -534,10 +537,13 @@ Partial Class admin
         '
         'suggestPanel
         '
+        Me.suggestPanel.Controls.Add(Me.suggestLabel)
+        Me.suggestPanel.Controls.Add(Me.suggestTextBox)
+        Me.suggestPanel.Controls.Add(Me.suggestButton)
         Me.suggestPanel.Controls.Add(Me.PictureBox12)
         Me.suggestPanel.Location = New System.Drawing.Point(200, 0)
         Me.suggestPanel.Name = "suggestPanel"
-        Me.suggestPanel.Size = New System.Drawing.Size(1060, 263)
+        Me.suggestPanel.Size = New System.Drawing.Size(1060, 493)
         Me.suggestPanel.TabIndex = 112
         '
         'PictureBox12
@@ -2365,6 +2371,32 @@ Partial Class admin
         '
         Me.OpenDlg.FileName = "OpenDlg"
         '
+        'suggestButton
+        '
+        Me.suggestButton.Location = New System.Drawing.Point(483, 428)
+        Me.suggestButton.Name = "suggestButton"
+        Me.suggestButton.Size = New System.Drawing.Size(94, 33)
+        Me.suggestButton.TabIndex = 106
+        Me.suggestButton.Text = "发送"
+        Me.suggestButton.UseVisualStyleBackColor = True
+        '
+        'suggestTextBox
+        '
+        Me.suggestTextBox.Location = New System.Drawing.Point(280, 195)
+        Me.suggestTextBox.Multiline = True
+        Me.suggestTextBox.Name = "suggestTextBox"
+        Me.suggestTextBox.Size = New System.Drawing.Size(500, 200)
+        Me.suggestTextBox.TabIndex = 108
+        '
+        'suggestLabel
+        '
+        Me.suggestLabel.AutoSize = True
+        Me.suggestLabel.Location = New System.Drawing.Point(280, 165)
+        Me.suggestLabel.Name = "suggestLabel"
+        Me.suggestLabel.Size = New System.Drawing.Size(44, 18)
+        Me.suggestLabel.TabIndex = 110
+        Me.suggestLabel.Text = "意见"
+        '
         'admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
@@ -2411,6 +2443,7 @@ Partial Class admin
         CType(Me.admin1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.suggestPanel.ResumeLayout(False)
+        Me.suggestPanel.PerformLayout()
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
         Me.adminPanel.ResumeLayout(False)
         Me.adminPanel.PerformLayout()
@@ -2669,4 +2702,7 @@ Partial Class admin
     Friend WithEvents pictureButton As Button
     Friend WithEvents Label36 As Label
     Friend WithEvents driverPictureBox As PictureBox
+    Friend WithEvents suggestLabel As Label
+    Friend WithEvents suggestTextBox As TextBox
+    Friend WithEvents suggestButton As Button
 End Class
