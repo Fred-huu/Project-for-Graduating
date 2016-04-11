@@ -30,9 +30,6 @@ Public Class admin
 
     Dim num As Integer = 0
 
-    Option Explicit On
-
-    Dim oDocument As Object
 
     Sub RecieveRefreshMethod(ByVal str As String) '定义一个实例方法
         ShowRecieveData(str)
@@ -113,31 +110,36 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         Dim dr As MySqlDataReader
         Dim com As MySqlCommand
 
-        Try
-            conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
-            'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;User ID=root;PWD=admin;pooling = True")
-            conn.Open()
-            com = New MySqlCommand("Select * From users Where user_id='" & USERTextBox.Text & "' And password='" & PasswordTextBox.Text & "'", conn)
-            dr = com.ExecuteReader()
-            If dr.Read() Then ' 表示有找到通过验证
-                loginPanel.Visible = False
-                menuPanel.Visible = True
-                adminPanel.Visible = True
-                downPanel.Visible = True
-                UserLabel.Text = dr!username & vbCrLf
+        If USERTextBox.Text = "" Or PasswordTextBox.Text = "" Then
+            'MessageBox.Show("有数据没有输入，请输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("笨蛋，数据都没输完，激动什么!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            Try
+                conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
+                'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;User ID=root;PWD=admin;pooling = True")
+                conn.Open()
+                com = New MySqlCommand("Select * From users Where user_id='" & USERTextBox.Text & "' And password='" & PasswordTextBox.Text & "'", conn)
+                dr = com.ExecuteReader()
+                If dr.Read() Then ' 表示有找到通过验证
+                    loginPanel.Visible = False
+                    menuPanel.Visible = True
+                    adminPanel.Visible = True
+                    downPanel.Visible = True
+                    UserLabel.Text = dr!username & vbCrLf
 
-                '用户信息界面
-                usernameTextBox.Text = dr!username & vbCrLf
-                nameTextBox.Text = dr!user_id & vbCrLf
+                    '用户信息界面
+                    usernameTextBox.Text = dr!username & vbCrLf
+                    nameTextBox.Text = dr!user_id & vbCrLf
 
-            Else
-                'MessageBox.Show("密码或用户名错误，请重新输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                MessageBox.Show("你这个笨蛋！居然把密码（用户名）输错了!Orz", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End If
-        Catch myerror As MySqlException
-            'MsgBox("Error connecting to the server:" & myerror.Message)
-            MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
-        End Try
+                Else
+                    'MessageBox.Show("密码或用户名错误，请重新输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    MessageBox.Show("你这个笨蛋！居然把密码（用户名）输错了!Orz", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            Catch myerror As MySqlException
+                'MsgBox("Error connecting to the server:" & myerror.Message)
+                MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
+            End Try
+        End If
 
     End Sub
 
@@ -395,19 +397,24 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         Dim com As MySqlCommand
         Dim dr As MySqlDataReader
 
-        '数据库连接与操作
-        Try
-            conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
-            'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
-            conn.Open()
-            com = New MySqlCommand("INSERT INTO manage (carnum,weight,time,user_id,manage_id,kind,remarks) VALUES ('" & TextBox7.Text & "','" & TextBox12.Text & "','" & TextBox9.Text & "','" & USERTextBox.Text & "','num','" & kindTextBox.Text & "','" & adminremarkTextBox.Text & "')", conn)
-            dr = com.ExecuteReader
+        If kindTextBox.Text = "" Then
+            MessageBox.Show("请输入货物类型!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
-            conn.Close()
-        Catch myerror As MySqlException
-            'MsgBox("Error connecting to the server:" & myerror.Message)
-            MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
-        End Try
+        Else
+            '数据库连接与操作
+            Try
+                conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
+                'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
+                conn.Open()
+                com = New MySqlCommand("INSERT INTO manage (carnum,weight,time,user_id,manage_id,kind,remarks) VALUES ('" & TextBox7.Text & "','" & TextBox12.Text & "','" & TextBox9.Text & "','" & USERTextBox.Text & "','num','" & kindTextBox.Text & "','" & adminremarkTextBox.Text & "')", conn)
+                dr = com.ExecuteReader
+
+                conn.Close()
+            Catch myerror As MySqlException
+                'MsgBox("Error connecting to the server:" & myerror.Message)
+                MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
+            End Try
+        End If
 
         SerialPort1.Close()
 
@@ -486,14 +493,14 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
                 com = New MySqlCommand("Select * From car,driver Where carnum='" & TextBox7.Text & "'", conn)
                 dr = com.ExecuteReader()
                 While dr.Read()
-                    TextBox1.AppendText(dr!驾驶证号 & vbCrLf)
-                    TextBox2.AppendText(dr!姓名 & vbCrLf)
-                    TextBox3.AppendText(dr!出生日期 & vbCrLf)
-                    TextBox4.AppendText(dr!部门 & vbCrLf)
-                    TextBox5.AppendText(dr!驾照类型 & vbCrLf)
-                    TextBox6.AppendText(dr!联系电话 & vbCrLf)
-                    TextBox8.AppendText(dr!车型 & vbCrLf)
-                    TextBox10.AppendText(dr!车重 & vbCrLf)
+                    TextBox1.AppendText(dr!driver_id & vbCrLf)
+                    TextBox2.AppendText(dr!name & vbCrLf)
+                    TextBox3.AppendText(dr!bday & vbCrLf)
+                    TextBox4.AppendText(dr!part & vbCrLf)
+                    TextBox5.AppendText(dr!dkind & vbCrLf)
+                    TextBox6.AppendText(dr!telnum & vbCrLf)
+                    TextBox8.AppendText(dr!model & vbCrLf)
+                    TextBox10.AppendText(dr!fload & vbCrLf)
                 End While
                 dr.Close()
             Catch myerror As MySqlException
@@ -1128,20 +1135,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         suggestPanel.Visible = False
         aboutPanel.Visible = False
 
-        Dim sFileName As String
-
-        ' Find an Office file...
-        With CommonDialog1
-            .FileName = ""
-            .ShowOpen
-            sFileName = .FileName
-        End With
-
-        ' If the user didn't cancel, open the file...
-        If Len(sFileName) Then
-      Set oDocument = Nothing
-      WebBrowser1.Navigate sFileName
-   End If
     End Sub
 
     '点击“使用帮助界面”（选中）
@@ -1253,13 +1246,4 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         includingPanel.Visible = False
     End Sub
 
-    Private Sub helpPanel_Paint(sender As Object, e As PaintEventArgs) Handles helpPanel.Paint
-        Command1.Caption = "Browse"
-        With CommonDialog1
-            .Filter = "Office Documents " &
-            "(*.doc, *.xls, *.ppt)|*.doc;*.xls;*.ppt"
-            .FilterIndex = 1
-            .Flags = cdlOFNFileMustExist Or cdlOFNHideReadOnly
-        End With
-    End Sub
 End Class
