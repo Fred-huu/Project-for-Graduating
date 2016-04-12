@@ -970,8 +970,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
             'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
             conn.Open()
-            com = New MySqlCommand("INSERT INTO driver (driver_id,name,bday,dkind,part,telnum) VALUES ('" & TextBox29.Text & "','" & TextBox30.Text & "','" & TextBox31.Text & "','" & TextBox32.Text & "','" & TextBox33.Text & "','" & TextBox34.Text & "')", conn)
-            'com = New MySqlCommand("INSERT INTO driver (driver_id,name,bday,dkind,part,telnum,photo) VALUES ('" & TextBox29.Text & "','" & TextBox30.Text & "','" & TextBox31.Text & "','" & TextBox32.Text & "','" & TextBox33.Text & "','" & TextBox34.Text & "'，@Photo)", conn)
+            com = New MySqlCommand("INSERT INTO driver (driver_id,name,bday,dkind,part,telnum,carnum) VALUES ('" & TextBox29.Text & "','" & TextBox30.Text & "','" & TextBox31.Text & "','" & TextBox32.Text & "','" & TextBox33.Text & "','" & TextBox34.Text & "','" & TextBox16.Text & "')", conn)
+            'com = New MySqlCommand("INSERT INTO driver (driver_id,name,bday,dkind,part,telnum,carnum,photo) VALUES ('" & TextBox29.Text & "','" & TextBox30.Text & "','" & TextBox31.Text & "','" & TextBox32.Text & "','" & TextBox33.Text & "','" & TextBox34.Text & "','" & TextBox16.Text & "'，@Photo)", conn)
             'com.Parameters.AddWithValue("@Photo", arrImage)
             dr = com.ExecuteReader
 
@@ -986,17 +986,17 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
     End Sub
 
     '照片添加按钮
-    Private Sub pictureButton_Click(sender As Object, e As EventArgs)
-        '二级菜单
-        messPanel.Visible = False
-        addPanel.Visible = False
-        includingPanel.Visible = False
+    ' Private Sub pictureButton_Click_1(sender As Object, e As EventArgs)
+    '二级菜单
+    'messPanel.Visible = False
+    'addPanel.Visible = False
+    'includingPanel.Visible = False
 
-        OpenDlg.Filter = "图片文件(*.jpg,*.gif,*.bmp)|*.jpg|*.gif|*.bmp"  '这是限定图片的格式
-        If OpenDlg.ShowDialog() = DialogResult.OK Then
-            Me.driverPictureBox.Image = Image.FromFile(OpenDlg.FileName)
-        End If
-    End Sub
+    'OpenDlg.Filter = "图片文件(*.jpg,*.gif,*.bmp)|*.jpg|*.gif|*.bmp"  '这是限定图片的格式
+    'If OpenDlg.ShowDialog() = DialogResult.OK Then
+    'Me.driverPictureBox.Image = Image.FromFile(OpenDlg.FileName)
+    'End If
+    'End Sub
 
     '清空数据
     Private Sub clearLinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles clearLinkLabel2.LinkClicked
