@@ -68,8 +68,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         mess1.Visible = False
         add0.Visible = True
         add1.Visible = False
-        user0.Visible = True
-        user1.Visible = False
         including0.Visible = True
         including1.Visible = False
 
@@ -82,7 +80,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         dmPanel.Visible = False
         caddPanel.Visible = False
         daddPanel.Visible = False
-        usermessPanel.Visible = False
         helpPanel.Visible = False
         suggestPanel.Visible = False
         aboutPanel.Visible = False
@@ -125,11 +122,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
                     menuPanel.Visible = True
                     adminPanel.Visible = True
                     downPanel.Visible = True
-                    UserLabel.Text = dr!username & vbCrLf
-
-                    '用户信息界面
-                    usernameTextBox.Text = dr!username & vbCrLf
-                    nameTextBox.Text = dr!user_id & vbCrLf
+                    UsernameLabel.Text = dr!username & vbCrLf
+                    UserLabel.Text = dr!user_id & vbCrLf
 
                 Else
                     'MessageBox.Show("密码或用户名错误，请重新输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -166,6 +160,25 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         newpasswTextBox.Text = ""
         newapasswTextBox.Text = ""
         newnameTextBox.Text = ""
+    End Sub
+
+    '注销账号
+    Private Sub signoutLinkLabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles signoutLinkLabel.LinkClicked
+        MsgBox("常来玩啊！我会想念你的！(≧ω≦)")
+
+        '二级菜单
+        messPanel.Visible = False
+        addPanel.Visible = False
+        includingPanel.Visible = False
+
+        downPanel.Visible = False
+
+        '清空登录界面数据
+        USERTextBox.Text = ""
+        PasswordTextBox.Text = ""
+
+        loginPanel.Visible = True
+        menuPanel.Visible = False
     End Sub
 
     '-------------------------------------------
@@ -263,8 +276,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         mess1.Visible = False
         add0.Visible = True
         add1.Visible = False
-        user0.Visible = True
-        user1.Visible = False
         including0.Visible = True
         including1.Visible = False
 
@@ -275,7 +286,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         dmPanel.Visible = False
         caddPanel.Visible = False
         daddPanel.Visible = False
-        usermessPanel.Visible = False
         helpPanel.Visible = False
         suggestPanel.Visible = False
         aboutPanel.Visible = False
@@ -564,8 +574,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         mess1.Visible = True
         add0.Visible = True
         add1.Visible = False
-        user0.Visible = True
-        user1.Visible = False
         including0.Visible = True
         including1.Visible = False
     End Sub
@@ -601,7 +609,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         dmPanel.Visible = False
         caddPanel.Visible = False
         daddPanel.Visible = False
-        usermessPanel.Visible = False
         helpPanel.Visible = False
         suggestPanel.Visible = False
         aboutPanel.Visible = False
@@ -676,7 +683,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         dmPanel.Visible = False
         caddPanel.Visible = False
         daddPanel.Visible = False
-        usermessPanel.Visible = False
         helpPanel.Visible = False
         suggestPanel.Visible = False
         aboutPanel.Visible = False
@@ -750,7 +756,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         dmPanel.Visible = True
         caddPanel.Visible = False
         daddPanel.Visible = False
-        usermessPanel.Visible = False
         helpPanel.Visible = False
         suggestPanel.Visible = False
         aboutPanel.Visible = False
@@ -830,8 +835,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         mess1.Visible = False
         add0.Visible = False
         add1.Visible = True
-        user0.Visible = True
-        user1.Visible = False
         including0.Visible = True
         including1.Visible = False
     End Sub
@@ -865,7 +868,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         dmPanel.Visible = False
         caddPanel.Visible = True
         daddPanel.Visible = False
-        usermessPanel.Visible = False
         helpPanel.Visible = False
         suggestPanel.Visible = False
         aboutPanel.Visible = False
@@ -937,7 +939,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         dmPanel.Visible = False
         caddPanel.Visible = False
         daddPanel.Visible = True
-        usermessPanel.Visible = False
         helpPanel.Visible = False
         suggestPanel.Visible = False
         aboutPanel.Visible = False
@@ -1015,61 +1016,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
     '-------------------------------------------
 
-    '个人中心界面
-    '点击“个人中心界面”（未选中）
-    Private Sub user0_Click(sender As Object, e As EventArgs) Handles user0.Click
-        '二级菜单
-        messPanel.Visible = False
-        addPanel.Visible = False
-        includingPanel.Visible = False
-
-        '一级菜单
-        admin0.Visible = True
-        admin1.Visible = False
-        mess0.Visible = True
-        mess1.Visible = False
-        add0.Visible = True
-        add1.Visible = False
-        user0.Visible = False
-        user1.Visible = True
-        including0.Visible = True
-        including1.Visible = False
-
-        'panel容器
-        adminPanel.Visible = False
-        wPanel.Visible = False
-        cmPanel.Visible = False
-        dmPanel.Visible = False
-        caddPanel.Visible = False
-        daddPanel.Visible = False
-        usermessPanel.Visible = True
-        helpPanel.Visible = False
-        suggestPanel.Visible = False
-        aboutPanel.Visible = False
-    End Sub
-
-    '注销账号
-    Private Sub signoutLinkLabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles signoutLinkLabel.LinkClicked
-        MsgBox("常来玩啊！我会想念你的！(≧ω≦)")
-
-        '二级菜单
-        messPanel.Visible = False
-        addPanel.Visible = False
-        includingPanel.Visible = False
-
-        downPanel.Visible = False
-
-        '清空登录界面数据
-        USERTextBox.Text = ""
-        PasswordTextBox.Text = ""
-
-        loginPanel.Visible = True
-        menuPanel.Visible = False
-        usermessPanel.Visible = False
-    End Sub
-
-    '-------------------------------------------
-
     '系统说明界面
     '点击“系统说明界面”（未选中）
     Private Sub including0_Click(sender As Object, e As EventArgs) Handles including0.Click
@@ -1093,8 +1039,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         mess1.Visible = False
         add0.Visible = True
         add1.Visible = False
-        user0.Visible = True
-        user1.Visible = False
         including0.Visible = False
         including1.Visible = True
     End Sub
@@ -1130,7 +1074,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         dmPanel.Visible = False
         caddPanel.Visible = False
         daddPanel.Visible = False
-        usermessPanel.Visible = False
         helpPanel.Visible = True
         suggestPanel.Visible = False
         aboutPanel.Visible = False
@@ -1164,7 +1107,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         dmPanel.Visible = False
         caddPanel.Visible = False
         daddPanel.Visible = False
-        usermessPanel.Visible = False
         helpPanel.Visible = False
         suggestPanel.Visible = True
         aboutPanel.Visible = False
@@ -1235,7 +1177,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         dmPanel.Visible = False
         caddPanel.Visible = False
         daddPanel.Visible = False
-        usermessPanel.Visible = False
         helpPanel.Visible = False
         suggestPanel.Visible = False
         aboutPanel.Visible = True
