@@ -299,7 +299,7 @@ Partial Class admin
         Me.版本信息Label.Name = "版本信息Label"
         Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.7.160412.5"
+        Me.版本信息Label.Text = "2.8.160413.1"
         '
         '人员姓名Label
         '
