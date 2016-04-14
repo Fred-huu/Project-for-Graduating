@@ -113,8 +113,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             'MessageBox.Show("笨蛋，数据都没输完，激动什么!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             Try
-                'conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
-                conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;User ID=root;PWD=admin;pooling = True")
+                conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
+                'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;User ID=root;PWD=admin;pooling = True")
                 conn.Open()
                 com = New MySqlCommand("Select * From users Where user_id='" & USERTextBox.Text & "' And password='" & PasswordTextBox.Text & "'", conn)
                 dr = com.ExecuteReader()
@@ -129,6 +129,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
                 Else
                     MessageBox.Show("密码或用户名错误，请重新输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     'MessageBox.Show("你这个笨蛋！居然把密码（用户名）输错了!Orz", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    PasswordTextBox.Text = ""
                 End If
             Catch myerror As MySqlException
                 MsgBox("Error connecting to the server:" & myerror.Message)
