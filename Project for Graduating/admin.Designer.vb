@@ -224,6 +224,10 @@ Partial Class admin
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.OpenDlg = New System.Windows.Forms.OpenFileDialog()
+        Me.backgroundPanel = New System.Windows.Forms.Panel()
+        Me.htPictureBox = New System.Windows.Forms.PictureBox()
+        Me.dielingWebBrowser = New System.Windows.Forms.WebBrowser()
+        Me.backgroundLinkLabel = New System.Windows.Forms.LinkLabel()
         Me.aboutPanel.SuspendLayout()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.开发人员PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -277,6 +281,8 @@ Partial Class admin
         CType(Me.suggest1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.about1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.downPanel.SuspendLayout()
+        Me.backgroundPanel.SuspendLayout()
+        CType(Me.htPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'aboutPanel
@@ -299,7 +305,7 @@ Partial Class admin
         Me.版本信息Label.Name = "版本信息Label"
         Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.8.160413.1"
+        Me.版本信息Label.Text = "2.8.160414.2"
         '
         '人员姓名Label
         '
@@ -2285,6 +2291,7 @@ Partial Class admin
         'downPanel
         '
         Me.downPanel.BackColor = System.Drawing.Color.Transparent
+        Me.downPanel.Controls.Add(Me.backgroundLinkLabel)
         Me.downPanel.Controls.Add(Me.signoutLinkLabel)
         Me.downPanel.Controls.Add(Me.time)
         Me.downPanel.Location = New System.Drawing.Point(0, 628)
@@ -2314,6 +2321,47 @@ Partial Class admin
         '
         Me.OpenDlg.FileName = "OpenDlg"
         '
+        'backgroundPanel
+        '
+        Me.backgroundPanel.Controls.Add(Me.dielingWebBrowser)
+        Me.backgroundPanel.Controls.Add(Me.htPictureBox)
+        Me.backgroundPanel.Location = New System.Drawing.Point(200, 0)
+        Me.backgroundPanel.Name = "backgroundPanel"
+        Me.backgroundPanel.Size = New System.Drawing.Size(1060, 628)
+        Me.backgroundPanel.TabIndex = 136
+        Me.backgroundPanel.Visible = False
+        '
+        'htPictureBox
+        '
+        Me.htPictureBox.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.htPictureBox.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.htPictureBox.Image = CType(resources.GetObject("htPictureBox.Image"), System.Drawing.Image)
+        Me.htPictureBox.Location = New System.Drawing.Point(0, 0)
+        Me.htPictureBox.Name = "htPictureBox"
+        Me.htPictureBox.Size = New System.Drawing.Size(1060, 60)
+        Me.htPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.htPictureBox.TabIndex = 105
+        Me.htPictureBox.TabStop = False
+        '
+        'dielingWebBrowser
+        '
+        Me.dielingWebBrowser.Location = New System.Drawing.Point(0, 60)
+        Me.dielingWebBrowser.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.dielingWebBrowser.Name = "dielingWebBrowser"
+        Me.dielingWebBrowser.Size = New System.Drawing.Size(1060, 568)
+        Me.dielingWebBrowser.TabIndex = 106
+        Me.dielingWebBrowser.Url = New System.Uri("http://vps.dieling.cc/qch/", System.UriKind.Absolute)
+        '
+        'backgroundLinkLabel
+        '
+        Me.backgroundLinkLabel.AutoSize = True
+        Me.backgroundLinkLabel.Location = New System.Drawing.Point(908, 10)
+        Me.backgroundLinkLabel.Name = "backgroundLinkLabel"
+        Me.backgroundLinkLabel.Size = New System.Drawing.Size(80, 18)
+        Me.backgroundLinkLabel.TabIndex = 159
+        Me.backgroundLinkLabel.TabStop = True
+        Me.backgroundLinkLabel.Text = "管理后台"
+        '
         'admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
@@ -2335,6 +2383,7 @@ Partial Class admin
         Me.Controls.Add(Me.newuserPanel)
         Me.Controls.Add(Me.loginPanel)
         Me.Controls.Add(Me.adminPanel)
+        Me.Controls.Add(Me.backgroundPanel)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "admin"
@@ -2406,6 +2455,8 @@ Partial Class admin
         CType(Me.about1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.downPanel.ResumeLayout(False)
         Me.downPanel.PerformLayout()
+        Me.backgroundPanel.ResumeLayout(False)
+        CType(Me.htPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2610,4 +2661,8 @@ Partial Class admin
     Friend WithEvents UserLabel As Label
     Friend WithEvents TextBox16 As TextBox
     Friend WithEvents Label26 As Label
+    Friend WithEvents backgroundPanel As Panel
+    Friend WithEvents dielingWebBrowser As WebBrowser
+    Friend WithEvents htPictureBox As PictureBox
+    Friend WithEvents backgroundLinkLabel As LinkLabel
 End Class

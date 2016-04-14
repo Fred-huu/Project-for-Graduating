@@ -83,6 +83,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         helpPanel.Visible = False
         suggestPanel.Visible = False
         aboutPanel.Visible = False
+        backgroundPanel.Visible = False
 
         downPanel.Visible = False
 
@@ -108,12 +109,12 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         Dim com As MySqlCommand
 
         If USERTextBox.Text = "" Or PasswordTextBox.Text = "" Then
-            'MessageBox.Show("有数据没有输入，请输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            MessageBox.Show("笨蛋，数据都没输完，激动什么!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("有数据没有输入，请输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'MessageBox.Show("笨蛋，数据都没输完，激动什么!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             Try
-                conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
-                'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;User ID=root;PWD=admin;pooling = True")
+                'conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
+                conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;User ID=root;PWD=admin;pooling = True")
                 conn.Open()
                 com = New MySqlCommand("Select * From users Where user_id='" & USERTextBox.Text & "' And password='" & PasswordTextBox.Text & "'", conn)
                 dr = com.ExecuteReader()
@@ -126,12 +127,12 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
                     UserLabel.Text = dr!user_id & vbCrLf
 
                 Else
-                    'MessageBox.Show("密码或用户名错误，请重新输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    MessageBox.Show("你这个笨蛋！居然把密码（用户名）输错了!Orz", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    MessageBox.Show("密码或用户名错误，请重新输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    'MessageBox.Show("你这个笨蛋！居然把密码（用户名）输错了!Orz", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
             Catch myerror As MySqlException
-                'MsgBox("Error connecting to the server:" & myerror.Message)
-                MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
+                MsgBox("Error connecting to the server:" & myerror.Message)
+                'MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
             End Try
         End If
 
@@ -164,7 +165,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
     '注销账号
     Private Sub signoutLinkLabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles signoutLinkLabel.LinkClicked
-        MsgBox("常来玩啊！我会想念你的！(≧ω≦)")
+        'MsgBox("常来玩啊！我会想念你的！(≧ω≦)")
 
         '二级菜单
         messPanel.Visible = False
@@ -197,24 +198,24 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             dr = com.ExecuteReader()
 
             If newnameTextBox.Text = "" Or newuserTextBox.Text = "" Or newpasswTextBox.Text = "" Or newapasswTextBox.Text = "" Or newapasswTextBox.Text = "" Then
-                'MessageBox.Show("有数据没有输入，请输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                MessageBox.Show("笨蛋，数据都没输完，激动什么!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("有数据没有输入，请输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                'MessageBox.Show("笨蛋，数据都没输完，激动什么!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
             ElseIf dr.Read() Then ' 表示有找到通过验证
-                'MessageBox.Show("账号已被注册，请重新输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                MessageBox.Show("笨蛋，这个账号已被注册，快重新想一个!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("账号已被注册，请重新输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                'MessageBox.Show("笨蛋，这个账号已被注册，快重新想一个!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 newuserTextBox.Text = ""
             Else
                 If newapasswTextBox.Text <> newpasswTextBox.Text Then
-                    'MessageBox.Show("两次密码输入不一致，请重新输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    MessageBox.Show("笨蛋！两次密码输入不一致，快重新输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    MessageBox.Show("两次密码输入不一致，请重新输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    'MessageBox.Show("笨蛋！两次密码输入不一致，快重新输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Else
                     insertuser()
 
                 End If
             End If
         Catch myerror As MySqlException
-            'MsgBox("Error connecting to the server:" & myerror.Message)
-            MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
+            MsgBox("Error connecting to the server:" & myerror.Message)
+            'MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
         End Try
     End Sub
 
@@ -231,8 +232,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             dr = com.ExecuteReader
             conn.Close()
 
-            'MessageBox.Show("账号注册成功！")
-            MessageBox.Show("哇！账号居然注册成功啦~！恭喜入坑！")
+            MessageBox.Show("账号注册成功！")
+            'MessageBox.Show("哇！账号居然注册成功啦~！恭喜入坑！")
 
             '清除登录界面的数据
             USERTextBox.Text = ""
@@ -243,8 +244,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             newuserPanel.Visible = False
 
         Catch myerror As MySqlException
-            'MsgBox("Error connecting to the server:" & myerror.Message)
-            MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
+            MsgBox("Error connecting to the server:" & myerror.Message)
+            'MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
         End Try
 
     End Sub
@@ -289,6 +290,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         helpPanel.Visible = False
         suggestPanel.Visible = False
         aboutPanel.Visible = False
+        backgroundPanel.Visible = False
 
     End Sub
 
@@ -356,8 +358,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             End While
             conn.Close()
         Catch myerror As MySqlException
-            'MsgBox("Error connecting to the server:" & myerror.Message)
-            MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
+            MsgBox("Error connecting to the server:" & myerror.Message)
+            'MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
         End Try
 
         '货物净重称量
@@ -421,8 +423,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
                 conn.Close()
             Catch myerror As MySqlException
-                'MsgBox("Error connecting to the server:" & myerror.Message)
-                MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
+                MsgBox("Error connecting to the server:" & myerror.Message)
+                'MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
             End Try
         End If
 
@@ -514,8 +516,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
                 End While
                 dr.Close()
             Catch myerror As MySqlException
-                'MsgBox("Error connecting to the server:" & myerror.Message)
-                MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
+                MsgBox("Error connecting to the server:" & myerror.Message)
+                'MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
             End Try
 
             '重新计算货物重量
@@ -534,8 +536,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
             '当输入数据为空时
         Else
-            MessageBox.Show("什么都没输入，快输入数据!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            'MessageBox.Show("输入数据为空!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'MessageBox.Show("什么都没输入，快输入数据!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("输入数据为空!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 
@@ -612,6 +614,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         helpPanel.Visible = False
         suggestPanel.Visible = False
         aboutPanel.Visible = False
+        backgroundPanel.Visible = False
+
     End Sub
 
     '点击“称量信息查询界面”（选中）
@@ -656,8 +660,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             Next
 
         Catch myerror As MySqlException
-            'MsgBox("Error connecting to the server:" & myerror.Message)
-            MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
+            MsgBox("Error connecting to the server:" & myerror.Message)
+            'MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
         End Try
     End Sub
 
@@ -686,6 +690,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         helpPanel.Visible = False
         suggestPanel.Visible = False
         aboutPanel.Visible = False
+        backgroundPanel.Visible = False
+
     End Sub
 
     '点击“车辆信息查询界面”（选中）
@@ -729,8 +735,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             'End While
             dr.Close()
         Catch myerror As MySqlException
-            'MsgBox("Error connecting to the server:" & myerror.Message)
-            MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
+            MsgBox("Error connecting to the server:" & myerror.Message)
+            'MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
         End Try
     End Sub
 
@@ -759,6 +765,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         helpPanel.Visible = False
         suggestPanel.Visible = False
         aboutPanel.Visible = False
+        backgroundPanel.Visible = False
+
     End Sub
 
     '点击“司机信息查询界面”（选中）
@@ -806,8 +814,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             ' End While
             dr.Close()
         Catch myerror As MySqlException
-            'MsgBox("Error connecting to the server:" & myerror.Message)
-            MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
+            MsgBox("Error connecting to the server:" & myerror.Message)
+            'MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
         End Try
 
     End Sub
@@ -871,6 +879,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         helpPanel.Visible = False
         suggestPanel.Visible = False
         aboutPanel.Visible = False
+        backgroundPanel.Visible = False
+
     End Sub
 
     '点击“车辆信息录入界面”（选中）
@@ -900,8 +910,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
             conn.Close()
         Catch myerror As MySqlException
-            'MsgBox("Error connecting to the server:" & myerror.Message)
-            MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
+            MsgBox("Error connecting to the server:" & myerror.Message)
+            'MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
         End Try
     End Sub
 
@@ -942,6 +952,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         helpPanel.Visible = False
         suggestPanel.Visible = False
         aboutPanel.Visible = False
+        backgroundPanel.Visible = False
+
     End Sub
 
     '点击“司机信息录入界面”（选中）
@@ -979,8 +991,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
             conn.Close()
         Catch myerror As MySqlException
-            'MsgBox("Error connecting to the server:" & myerror.Message)
-            MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
+            MsgBox("Error connecting to the server:" & myerror.Message)
+            'MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
         End Try
 
     End Sub
@@ -1077,6 +1089,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         helpPanel.Visible = True
         suggestPanel.Visible = False
         aboutPanel.Visible = False
+        backgroundPanel.Visible = False
 
     End Sub
 
@@ -1110,6 +1123,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         helpPanel.Visible = False
         suggestPanel.Visible = True
         aboutPanel.Visible = False
+        backgroundPanel.Visible = False
+
     End Sub
 
     '点击“意见反馈界面”（选中）
@@ -1180,6 +1195,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         helpPanel.Visible = False
         suggestPanel.Visible = False
         aboutPanel.Visible = True
+        backgroundPanel.Visible = False
+
     End Sub
 
     '点击“关于界面”（选中）
@@ -1187,4 +1204,28 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         includingPanel.Visible = False
     End Sub
 
+    '后台管理
+    Private Sub backgroundLinkLabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles backgroundLinkLabel.LinkClicked
+        '一级菜单
+        admin0.Visible = True
+        admin1.Visible = False
+        mess0.Visible = True
+        mess1.Visible = False
+        add0.Visible = True
+        add1.Visible = False
+        including0.Visible = True
+        including1.Visible = False
+
+        'panel容器
+        adminPanel.Visible = False
+        wPanel.Visible = False
+        cmPanel.Visible = False
+        dmPanel.Visible = False
+        caddPanel.Visible = False
+        daddPanel.Visible = False
+        helpPanel.Visible = False
+        suggestPanel.Visible = False
+        aboutPanel.Visible = False
+        backgroundPanel.Visible = True
+    End Sub
 End Class
