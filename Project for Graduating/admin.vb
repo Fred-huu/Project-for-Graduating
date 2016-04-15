@@ -56,6 +56,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         USERTextBox.Text = ""
         PasswordTextBox.Text = ""
 
+        Me.FormBorderStyle = 0
+
         '二级菜单
         messPanel.Visible = False
         addPanel.Visible = False
@@ -126,6 +128,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
                     UsernameLabel.Text = dr!username & vbCrLf
                     UserLabel.Text = dr!user_id & vbCrLf
 
+                    Me.FormBorderStyle = 1
+
                 Else
                     MessageBox.Show("密码或用户名错误，请重新输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     'MessageBox.Show("你这个笨蛋！居然把密码（用户名）输错了!Orz", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -167,6 +171,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
     '注销账号
     Private Sub signoutLinkLabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles signoutLinkLabel.LinkClicked
         'MsgBox("常来玩啊！我会想念你的！(≧ω≦)")
+
+        Me.FormBorderStyle = 0
 
         '二级菜单
         messPanel.Visible = False
@@ -1229,4 +1235,5 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         aboutPanel.Visible = False
         backgroundPanel.Visible = True
     End Sub
+
 End Class

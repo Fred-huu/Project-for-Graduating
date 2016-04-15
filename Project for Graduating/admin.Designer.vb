@@ -220,14 +220,14 @@ Partial Class admin
         Me.suggest1 = New System.Windows.Forms.PictureBox()
         Me.about1 = New System.Windows.Forms.PictureBox()
         Me.downPanel = New System.Windows.Forms.Panel()
+        Me.backgroundLinkLabel = New System.Windows.Forms.LinkLabel()
         Me.time = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.OpenDlg = New System.Windows.Forms.OpenFileDialog()
         Me.backgroundPanel = New System.Windows.Forms.Panel()
-        Me.htPictureBox = New System.Windows.Forms.PictureBox()
         Me.dielingWebBrowser = New System.Windows.Forms.WebBrowser()
-        Me.backgroundLinkLabel = New System.Windows.Forms.LinkLabel()
+        Me.htPictureBox = New System.Windows.Forms.PictureBox()
         Me.aboutPanel.SuspendLayout()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.开发人员PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -305,7 +305,7 @@ Partial Class admin
         Me.版本信息Label.Name = "版本信息Label"
         Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.8.160414.3"
+        Me.版本信息Label.Text = "2.8.160415.4"
         '
         '人员姓名Label
         '
@@ -1162,7 +1162,7 @@ Partial Class admin
         'signoutLinkLabel
         '
         Me.signoutLinkLabel.AutoSize = True
-        Me.signoutLinkLabel.Location = New System.Drawing.Point(1001, 10)
+        Me.signoutLinkLabel.Location = New System.Drawing.Point(1010, 10)
         Me.signoutLinkLabel.Name = "signoutLinkLabel"
         Me.signoutLinkLabel.Size = New System.Drawing.Size(44, 18)
         Me.signoutLinkLabel.TabIndex = 158
@@ -2299,6 +2299,16 @@ Partial Class admin
         Me.downPanel.Size = New System.Drawing.Size(1280, 38)
         Me.downPanel.TabIndex = 135
         '
+        'backgroundLinkLabel
+        '
+        Me.backgroundLinkLabel.AutoSize = True
+        Me.backgroundLinkLabel.Location = New System.Drawing.Point(920, 10)
+        Me.backgroundLinkLabel.Name = "backgroundLinkLabel"
+        Me.backgroundLinkLabel.Size = New System.Drawing.Size(80, 18)
+        Me.backgroundLinkLabel.TabIndex = 159
+        Me.backgroundLinkLabel.TabStop = True
+        Me.backgroundLinkLabel.Text = "管理后台"
+        '
         'time
         '
         Me.time.AutoSize = True
@@ -2331,6 +2341,15 @@ Partial Class admin
         Me.backgroundPanel.TabIndex = 136
         Me.backgroundPanel.Visible = False
         '
+        'dielingWebBrowser
+        '
+        Me.dielingWebBrowser.Location = New System.Drawing.Point(0, 60)
+        Me.dielingWebBrowser.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.dielingWebBrowser.Name = "dielingWebBrowser"
+        Me.dielingWebBrowser.Size = New System.Drawing.Size(1060, 568)
+        Me.dielingWebBrowser.TabIndex = 106
+        Me.dielingWebBrowser.Url = New System.Uri("http://vps.dieling.cc/qch/", System.UriKind.Absolute)
+        '
         'htPictureBox
         '
         Me.htPictureBox.BackColor = System.Drawing.SystemColors.HotTrack
@@ -2342,25 +2361,6 @@ Partial Class admin
         Me.htPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.htPictureBox.TabIndex = 105
         Me.htPictureBox.TabStop = False
-        '
-        'dielingWebBrowser
-        '
-        Me.dielingWebBrowser.Location = New System.Drawing.Point(0, 60)
-        Me.dielingWebBrowser.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.dielingWebBrowser.Name = "dielingWebBrowser"
-        Me.dielingWebBrowser.Size = New System.Drawing.Size(1060, 568)
-        Me.dielingWebBrowser.TabIndex = 106
-        Me.dielingWebBrowser.Url = New System.Uri("http://vps.dieling.cc/qch/", System.UriKind.Absolute)
-        '
-        'backgroundLinkLabel
-        '
-        Me.backgroundLinkLabel.AutoSize = True
-        Me.backgroundLinkLabel.Location = New System.Drawing.Point(908, 10)
-        Me.backgroundLinkLabel.Name = "backgroundLinkLabel"
-        Me.backgroundLinkLabel.Size = New System.Drawing.Size(80, 18)
-        Me.backgroundLinkLabel.TabIndex = 159
-        Me.backgroundLinkLabel.TabStop = True
-        Me.backgroundLinkLabel.Text = "管理后台"
         '
         'admin
         '
