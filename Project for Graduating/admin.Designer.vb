@@ -228,6 +228,7 @@ Partial Class admin
         Me.backgroundPanel = New System.Windows.Forms.Panel()
         Me.dielingWebBrowser = New System.Windows.Forms.WebBrowser()
         Me.htPictureBox = New System.Windows.Forms.PictureBox()
+        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.aboutPanel.SuspendLayout()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.开发人员PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -305,7 +306,7 @@ Partial Class admin
         Me.版本信息Label.Name = "版本信息Label"
         Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.8.160415.4"
+        Me.版本信息Label.Text = "2.8.160415.6"
         '
         '人员姓名Label
         '
@@ -1108,13 +1109,13 @@ Partial Class admin
         'ListView1
         '
         Me.ListView1.BackgroundImageTiled = True
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader7})
         Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
-        Me.ListView1.Location = New System.Drawing.Point(100, 126)
+        Me.ListView1.Location = New System.Drawing.Point(150, 126)
         Me.ListView1.MinimumSize = New System.Drawing.Size(4, 4)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(700, 372)
+        Me.ListView1.Size = New System.Drawing.Size(760, 372)
         Me.ListView1.TabIndex = 106
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -1127,7 +1128,7 @@ Partial Class admin
         'ColumnHeader2
         '
         Me.ColumnHeader2.Text = "车牌号"
-        Me.ColumnHeader2.Width = 90
+        Me.ColumnHeader2.Width = 70
         '
         'ColumnHeader3
         '
@@ -2333,8 +2334,8 @@ Partial Class admin
         '
         'backgroundPanel
         '
-        Me.backgroundPanel.Controls.Add(Me.dielingWebBrowser)
         Me.backgroundPanel.Controls.Add(Me.htPictureBox)
+        Me.backgroundPanel.Controls.Add(Me.dielingWebBrowser)
         Me.backgroundPanel.Location = New System.Drawing.Point(200, 0)
         Me.backgroundPanel.Name = "backgroundPanel"
         Me.backgroundPanel.Size = New System.Drawing.Size(1060, 628)
@@ -2361,6 +2362,10 @@ Partial Class admin
         Me.htPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.htPictureBox.TabIndex = 105
         Me.htPictureBox.TabStop = False
+        '
+        'ColumnHeader7
+        '
+        Me.ColumnHeader7.Text = "备注"
         '
         'admin
         '
@@ -2665,4 +2670,5 @@ Partial Class admin
     Friend WithEvents dielingWebBrowser As WebBrowser
     Friend WithEvents htPictureBox As PictureBox
     Friend WithEvents backgroundLinkLabel As LinkLabel
+    Friend WithEvents ColumnHeader7 As ColumnHeader
 End Class

@@ -89,7 +89,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
         downPanel.Visible = False
 
-
         myPort = IO.Ports.SerialPort.GetPortNames()
         ComboBox1.Items.AddRange(myPort)
 
@@ -299,6 +298,9 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         aboutPanel.Visible = False
         backgroundPanel.Visible = False
 
+        '隐藏修改界面
+        modifyPanel.Visible = False
+
     End Sub
 
     '启动按钮
@@ -473,6 +475,9 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         includingPanel.Visible = False
 
         modifyPanel.Visible = True
+
+        '清空数据
+        modifyTextBox.Text = ""
     End Sub
 
     '确定修改车牌号
@@ -623,6 +628,9 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         aboutPanel.Visible = False
         backgroundPanel.Visible = False
 
+        '清空数据
+        ListView1.Items.Clear()
+
     End Sub
 
     '点击“称量信息查询界面”（选中）
@@ -636,6 +644,9 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         messPanel.Visible = False
         addPanel.Visible = False
         includingPanel.Visible = False
+
+        '清空数据
+        ListView1.Items.Clear()
 
         Dim com As MySqlCommand
         Dim i As Integer
@@ -662,6 +673,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
                         .Add(TABLE.Rows(i)("weight"))
                         .Add(TABLE.Rows(i)("kind"))
                         .Add(TABLE.Rows(i)("time"))
+                        .Add(TABLE.Rows(i)("remarks"))
                     End With
                 End With
             Next
@@ -698,6 +710,13 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         suggestPanel.Visible = False
         aboutPanel.Visible = False
         backgroundPanel.Visible = False
+
+        '清空数据
+        cmTextBox.Text = ""
+        TextBox13.Text = ""
+        TextBox14.Text = ""
+        TextBox15.Text = ""
+        TextBox17.Text = ""
 
     End Sub
 
@@ -773,6 +792,15 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         suggestPanel.Visible = False
         aboutPanel.Visible = False
         backgroundPanel.Visible = False
+
+        '清空数据
+        dmTextBox.Text = ""
+        TextBox18.Text = ""
+        TextBox19.Text = ""
+        TextBox20.Text = ""
+        TextBox21.Text = ""
+        TextBox22.Text = ""
+        TextBox23.Text = ""
 
     End Sub
 
@@ -888,6 +916,12 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         aboutPanel.Visible = False
         backgroundPanel.Visible = False
 
+        '清空数据
+        TextBox24.Text = ""
+        TextBox25.Text = ""
+        TextBox26.Text = ""
+        TextBox28.Text = ""
+
     End Sub
 
     '点击“车辆信息录入界面”（选中）
@@ -960,6 +994,14 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         suggestPanel.Visible = False
         aboutPanel.Visible = False
         backgroundPanel.Visible = False
+
+        '清空数据
+        TextBox29.Text = ""
+        TextBox30.Text = ""
+        TextBox31.Text = ""
+        TextBox32.Text = ""
+        TextBox33.Text = ""
+        TextBox34.Text = ""
 
     End Sub
 
@@ -1132,6 +1174,9 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         aboutPanel.Visible = False
         backgroundPanel.Visible = False
 
+        '清空数据
+        suggestTextBox.Text = ""
+
     End Sub
 
     '点击“意见反馈界面”（选中）
@@ -1222,6 +1267,11 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         add1.Visible = False
         including0.Visible = True
         including1.Visible = False
+
+        '二级菜单
+        messPanel.Visible = False
+        addPanel.Visible = False
+        includingPanel.Visible = False
 
         'panel容器
         adminPanel.Visible = False
