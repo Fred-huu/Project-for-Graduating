@@ -1,13 +1,17 @@
 ﻿'导入各种库
+'导入数据库方面的库
 Imports MySql.Data.MySqlClient
 
+'-------------------------------------------
+
+'导入串口连接方面的库
 Imports System
 Imports System.Threading
 Imports System.IO.Ports
 Imports System.ComponentModel
 Imports System.IO
 
-Imports System.Net.Mail
+'-------------------------------------------
 
 Public Class admin
     '定义全局变量
@@ -28,9 +32,7 @@ Public Class admin
     Dim myPort As Array
     Delegate Sub SetTextCallback(ByVal [text] As String)
 
-    Dim num As Integer = 0
-
-
+    '串口连接相关
     Sub RecieveRefreshMethod(ByVal str As String) '定义一个实例方法
         ShowRecieveData(str)
     End Sub
@@ -46,16 +48,17 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
     '窗口界面
     Private Sub admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        '时钟
         Timer1.Interval = 1000
 
+        '串口连接
         myPort = IO.Ports.SerialPort.GetPortNames()
         ComboBox1.Items.AddRange(myPort)
 
+        '设置“登录”按钮可通过回车键启动
         Me.AcceptButton = entryButton
 
-        USERTextBox.Text = ""
-        PasswordTextBox.Text = ""
-
+        '定义窗口无边框
         Me.FormBorderStyle = 0
 
         '二级菜单
@@ -89,11 +92,9 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
         downPanel.Visible = False
 
-        myPort = IO.Ports.SerialPort.GetPortNames()
-        ComboBox1.Items.AddRange(myPort)
-
     End Sub
 
+    '时钟显示
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         time.Text = Now
         logintime.Text = Now
@@ -127,6 +128,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
                     UsernameLabel.Text = dr!username & vbCrLf
                     UserLabel.Text = dr!user_id & vbCrLf
 
+                    '定义窗口有边框
                     Me.FormBorderStyle = 1
 
                 Else
@@ -149,9 +151,10 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
     '忘记密码
     Private Sub 忘记密码LinkLabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles 忘记密码LinkLabel.LinkClicked
-        MessageBox.Show("密码忘啦？！快让我们一起找回密码！")
-        MessageBox.Show("其实啦...我也不知道怎样找回密码！这个功能还没有做出来！当然我也不打算错 (￣▽￣)~*这个键其实没什么用处！（不服来打我啊！）但是，有句话我想对你说：")
-        MessageBox.Show("你密码忘了关我屁事！怪我咯！你这个笨蛋！ ╮(￣▽￣)╭")
+        MessageBox.Show("请联系管理员找回密码！")
+        'MessageBox.Show("密码忘啦？！快让我们一起找回密码！")
+        'MessageBox.Show("其实啦...我也不知道怎样找回密码！这个功能还没有做出来！当然我也不打算错 (￣▽￣)~*这个键其实没什么用处！（不服来打我啊！）但是，有句话我想对你说：")
+        'MessageBox.Show("你密码忘了关我屁事！怪我咯！你这个笨蛋！ ╮(￣▽￣)╭")
     End Sub
 
     '注册
@@ -171,6 +174,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
     Private Sub signoutLinkLabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles signoutLinkLabel.LinkClicked
         'MsgBox("常来玩啊！我会想念你的！(≧ω≦)")
 
+        '定义窗口无边框
         Me.FormBorderStyle = 0
 
         '二级菜单
@@ -178,14 +182,15 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         addPanel.Visible = False
         includingPanel.Visible = False
 
-        downPanel.Visible = False
-
         '清空登录界面数据
         USERTextBox.Text = ""
         PasswordTextBox.Text = ""
 
         loginPanel.Visible = True
         menuPanel.Visible = False
+
+        downPanel.Visible = False
+
     End Sub
 
     '-------------------------------------------
@@ -310,26 +315,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         addPanel.Visible = False
         includingPanel.Visible = False
 
-        '串口连接相关
-        SerialPort1.PortName = ComboBox1.Text
-        SerialPort1.BaudRate = ComboBox2.Text
-        SerialPort1.Open()
-
-        Dim rcv As Byte() = New Byte(2) {}
-
-        For i As Integer = 0 To 2
-            rcv(i) = SerialPort1.ReadExisting
-        Next
-        TextBox7.Text = rcv(0)
-        TextBox9.Text = rcv(1)
-        TextBox11.Text = rcv(2)
-
-        '数据库相关
-        Dim com As MySqlCommand
-        Dim dr As MySqlDataReader
-
-        updateButton.Enabled = True
-
         '清空数据
         If TextBox1.Text <> "" And TextBox2.Text <> "" And TextBox3.Text <> "" And TextBox4.Text <> "" And TextBox5.Text <> "" And TextBox6.Text <> "" And TextBox8.Text <> "" And TextBox10.Text <> "" And TextBox12.Text <> "" Then
             TextBox1.Text = ""
@@ -347,6 +332,24 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             kindTextBox.Text = ""
             adminremarkTextBox.Text = ""
         End If
+
+        '串口连接相关
+        SerialPort1.PortName = ComboBox1.Text
+        SerialPort1.BaudRate = ComboBox2.Text
+        SerialPort1.Open()
+
+        Dim rcv As Byte() = New Byte(2) {}
+
+        For i As Integer = 0 To 2
+            rcv(i) = SerialPort1.ReadExisting
+        Next
+        TextBox7.Text = rcv(0)
+        TextBox9.Text = rcv(1)
+        TextBox11.Text = rcv(2)
+
+        '数据库相关
+        Dim com As MySqlCommand
+        Dim dr As MySqlDataReader
 
         '数据库连接与操作
         Try
@@ -382,6 +385,9 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             TextBox12.Text = ""
         End If
 
+        '启动上传按钮
+        updateButton.Enabled = True
+
     End Sub
 
     Private Sub SerialPort1_DataReceived(sender As System.Object, e As System.IO.Ports.SerialDataReceivedEventArgs) Handles SerialPort1.DataReceived
@@ -393,7 +399,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             Dim x As New SetTextCallback(AddressOf ReceivedText)
             Me.Invoke(x, New Object() {(text)})
         Else
-            Me.TextBox7.Text &= [text] 'append text
+            Me.TextBox7.Text &= [text] '录入数据
 
             'Dim rcv As Byte() = New Byte(2) {}
 
@@ -408,8 +414,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
     '上传按钮
     Private Sub updateButton_Click(sender As Object, e As EventArgs) Handles updateButton.Click
-        num = num + 1
-
         '二级菜单
         messPanel.Visible = False
         addPanel.Visible = False
@@ -429,7 +433,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
                 conn.Open()
                 com = New MySqlCommand("INSERT INTO manage (carnum,weight,time,user_id,manage_id,kind,remarks) VALUES ('" & TextBox7.Text & "','" & TextBox12.Text & "','" & TextBox9.Text & "','" & USERTextBox.Text & "','num','" & kindTextBox.Text & "','" & adminremarkTextBox.Text & "')", conn)
                 dr = com.ExecuteReader
-
                 conn.Close()
             Catch myerror As MySqlException
                 MsgBox("Error connecting to the server:" & myerror.Message)
@@ -448,6 +451,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         addPanel.Visible = False
         includingPanel.Visible = False
 
+        '清除数据
         TextBox1.Text = ""
         TextBox2.Text = ""
         TextBox3.Text = ""
@@ -546,8 +550,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             '隐藏修改界面
             modifyPanel.Visible = False
 
-            '当输入数据为空时
         Else
+            '当输入数据为空时
             'MessageBox.Show("什么都没输入，快输入数据!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
             MessageBox.Show("输入数据为空!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
@@ -648,6 +652,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '清空数据
         ListView1.Items.Clear()
 
+        '数据库操作
         Dim com As MySqlCommand
         Dim i As Integer
         Dim TABLE As New DataTable
@@ -732,6 +737,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         addPanel.Visible = False
         includingPanel.Visible = False
 
+        '清除数据
         If cmTextBox.Text <> "" Then
             TextBox13.Text = ""
             TextBox14.Text = ""
@@ -739,10 +745,10 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             TextBox17.Text = ""
         End If
 
+        '数据库连接与操作
         Dim com As MySqlCommand
         Dim dr As MySqlDataReader
 
-        '数据库连接与操作
         Try
             conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
             'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
@@ -816,6 +822,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         addPanel.Visible = False
         includingPanel.Visible = False
 
+        '清除数据
         If dmTextBox.Text <> "" Then
             TextBox18.Text = ""
             TextBox19.Text = ""
@@ -825,10 +832,10 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             TextBox23.Text = ""
         End If
 
+        '数据库连接与操作
         Dim com As MySqlCommand
         Dim dr As MySqlDataReader
 
-        '数据库连接与操作
         Try
             conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
             'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
@@ -936,10 +943,10 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         addPanel.Visible = False
         includingPanel.Visible = False
 
+        '数据库连接与操作
         Dim com As MySqlCommand
         Dim dr As MySqlDataReader
 
-        '数据库连接与操作
         Try
             conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
             'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
@@ -1023,10 +1030,10 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         'Dim arrImage() As Byte = mstream.GetBuffer()
         'mstream.Close()
 
+        '数据库连接与操作
         Dim com As MySqlCommand
         Dim dr As MySqlDataReader
 
-        '数据库连接与操作
         Try
             conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
             'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
@@ -1186,17 +1193,17 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
     '发送邮件
     Private Sub suggestButton_Click(sender As Object, e As EventArgs) Handles suggestButton.Click
-        '创建发件连接,根据你的发送邮箱的SMTP设置填充
+        '创建发件连接,邮箱的SMTP设置填充
         Dim smtp As New System.Net.Mail.SmtpClient("smtp.163.com", 25)
-        '发件邮箱身份验证,参数分别为 发件邮箱登录名和密码
+        '发件邮箱身份验证,发件邮箱登录名和密码
         smtp.Credentials = New System.Net.NetworkCredential("huu_007@163.com", "huan19931224")
         '创建邮件
         Dim mail As New System.Net.Mail.MailMessage()
-        '邮件主题
+        '主题
         mail.Subject = "意见反馈"
         '主题编码
         mail.SubjectEncoding = System.Text.Encoding.GetEncoding("GB2312")
-        '邮件正文件编码
+        '正文件编码
         mail.BodyEncoding = System.Text.Encoding.GetEncoding("GB2312")
         '发件人邮箱
         mail.From = New System.Net.Mail.MailAddress("huu_007@163.com")

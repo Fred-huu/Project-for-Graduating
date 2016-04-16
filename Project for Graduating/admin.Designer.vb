@@ -110,6 +110,7 @@ Partial Class admin
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.signoutLinkLabel = New System.Windows.Forms.LinkLabel()
         Me.cmPanel = New System.Windows.Forms.Panel()
@@ -226,9 +227,8 @@ Partial Class admin
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.OpenDlg = New System.Windows.Forms.OpenFileDialog()
         Me.backgroundPanel = New System.Windows.Forms.Panel()
-        Me.dielingWebBrowser = New System.Windows.Forms.WebBrowser()
         Me.htPictureBox = New System.Windows.Forms.PictureBox()
-        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.dielingWebBrowser = New System.Windows.Forms.WebBrowser()
         Me.aboutPanel.SuspendLayout()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.开发人员PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -306,7 +306,7 @@ Partial Class admin
         Me.版本信息Label.Name = "版本信息Label"
         Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.8.160415.6"
+        Me.版本信息Label.Text = "2.8.160416.1"
         '
         '人员姓名Label
         '
@@ -394,9 +394,9 @@ Partial Class admin
         Me.UserLabel.AutoSize = True
         Me.UserLabel.Location = New System.Drawing.Point(88, 598)
         Me.UserLabel.Name = "UserLabel"
-        Me.UserLabel.Size = New System.Drawing.Size(62, 18)
+        Me.UserLabel.Size = New System.Drawing.Size(44, 18)
         Me.UserLabel.TabIndex = 67
-        Me.UserLabel.Text = "用户名"
+        Me.UserLabel.Text = "账户"
         '
         'Label2
         '
@@ -1147,6 +1147,10 @@ Partial Class admin
         '
         Me.ColumnHeader6.Text = "称量时间"
         Me.ColumnHeader6.Width = 120
+        '
+        'ColumnHeader7
+        '
+        Me.ColumnHeader7.Text = "备注"
         '
         'PictureBox3
         '
@@ -2342,15 +2346,6 @@ Partial Class admin
         Me.backgroundPanel.TabIndex = 136
         Me.backgroundPanel.Visible = False
         '
-        'dielingWebBrowser
-        '
-        Me.dielingWebBrowser.Location = New System.Drawing.Point(0, 60)
-        Me.dielingWebBrowser.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.dielingWebBrowser.Name = "dielingWebBrowser"
-        Me.dielingWebBrowser.Size = New System.Drawing.Size(1060, 568)
-        Me.dielingWebBrowser.TabIndex = 106
-        Me.dielingWebBrowser.Url = New System.Uri("http://vps.dieling.cc/qch/", System.UriKind.Absolute)
-        '
         'htPictureBox
         '
         Me.htPictureBox.BackColor = System.Drawing.SystemColors.HotTrack
@@ -2363,9 +2358,14 @@ Partial Class admin
         Me.htPictureBox.TabIndex = 105
         Me.htPictureBox.TabStop = False
         '
-        'ColumnHeader7
+        'dielingWebBrowser
         '
-        Me.ColumnHeader7.Text = "备注"
+        Me.dielingWebBrowser.Location = New System.Drawing.Point(0, 60)
+        Me.dielingWebBrowser.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.dielingWebBrowser.Name = "dielingWebBrowser"
+        Me.dielingWebBrowser.Size = New System.Drawing.Size(1060, 568)
+        Me.dielingWebBrowser.TabIndex = 106
+        Me.dielingWebBrowser.Url = New System.Uri("http://vps.dieling.cc/qch/", System.UriKind.Absolute)
         '
         'admin
         '
