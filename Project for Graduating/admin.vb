@@ -96,9 +96,11 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
     '时钟显示
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        time.Text = Now
-        logintime.Text = Now
-        logtime.Text = Now
+        Dim datestr As String = ""
+        datestr = Format(Now(), "yyyy-mm-dd HH:dd:ss")
+        time.Text = datestr
+        logintime.Text = datestr
+        logtime.Text = datestr
     End Sub
 
     '-------------------------------------------
@@ -338,16 +340,18 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         SerialPort1.BaudRate = ComboBox2.Text
         SerialPort1.Open()
 
-        'Dim rcv As Byte() = New Byte(2) {}
+        'Dim rcv As Byte() = New Byte(1) {}
 
-        'TextBox9.Text = SerialPort1.ReadExisting
-
-        'For i As Integer = 0 To 2
+        'For i As Integer = 0 To 1
         '   rcv(i) = SerialPort1.ReadExisting
         'Next
         'TextBox7.Text = rcv(0)
-        'TextBox9.Text = rcv(1)
-        ' TextBox11.Text = rcv(2)
+        'TextBox11.Text = rcv(1)
+
+        '称量时间显示
+        Dim datestr As String = ""
+        datestr = Format(Now(), "yyyy-mm-dd HH:dd:ss")
+        TextBox9.Text = datestr
 
         '数据库相关
         Dim com As MySqlCommand

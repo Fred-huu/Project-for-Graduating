@@ -306,7 +306,7 @@ Partial Class admin
         Me.版本信息Label.Name = "版本信息Label"
         Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.8.160417.2"
+        Me.版本信息Label.Text = "2.8.160417.5"
         '
         '人员姓名Label
         '
@@ -637,7 +637,7 @@ Partial Class admin
         '
         Me.adminremarkTextBox.Location = New System.Drawing.Point(605, 540)
         Me.adminremarkTextBox.Name = "adminremarkTextBox"
-        Me.adminremarkTextBox.Size = New System.Drawing.Size(107, 28)
+        Me.adminremarkTextBox.Size = New System.Drawing.Size(150, 28)
         Me.adminremarkTextBox.TabIndex = 111
         '
         'Label67
@@ -653,7 +653,7 @@ Partial Class admin
         '
         Me.kindTextBox.Location = New System.Drawing.Point(605, 400)
         Me.kindTextBox.Name = "kindTextBox"
-        Me.kindTextBox.Size = New System.Drawing.Size(89, 28)
+        Me.kindTextBox.Size = New System.Drawing.Size(150, 28)
         Me.kindTextBox.TabIndex = 109
         '
         '修改LinkLabel
@@ -850,7 +850,7 @@ Partial Class admin
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(695, 440)
+        Me.Label20.Location = New System.Drawing.Point(755, 440)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(26, 18)
         Me.Label20.TabIndex = 97
@@ -868,7 +868,7 @@ Partial Class admin
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(695, 475)
+        Me.Label4.Location = New System.Drawing.Point(755, 475)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(26, 18)
         Me.Label4.TabIndex = 96
@@ -886,7 +886,7 @@ Partial Class admin
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(695, 510)
+        Me.Label3.Location = New System.Drawing.Point(755, 510)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(26, 18)
         Me.Label3.TabIndex = 95
@@ -925,7 +925,7 @@ Partial Class admin
         Me.TextBox12.ImeMode = System.Windows.Forms.ImeMode.Disable
         Me.TextBox12.Location = New System.Drawing.Point(605, 505)
         Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(89, 28)
+        Me.TextBox12.Size = New System.Drawing.Size(150, 28)
         Me.TextBox12.TabIndex = 93
         '
         'Label8
@@ -962,7 +962,7 @@ Partial Class admin
         Me.TextBox11.ImeMode = System.Windows.Forms.ImeMode.Disable
         Me.TextBox11.Location = New System.Drawing.Point(605, 470)
         Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.Size = New System.Drawing.Size(89, 28)
+        Me.TextBox11.Size = New System.Drawing.Size(150, 28)
         Me.TextBox11.TabIndex = 91
         '
         'Label10
@@ -997,7 +997,7 @@ Partial Class admin
         Me.TextBox10.Enabled = False
         Me.TextBox10.Location = New System.Drawing.Point(605, 435)
         Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(89, 28)
+        Me.TextBox10.Size = New System.Drawing.Size(150, 28)
         Me.TextBox10.TabIndex = 89
         '
         'TextBox8
@@ -1005,7 +1005,7 @@ Partial Class admin
         Me.TextBox8.Enabled = False
         Me.TextBox8.Location = New System.Drawing.Point(605, 330)
         Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(89, 28)
+        Me.TextBox8.Size = New System.Drawing.Size(150, 28)
         Me.TextBox8.TabIndex = 82
         '
         'TextBox6
@@ -1021,7 +1021,7 @@ Partial Class admin
         Me.TextBox7.Enabled = False
         Me.TextBox7.Location = New System.Drawing.Point(605, 295)
         Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(89, 28)
+        Me.TextBox7.Size = New System.Drawing.Size(150, 28)
         Me.TextBox7.TabIndex = 83
         '
         'TextBox5
@@ -1037,7 +1037,7 @@ Partial Class admin
         Me.TextBox9.Enabled = False
         Me.TextBox9.Location = New System.Drawing.Point(605, 365)
         Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(89, 28)
+        Me.TextBox9.Size = New System.Drawing.Size(150, 28)
         Me.TextBox9.TabIndex = 84
         '
         'TextBox4
