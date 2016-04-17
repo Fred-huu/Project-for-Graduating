@@ -338,14 +338,16 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         SerialPort1.BaudRate = ComboBox2.Text
         SerialPort1.Open()
 
-        Dim rcv As Byte() = New Byte(2) {}
+        'Dim rcv As Byte() = New Byte(2) {}
 
-        For i As Integer = 0 To 2
-            rcv(i) = SerialPort1.ReadExisting
-        Next
-        TextBox7.Text = rcv(0)
-        TextBox9.Text = rcv(1)
-        TextBox11.Text = rcv(2)
+        'TextBox9.Text = SerialPort1.ReadExisting
+
+        'For i As Integer = 0 To 2
+        '   rcv(i) = SerialPort1.ReadExisting
+        'Next
+        'TextBox7.Text = rcv(0)
+        'TextBox9.Text = rcv(1)
+        ' TextBox11.Text = rcv(2)
 
         '数据库相关
         Dim com As MySqlCommand
@@ -395,11 +397,11 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
     End Sub
 
     Private Sub ReceivedText(ByVal [text] As String) 'input from ReadExisting
-        If Me.TextBox7.InvokeRequired Then
+        If Me.TextBox11.InvokeRequired Then
             Dim x As New SetTextCallback(AddressOf ReceivedText)
             Me.Invoke(x, New Object() {(text)})
         Else
-            Me.TextBox7.Text &= [text] '录入数据
+            Me.TextBox11.Text &= [text] '录入数据
 
             'Dim rcv As Byte() = New Byte(2) {}
 
@@ -440,6 +442,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             End Try
         End If
 
+        '关闭串口
         SerialPort1.Close()
 
     End Sub
