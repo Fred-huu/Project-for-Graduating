@@ -96,8 +96,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
     '时钟显示
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        Dim datestr As String = ""
-        datestr = Format(Now(), "yyyy-mm-dd HH:dd:ss")
+        Dim datestr As String
+        datestr = Format(Now(), "yyyy-MM-dd HH:mm:ss")
         time.Text = datestr
         logintime.Text = datestr
         logtime.Text = datestr
