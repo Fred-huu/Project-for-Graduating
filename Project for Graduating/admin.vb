@@ -188,7 +188,20 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         USERTextBox.Text = ""
         PasswordTextBox.Text = ""
 
+        'panel容器
         loginPanel.Visible = True
+        newuserPanel.Visible = False
+        adminPanel.Visible = False
+        wPanel.Visible = False
+        cmPanel.Visible = False
+        dmPanel.Visible = False
+        caddPanel.Visible = False
+        daddPanel.Visible = False
+        helpPanel.Visible = False
+        suggestPanel.Visible = False
+        aboutPanel.Visible = False
+        backgroundPanel.Visible = False
+
         menuPanel.Visible = False
 
         downPanel.Visible = False

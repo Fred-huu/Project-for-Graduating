@@ -306,7 +306,7 @@ Partial Class admin
         Me.版本信息Label.Name = "版本信息Label"
         Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.9.160424.1"
+        Me.版本信息Label.Text = "2.9.160426.2"
         '
         '人员姓名Label
         '
@@ -551,14 +551,14 @@ Partial Class admin
         Me.suggestTextBox.Multiline = True
         Me.suggestTextBox.Name = "suggestTextBox"
         Me.suggestTextBox.Size = New System.Drawing.Size(500, 200)
-        Me.suggestTextBox.TabIndex = 108
+        Me.suggestTextBox.TabIndex = 101
         '
         'suggestButton
         '
         Me.suggestButton.Location = New System.Drawing.Point(483, 428)
         Me.suggestButton.Name = "suggestButton"
         Me.suggestButton.Size = New System.Drawing.Size(94, 33)
-        Me.suggestButton.TabIndex = 106
+        Me.suggestButton.TabIndex = 102
         Me.suggestButton.Text = "发送"
         Me.suggestButton.UseVisualStyleBackColor = True
         '
@@ -638,7 +638,7 @@ Partial Class admin
         Me.adminremarkTextBox.Location = New System.Drawing.Point(605, 540)
         Me.adminremarkTextBox.Name = "adminremarkTextBox"
         Me.adminremarkTextBox.Size = New System.Drawing.Size(150, 28)
-        Me.adminremarkTextBox.TabIndex = 111
+        Me.adminremarkTextBox.TabIndex = 36
         '
         'Label67
         '
@@ -654,7 +654,7 @@ Partial Class admin
         Me.kindTextBox.Location = New System.Drawing.Point(605, 400)
         Me.kindTextBox.Name = "kindTextBox"
         Me.kindTextBox.Size = New System.Drawing.Size(150, 28)
-        Me.kindTextBox.TabIndex = 109
+        Me.kindTextBox.TabIndex = 32
         '
         '修改LinkLabel
         '
@@ -662,7 +662,7 @@ Partial Class admin
         Me.修改LinkLabel.Location = New System.Drawing.Point(276, 512)
         Me.修改LinkLabel.Name = "修改LinkLabel"
         Me.修改LinkLabel.Size = New System.Drawing.Size(44, 18)
-        Me.修改LinkLabel.TabIndex = 108
+        Me.修改LinkLabel.TabIndex = 37
         Me.修改LinkLabel.TabStop = True
         Me.修改LinkLabel.Text = "修改"
         '
@@ -690,7 +690,7 @@ Partial Class admin
         Me.Cancel.Location = New System.Drawing.Point(58, 150)
         Me.Cancel.Name = "Cancel"
         Me.Cancel.Size = New System.Drawing.Size(88, 31)
-        Me.Cancel.TabIndex = 10
+        Me.Cancel.TabIndex = 43
         Me.Cancel.Text = "取消"
         Me.Cancel.UseVisualStyleBackColor = False
         '
@@ -700,7 +700,7 @@ Partial Class admin
         Me.OK.Location = New System.Drawing.Point(58, 111)
         Me.OK.Name = "OK"
         Me.OK.Size = New System.Drawing.Size(90, 33)
-        Me.OK.TabIndex = 9
+        Me.OK.TabIndex = 42
         Me.OK.Text = "确定"
         Me.OK.UseVisualStyleBackColor = False
         '
@@ -709,7 +709,7 @@ Partial Class admin
         Me.modifyTextBox.Location = New System.Drawing.Point(71, 68)
         Me.modifyTextBox.Name = "modifyTextBox"
         Me.modifyTextBox.Size = New System.Drawing.Size(112, 28)
-        Me.modifyTextBox.TabIndex = 8
+        Me.modifyTextBox.TabIndex = 41
         '
         'Label52
         '
@@ -726,7 +726,7 @@ Partial Class admin
         Me.复位LinkLabel.Location = New System.Drawing.Point(336, 512)
         Me.复位LinkLabel.Name = "复位LinkLabel"
         Me.复位LinkLabel.Size = New System.Drawing.Size(44, 18)
-        Me.复位LinkLabel.TabIndex = 106
+        Me.复位LinkLabel.TabIndex = 38
         Me.复位LinkLabel.TabStop = True
         Me.复位LinkLabel.Text = "复位"
         '
@@ -780,7 +780,7 @@ Partial Class admin
         Me.ComboBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(180, 26)
-        Me.ComboBox2.TabIndex = 101
+        Me.ComboBox2.TabIndex = 22
         '
         'openButton
         '
@@ -799,7 +799,7 @@ Partial Class admin
         Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(180, 26)
-        Me.ComboBox1.TabIndex = 100
+        Me.ComboBox1.TabIndex = 21
         '
         'updateButton
         '
@@ -809,7 +809,7 @@ Partial Class admin
         Me.updateButton.Location = New System.Drawing.Point(401, 510)
         Me.updateButton.Name = "updateButton"
         Me.updateButton.Size = New System.Drawing.Size(94, 33)
-        Me.updateButton.TabIndex = 70
+        Me.updateButton.TabIndex = 39
         Me.updateButton.Text = "上传(&U)"
         Me.updateButton.UseVisualStyleBackColor = True
         '
@@ -819,7 +819,7 @@ Partial Class admin
         Me.TextBox2.Location = New System.Drawing.Point(345, 330)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(150, 28)
-        Me.TextBox2.TabIndex = 99
+        Me.TextBox2.TabIndex = 24
         '
         'Label15
         '
@@ -836,7 +836,7 @@ Partial Class admin
         Me.TextBox1.Location = New System.Drawing.Point(345, 295)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(150, 28)
-        Me.TextBox1.TabIndex = 98
+        Me.TextBox1.TabIndex = 23
         '
         'Label14
         '
@@ -926,7 +926,7 @@ Partial Class admin
         Me.TextBox12.Location = New System.Drawing.Point(605, 505)
         Me.TextBox12.Name = "TextBox12"
         Me.TextBox12.Size = New System.Drawing.Size(150, 28)
-        Me.TextBox12.TabIndex = 93
+        Me.TextBox12.TabIndex = 35
         '
         'Label8
         '
@@ -963,7 +963,7 @@ Partial Class admin
         Me.TextBox11.Location = New System.Drawing.Point(605, 470)
         Me.TextBox11.Name = "TextBox11"
         Me.TextBox11.Size = New System.Drawing.Size(150, 28)
-        Me.TextBox11.TabIndex = 91
+        Me.TextBox11.TabIndex = 34
         '
         'Label10
         '
@@ -998,7 +998,7 @@ Partial Class admin
         Me.TextBox10.Location = New System.Drawing.Point(605, 435)
         Me.TextBox10.Name = "TextBox10"
         Me.TextBox10.Size = New System.Drawing.Size(150, 28)
-        Me.TextBox10.TabIndex = 89
+        Me.TextBox10.TabIndex = 33
         '
         'TextBox8
         '
@@ -1006,7 +1006,7 @@ Partial Class admin
         Me.TextBox8.Location = New System.Drawing.Point(605, 330)
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.Size = New System.Drawing.Size(150, 28)
-        Me.TextBox8.TabIndex = 82
+        Me.TextBox8.TabIndex = 30
         '
         'TextBox6
         '
@@ -1014,7 +1014,7 @@ Partial Class admin
         Me.TextBox6.Location = New System.Drawing.Point(345, 470)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(150, 28)
-        Me.TextBox6.TabIndex = 88
+        Me.TextBox6.TabIndex = 28
         '
         'TextBox7
         '
@@ -1022,7 +1022,7 @@ Partial Class admin
         Me.TextBox7.Location = New System.Drawing.Point(605, 295)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(150, 28)
-        Me.TextBox7.TabIndex = 83
+        Me.TextBox7.TabIndex = 29
         '
         'TextBox5
         '
@@ -1030,7 +1030,7 @@ Partial Class admin
         Me.TextBox5.Location = New System.Drawing.Point(345, 435)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(150, 28)
-        Me.TextBox5.TabIndex = 87
+        Me.TextBox5.TabIndex = 27
         '
         'TextBox9
         '
@@ -1038,7 +1038,7 @@ Partial Class admin
         Me.TextBox9.Location = New System.Drawing.Point(605, 365)
         Me.TextBox9.Name = "TextBox9"
         Me.TextBox9.Size = New System.Drawing.Size(150, 28)
-        Me.TextBox9.TabIndex = 84
+        Me.TextBox9.TabIndex = 31
         '
         'TextBox4
         '
@@ -1046,7 +1046,7 @@ Partial Class admin
         Me.TextBox4.Location = New System.Drawing.Point(345, 400)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(150, 28)
-        Me.TextBox4.TabIndex = 86
+        Me.TextBox4.TabIndex = 26
         '
         'TextBox3
         '
@@ -1054,7 +1054,7 @@ Partial Class admin
         Me.TextBox3.Location = New System.Drawing.Point(345, 365)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(150, 28)
-        Me.TextBox3.TabIndex = 85
+        Me.TextBox3.TabIndex = 25
         '
         'helpPanel
         '
@@ -1102,7 +1102,7 @@ Partial Class admin
         Me.selectButton.Location = New System.Drawing.Point(483, 512)
         Me.selectButton.Name = "selectButton"
         Me.selectButton.Size = New System.Drawing.Size(94, 33)
-        Me.selectButton.TabIndex = 107
+        Me.selectButton.TabIndex = 51
         Me.selectButton.Text = "查询"
         Me.selectButton.UseVisualStyleBackColor = True
         '
@@ -1201,7 +1201,7 @@ Partial Class admin
         Me.cmTextBox.Multiline = True
         Me.cmTextBox.Name = "cmTextBox"
         Me.cmTextBox.Size = New System.Drawing.Size(170, 28)
-        Me.cmTextBox.TabIndex = 133
+        Me.cmTextBox.TabIndex = 61
         '
         'Label12
         '
@@ -1219,7 +1219,7 @@ Partial Class admin
         Me.carselectButton.Location = New System.Drawing.Point(508, 218)
         Me.carselectButton.Name = "carselectButton"
         Me.carselectButton.Size = New System.Drawing.Size(94, 33)
-        Me.carselectButton.TabIndex = 146
+        Me.carselectButton.TabIndex = 62
         Me.carselectButton.Text = "确定"
         Me.carselectButton.UseVisualStyleBackColor = True
         '
@@ -1355,7 +1355,7 @@ Partial Class admin
         Me.dmTextBox.Multiline = True
         Me.dmTextBox.Name = "dmTextBox"
         Me.dmTextBox.Size = New System.Drawing.Size(187, 28)
-        Me.dmTextBox.TabIndex = 130
+        Me.dmTextBox.TabIndex = 71
         '
         'Label29
         '
@@ -1373,7 +1373,7 @@ Partial Class admin
         Me.driverselectButton.Location = New System.Drawing.Point(498, 193)
         Me.driverselectButton.Name = "driverselectButton"
         Me.driverselectButton.Size = New System.Drawing.Size(94, 33)
-        Me.driverselectButton.TabIndex = 142
+        Me.driverselectButton.TabIndex = 72
         Me.driverselectButton.Text = "确定"
         Me.driverselectButton.UseVisualStyleBackColor = True
         '
@@ -1509,7 +1509,7 @@ Partial Class admin
         Me.clearLinkLabel.Location = New System.Drawing.Point(499, 295)
         Me.clearLinkLabel.Name = "clearLinkLabel"
         Me.clearLinkLabel.Size = New System.Drawing.Size(80, 18)
-        Me.clearLinkLabel.TabIndex = 114
+        Me.clearLinkLabel.TabIndex = 85
         Me.clearLinkLabel.TabStop = True
         Me.clearLinkLabel.Text = "清除数据"
         '
@@ -1519,7 +1519,7 @@ Partial Class admin
         Me.carupdateButton.Location = New System.Drawing.Point(498, 381)
         Me.carupdateButton.Name = "carupdateButton"
         Me.carupdateButton.Size = New System.Drawing.Size(94, 33)
-        Me.carupdateButton.TabIndex = 115
+        Me.carupdateButton.TabIndex = 86
         Me.carupdateButton.Text = "上传"
         Me.carupdateButton.UseVisualStyleBackColor = True
         '
@@ -1528,7 +1528,7 @@ Partial Class admin
         Me.TextBox28.Location = New System.Drawing.Point(499, 260)
         Me.TextBox28.Name = "TextBox28"
         Me.TextBox28.Size = New System.Drawing.Size(170, 28)
-        Me.TextBox28.TabIndex = 113
+        Me.TextBox28.TabIndex = 84
         '
         'Label39
         '
@@ -1555,21 +1555,21 @@ Partial Class admin
         Me.TextBox26.Location = New System.Drawing.Point(499, 225)
         Me.TextBox26.Name = "TextBox26"
         Me.TextBox26.Size = New System.Drawing.Size(170, 28)
-        Me.TextBox26.TabIndex = 111
+        Me.TextBox26.TabIndex = 83
         '
         'TextBox24
         '
         Me.TextBox24.Location = New System.Drawing.Point(499, 155)
         Me.TextBox24.Name = "TextBox24"
         Me.TextBox24.Size = New System.Drawing.Size(170, 28)
-        Me.TextBox24.TabIndex = 109
+        Me.TextBox24.TabIndex = 81
         '
         'TextBox25
         '
         Me.TextBox25.Location = New System.Drawing.Point(499, 190)
         Me.TextBox25.Name = "TextBox25"
         Me.TextBox25.Size = New System.Drawing.Size(170, 28)
-        Me.TextBox25.TabIndex = 110
+        Me.TextBox25.TabIndex = 82
         '
         'Label41
         '
@@ -1653,7 +1653,7 @@ Partial Class admin
         Me.TextBox16.Location = New System.Drawing.Point(474, 292)
         Me.TextBox16.Name = "TextBox16"
         Me.TextBox16.Size = New System.Drawing.Size(170, 28)
-        Me.TextBox16.TabIndex = 122
+        Me.TextBox16.TabIndex = 95
         '
         'Label26
         '
@@ -1670,7 +1670,7 @@ Partial Class admin
         Me.clearLinkLabel2.Location = New System.Drawing.Point(471, 402)
         Me.clearLinkLabel2.Name = "clearLinkLabel2"
         Me.clearLinkLabel2.Size = New System.Drawing.Size(80, 18)
-        Me.clearLinkLabel2.TabIndex = 121
+        Me.clearLinkLabel2.TabIndex = 98
         Me.clearLinkLabel2.TabStop = True
         Me.clearLinkLabel2.Text = "清除数据"
         '
@@ -1680,7 +1680,7 @@ Partial Class admin
         Me.driverupdateButton.Location = New System.Drawing.Point(460, 428)
         Me.driverupdateButton.Name = "driverupdateButton"
         Me.driverupdateButton.Size = New System.Drawing.Size(94, 33)
-        Me.driverupdateButton.TabIndex = 112
+        Me.driverupdateButton.TabIndex = 99
         Me.driverupdateButton.Text = "上传"
         Me.driverupdateButton.UseVisualStyleBackColor = True
         '
@@ -1689,35 +1689,35 @@ Partial Class admin
         Me.TextBox34.Location = New System.Drawing.Point(474, 362)
         Me.TextBox34.Name = "TextBox34"
         Me.TextBox34.Size = New System.Drawing.Size(170, 28)
-        Me.TextBox34.TabIndex = 111
+        Me.TextBox34.TabIndex = 97
         '
         'TextBox33
         '
         Me.TextBox33.Location = New System.Drawing.Point(474, 327)
         Me.TextBox33.Name = "TextBox33"
         Me.TextBox33.Size = New System.Drawing.Size(170, 28)
-        Me.TextBox33.TabIndex = 110
+        Me.TextBox33.TabIndex = 96
         '
         'TextBox32
         '
         Me.TextBox32.Location = New System.Drawing.Point(474, 257)
         Me.TextBox32.Name = "TextBox32"
         Me.TextBox32.Size = New System.Drawing.Size(170, 28)
-        Me.TextBox32.TabIndex = 109
+        Me.TextBox32.TabIndex = 94
         '
         'TextBox31
         '
         Me.TextBox31.Location = New System.Drawing.Point(474, 222)
         Me.TextBox31.Name = "TextBox31"
         Me.TextBox31.Size = New System.Drawing.Size(170, 28)
-        Me.TextBox31.TabIndex = 108
+        Me.TextBox31.TabIndex = 93
         '
         'TextBox30
         '
         Me.TextBox30.Location = New System.Drawing.Point(474, 187)
         Me.TextBox30.Name = "TextBox30"
         Me.TextBox30.Size = New System.Drawing.Size(170, 28)
-        Me.TextBox30.TabIndex = 107
+        Me.TextBox30.TabIndex = 92
         '
         'TextBox29
         '
@@ -1726,7 +1726,7 @@ Partial Class admin
         Me.TextBox29.Multiline = True
         Me.TextBox29.Name = "TextBox29"
         Me.TextBox29.Size = New System.Drawing.Size(170, 28)
-        Me.TextBox29.TabIndex = 106
+        Me.TextBox29.TabIndex = 91
         '
         'Label45
         '
@@ -1967,7 +1967,7 @@ Partial Class admin
         Me.newcancelButton.Location = New System.Drawing.Point(658, 485)
         Me.newcancelButton.Name = "newcancelButton"
         Me.newcancelButton.Size = New System.Drawing.Size(94, 33)
-        Me.newcancelButton.TabIndex = 121
+        Me.newcancelButton.TabIndex = 16
         Me.newcancelButton.Text = "取消"
         Me.newcancelButton.UseVisualStyleBackColor = True
         '
@@ -1977,7 +1977,7 @@ Partial Class admin
         Me.newokButton.Location = New System.Drawing.Point(480, 485)
         Me.newokButton.Name = "newokButton"
         Me.newokButton.Size = New System.Drawing.Size(94, 33)
-        Me.newokButton.TabIndex = 120
+        Me.newokButton.TabIndex = 15
         Me.newokButton.Text = "确定"
         Me.newokButton.UseVisualStyleBackColor = True
         '
@@ -1987,21 +1987,21 @@ Partial Class admin
         Me.newpasswTextBox.Name = "newpasswTextBox"
         Me.newpasswTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.newpasswTextBox.Size = New System.Drawing.Size(150, 28)
-        Me.newpasswTextBox.TabIndex = 116
+        Me.newpasswTextBox.TabIndex = 12
         '
         'newuserTextBox
         '
         Me.newuserTextBox.Location = New System.Drawing.Point(602, 275)
         Me.newuserTextBox.Name = "newuserTextBox"
         Me.newuserTextBox.Size = New System.Drawing.Size(150, 28)
-        Me.newuserTextBox.TabIndex = 115
+        Me.newuserTextBox.TabIndex = 11
         '
         'newnameTextBox
         '
         Me.newnameTextBox.Location = New System.Drawing.Point(602, 380)
         Me.newnameTextBox.Name = "newnameTextBox"
         Me.newnameTextBox.Size = New System.Drawing.Size(150, 28)
-        Me.newnameTextBox.TabIndex = 118
+        Me.newnameTextBox.TabIndex = 14
         '
         'newapasswTextBox
         '
@@ -2009,7 +2009,7 @@ Partial Class admin
         Me.newapasswTextBox.Name = "newapasswTextBox"
         Me.newapasswTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.newapasswTextBox.Size = New System.Drawing.Size(150, 28)
-        Me.newapasswTextBox.TabIndex = 117
+        Me.newapasswTextBox.TabIndex = 13
         '
         'Label63
         '
