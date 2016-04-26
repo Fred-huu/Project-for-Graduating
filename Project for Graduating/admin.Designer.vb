@@ -306,7 +306,7 @@ Partial Class admin
         Me.版本信息Label.Name = "版本信息Label"
         Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.9.160426.2"
+        Me.版本信息Label.Text = "2.9.160426.3"
         '
         '人员姓名Label
         '
@@ -638,7 +638,7 @@ Partial Class admin
         Me.adminremarkTextBox.Location = New System.Drawing.Point(605, 540)
         Me.adminremarkTextBox.Name = "adminremarkTextBox"
         Me.adminremarkTextBox.Size = New System.Drawing.Size(150, 28)
-        Me.adminremarkTextBox.TabIndex = 36
+        Me.adminremarkTextBox.TabIndex = 37
         '
         'Label67
         '
@@ -654,7 +654,7 @@ Partial Class admin
         Me.kindTextBox.Location = New System.Drawing.Point(605, 400)
         Me.kindTextBox.Name = "kindTextBox"
         Me.kindTextBox.Size = New System.Drawing.Size(150, 28)
-        Me.kindTextBox.TabIndex = 32
+        Me.kindTextBox.TabIndex = 33
         '
         '修改LinkLabel
         '
@@ -662,7 +662,7 @@ Partial Class admin
         Me.修改LinkLabel.Location = New System.Drawing.Point(276, 512)
         Me.修改LinkLabel.Name = "修改LinkLabel"
         Me.修改LinkLabel.Size = New System.Drawing.Size(44, 18)
-        Me.修改LinkLabel.TabIndex = 37
+        Me.修改LinkLabel.TabIndex = 38
         Me.修改LinkLabel.TabStop = True
         Me.修改LinkLabel.Text = "修改"
         '
@@ -726,7 +726,7 @@ Partial Class admin
         Me.复位LinkLabel.Location = New System.Drawing.Point(336, 512)
         Me.复位LinkLabel.Name = "复位LinkLabel"
         Me.复位LinkLabel.Size = New System.Drawing.Size(44, 18)
-        Me.复位LinkLabel.TabIndex = 38
+        Me.复位LinkLabel.TabIndex = 39
         Me.复位LinkLabel.TabStop = True
         Me.复位LinkLabel.Text = "复位"
         '
@@ -788,7 +788,7 @@ Partial Class admin
         Me.openButton.Location = New System.Drawing.Point(605, 180)
         Me.openButton.Name = "openButton"
         Me.openButton.Size = New System.Drawing.Size(94, 33)
-        Me.openButton.TabIndex = 69
+        Me.openButton.TabIndex = 23
         Me.openButton.Text = "启动(&S)"
         Me.openButton.UseVisualStyleBackColor = True
         '
@@ -809,7 +809,7 @@ Partial Class admin
         Me.updateButton.Location = New System.Drawing.Point(401, 510)
         Me.updateButton.Name = "updateButton"
         Me.updateButton.Size = New System.Drawing.Size(94, 33)
-        Me.updateButton.TabIndex = 39
+        Me.updateButton.TabIndex = 40
         Me.updateButton.Text = "上传(&U)"
         Me.updateButton.UseVisualStyleBackColor = True
         '
@@ -819,7 +819,7 @@ Partial Class admin
         Me.TextBox2.Location = New System.Drawing.Point(345, 330)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(150, 28)
-        Me.TextBox2.TabIndex = 24
+        Me.TextBox2.TabIndex = 25
         '
         'Label15
         '
@@ -836,7 +836,7 @@ Partial Class admin
         Me.TextBox1.Location = New System.Drawing.Point(345, 295)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(150, 28)
-        Me.TextBox1.TabIndex = 23
+        Me.TextBox1.TabIndex = 24
         '
         'Label14
         '
@@ -926,7 +926,7 @@ Partial Class admin
         Me.TextBox12.Location = New System.Drawing.Point(605, 505)
         Me.TextBox12.Name = "TextBox12"
         Me.TextBox12.Size = New System.Drawing.Size(150, 28)
-        Me.TextBox12.TabIndex = 35
+        Me.TextBox12.TabIndex = 36
         '
         'Label8
         '
@@ -963,7 +963,7 @@ Partial Class admin
         Me.TextBox11.Location = New System.Drawing.Point(605, 470)
         Me.TextBox11.Name = "TextBox11"
         Me.TextBox11.Size = New System.Drawing.Size(150, 28)
-        Me.TextBox11.TabIndex = 34
+        Me.TextBox11.TabIndex = 35
         '
         'Label10
         '
@@ -998,7 +998,7 @@ Partial Class admin
         Me.TextBox10.Location = New System.Drawing.Point(605, 435)
         Me.TextBox10.Name = "TextBox10"
         Me.TextBox10.Size = New System.Drawing.Size(150, 28)
-        Me.TextBox10.TabIndex = 33
+        Me.TextBox10.TabIndex = 34
         '
         'TextBox8
         '
@@ -1006,7 +1006,7 @@ Partial Class admin
         Me.TextBox8.Location = New System.Drawing.Point(605, 330)
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.Size = New System.Drawing.Size(150, 28)
-        Me.TextBox8.TabIndex = 30
+        Me.TextBox8.TabIndex = 31
         '
         'TextBox6
         '
@@ -1014,7 +1014,7 @@ Partial Class admin
         Me.TextBox6.Location = New System.Drawing.Point(345, 470)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(150, 28)
-        Me.TextBox6.TabIndex = 28
+        Me.TextBox6.TabIndex = 29
         '
         'TextBox7
         '
@@ -1022,7 +1022,7 @@ Partial Class admin
         Me.TextBox7.Location = New System.Drawing.Point(605, 295)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(150, 28)
-        Me.TextBox7.TabIndex = 29
+        Me.TextBox7.TabIndex = 30
         '
         'TextBox5
         '
@@ -1030,7 +1030,7 @@ Partial Class admin
         Me.TextBox5.Location = New System.Drawing.Point(345, 435)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(150, 28)
-        Me.TextBox5.TabIndex = 27
+        Me.TextBox5.TabIndex = 28
         '
         'TextBox9
         '
@@ -1038,7 +1038,7 @@ Partial Class admin
         Me.TextBox9.Location = New System.Drawing.Point(605, 365)
         Me.TextBox9.Name = "TextBox9"
         Me.TextBox9.Size = New System.Drawing.Size(150, 28)
-        Me.TextBox9.TabIndex = 31
+        Me.TextBox9.TabIndex = 32
         '
         'TextBox4
         '
@@ -1046,7 +1046,7 @@ Partial Class admin
         Me.TextBox4.Location = New System.Drawing.Point(345, 400)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(150, 28)
-        Me.TextBox4.TabIndex = 26
+        Me.TextBox4.TabIndex = 27
         '
         'TextBox3
         '
@@ -1054,7 +1054,7 @@ Partial Class admin
         Me.TextBox3.Location = New System.Drawing.Point(345, 365)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(150, 28)
-        Me.TextBox3.TabIndex = 25
+        Me.TextBox3.TabIndex = 26
         '
         'helpPanel
         '
@@ -1170,7 +1170,7 @@ Partial Class admin
         Me.signoutLinkLabel.Location = New System.Drawing.Point(1010, 10)
         Me.signoutLinkLabel.Name = "signoutLinkLabel"
         Me.signoutLinkLabel.Size = New System.Drawing.Size(44, 18)
-        Me.signoutLinkLabel.TabIndex = 158
+        Me.signoutLinkLabel.TabIndex = 112
         Me.signoutLinkLabel.TabStop = True
         Me.signoutLinkLabel.Text = "注销"
         '
@@ -2310,7 +2310,7 @@ Partial Class admin
         Me.backgroundLinkLabel.Location = New System.Drawing.Point(920, 10)
         Me.backgroundLinkLabel.Name = "backgroundLinkLabel"
         Me.backgroundLinkLabel.Size = New System.Drawing.Size(80, 18)
-        Me.backgroundLinkLabel.TabIndex = 159
+        Me.backgroundLinkLabel.TabIndex = 111
         Me.backgroundLinkLabel.TabStop = True
         Me.backgroundLinkLabel.Text = "管理后台"
         '
