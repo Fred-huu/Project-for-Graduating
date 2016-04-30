@@ -407,6 +407,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
         '启动上传按钮
         updateButton.Enabled = True
+        openButton.Enabled = False
 
     End Sub
 
@@ -451,9 +452,34 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
                 conn = New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
                 'conn = New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
                 conn.Open()
-                com = New MySqlCommand("INSERT INTO manage (carnum,weight,time,user_id,manage_id,kind,remarks) VALUES ('" & TextBox7.Text & "','" & TextBox12.Text & "','" & TextBox9.Text & "','" & USERTextBox.Text & "','num','" & kindTextBox.Text & "','" & adminremarkTextBox.Text & "')", conn)
+                com = New MySqlCommand("INSERT INTO manage (carnum,weight,time,user_id,kind,remarks) VALUES ('" & TextBox7.Text & "','" & TextBox12.Text & "','" & TextBox9.Text & "','" & USERTextBox.Text & "','" & kindTextBox.Text & "','" & adminremarkTextBox.Text & "')", conn)
                 dr = com.ExecuteReader
                 conn.Close()
+                MsgBox("上传成功")
+
+                '按钮
+                updateButton.Enabled = False
+                openButton.Enabled = True
+
+                '关闭串口
+                SerialPort1.Close()
+
+                '清空数据
+                TextBox1.Text = ""
+                TextBox2.Text = ""
+                TextBox3.Text = ""
+                TextBox4.Text = ""
+                TextBox5.Text = ""
+                TextBox6.Text = ""
+                TextBox7.Text = ""
+                TextBox8.Text = ""
+                TextBox9.Text = ""
+                TextBox10.Text = ""
+                TextBox11.Text = ""
+                TextBox12.Text = ""
+                kindTextBox.Text = ""
+                adminremarkTextBox.Text = ""
+
             Catch myerror As MySqlException
                 MsgBox("Error connecting to the server:" & myerror.Message)
                 'MsgBox("数据库连接出错啦~~来看看错在哪里（前提是你这个笨蛋能看得懂！  ╮(╯▽╰)╭ ）:" & myerror.Message)
