@@ -602,12 +602,14 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
     '点击“信息查询”（未选中）
     Private Sub mess0_Click(sender As Object, e As EventArgs) Handles mess0.Click
         '二级菜单
-        wmess0.Visible = True
-        wmess1.Visible = False
-        cmess0.Visible = True
-        cmess1.Visible = False
-        dmess0.Visible = True
-        dmess1.Visible = False
+        If wPanel.Visible = False And cmPanel.Visible = False And dmPanel.Visible = False Then
+            wmess0.Visible = True
+            wmess1.Visible = False
+            cmess0.Visible = True
+            cmess1.Visible = False
+            dmess0.Visible = True
+            dmess1.Visible = False
+        End If
 
         '二级菜单列表
         messPanel.Visible = True
@@ -897,10 +899,12 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
     '点击“信息录入界面”（未选中）
     Private Sub add0_Click(sender As Object, e As EventArgs) Handles add0.Click
         '二级菜单
-        addcmess0.Visible = True
-        addcmess1.Visible = False
-        adddmess0.Visible = True
-        adddmess1.Visible = False
+        If caddPanel.Visible = False And daddPanel.Visible = False Then
+            addcmess0.Visible = True
+            addcmess1.Visible = False
+            adddmess0.Visible = True
+            adddmess1.Visible = False
+        End If
 
         '二级菜单列表
         addPanel.Visible = True
@@ -1117,12 +1121,14 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
     '点击“系统说明界面”（未选中）
     Private Sub including0_Click(sender As Object, e As EventArgs) Handles including0.Click
         '二级菜单
-        help0.Visible = True
-        help1.Visible = False
-        suggest0.Visible = True
-        suggest1.Visible = False
-        about0.Visible = True
-        about1.Visible = False
+        If helpPanel.Visible = False And suggestPanel.Visible = False And aboutPanel.Visible = False Then
+            help0.Visible = True
+            help1.Visible = False
+            suggest0.Visible = True
+            suggest1.Visible = False
+            about0.Visible = True
+            about1.Visible = False
+        End If
 
         '二级菜单列表
         messPanel.Visible = False
