@@ -33,20 +33,6 @@ Public Class admin
     Dim myPort As Array
     Delegate Sub SetTextCallback(ByVal [text] As String)
 
-    '串口连接相关
-    Sub RecieveRefreshMethod(ByVal str As String) '定义一个实例方法
-        ShowRecieveData(str)
-    End Sub
-
-    Private Sub ShowRecieveData(ByVal str As String)
-        On Error GoTo Err
-
-        Exit Sub
-Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
-    End Sub
-
-    '-------------------------------------------
-
     '窗口界面
     Private Sub admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '时钟
@@ -76,22 +62,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         add1.Visible = False
         including0.Visible = True
         including1.Visible = False
-
-        'panel容器
-        loginPanel.Visible = True
-        newuserPanel.Visible = False
-        adminPanel.Visible = False
-        wPanel.Visible = False
-        cmPanel.Visible = False
-        dmPanel.Visible = False
-        caddPanel.Visible = False
-        daddPanel.Visible = False
-        helpPanel.Visible = False
-        suggestPanel.Visible = False
-        aboutPanel.Visible = False
-        backgroundPanel.Visible = False
-
-        downPanel.Visible = False
 
     End Sub
 
@@ -405,17 +375,29 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             TextBox12.Text = ""
         End If
 
-        '启动上传按钮
+        '按钮
         updateButton.Enabled = True
         openButton.Enabled = False
 
+    End Sub
+
+    '串口连接相关
+    Sub RecieveRefreshMethod(ByVal str As String) '定义一个实例方法
+        ShowRecieveData(str)
+    End Sub
+
+    Private Sub ShowRecieveData(ByVal str As String)
+        On Error GoTo Err
+
+        Exit Sub
+Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
     End Sub
 
     Private Sub SerialPort1_DataReceived(sender As System.Object, e As System.IO.Ports.SerialDataReceivedEventArgs) Handles SerialPort1.DataReceived
         ReceivedText(SerialPort1.ReadExisting())
     End Sub
 
-    Private Sub ReceivedText(ByVal [text] As String) 'input from ReadExisting
+    Private Sub ReceivedText(ByVal [text] As String)
         If Me.TextBox11.InvokeRequired Then
             Dim x As New SetTextCallback(AddressOf ReceivedText)
             Me.Invoke(x, New Object() {(text)})

@@ -298,6 +298,7 @@ Partial Class admin
         Me.aboutPanel.Name = "aboutPanel"
         Me.aboutPanel.Size = New System.Drawing.Size(1060, 478)
         Me.aboutPanel.TabIndex = 110
+        Me.aboutPanel.Visible = False
         '
         '版本信息Label
         '
@@ -306,7 +307,7 @@ Partial Class admin
         Me.版本信息Label.Name = "版本信息Label"
         Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.9.160430.2"
+        Me.版本信息Label.Text = "2.9.160501.2"
         '
         '人员姓名Label
         '
@@ -535,6 +536,7 @@ Partial Class admin
         Me.suggestPanel.Name = "suggestPanel"
         Me.suggestPanel.Size = New System.Drawing.Size(1060, 493)
         Me.suggestPanel.TabIndex = 112
+        Me.suggestPanel.Visible = False
         '
         'suggestLabel
         '
@@ -623,6 +625,7 @@ Partial Class admin
         Me.adminPanel.Name = "adminPanel"
         Me.adminPanel.Size = New System.Drawing.Size(1060, 608)
         Me.adminPanel.TabIndex = 113
+        Me.adminPanel.Visible = False
         '
         'Label68
         '
@@ -1064,6 +1067,7 @@ Partial Class admin
         Me.helpPanel.Name = "helpPanel"
         Me.helpPanel.Size = New System.Drawing.Size(1060, 628)
         Me.helpPanel.TabIndex = 114
+        Me.helpPanel.Visible = False
         '
         'includingLabel
         '
@@ -1095,6 +1099,7 @@ Partial Class admin
         Me.wPanel.Name = "wPanel"
         Me.wPanel.Size = New System.Drawing.Size(1060, 560)
         Me.wPanel.TabIndex = 115
+        Me.wPanel.Visible = False
         '
         'selectButton
         '
@@ -1193,6 +1198,7 @@ Partial Class admin
         Me.cmPanel.Name = "cmPanel"
         Me.cmPanel.Size = New System.Drawing.Size(1060, 472)
         Me.cmPanel.TabIndex = 118
+        Me.cmPanel.Visible = False
         '
         'cmTextBox
         '
@@ -1339,6 +1345,7 @@ Partial Class admin
         Me.dmPanel.Name = "dmPanel"
         Me.dmPanel.Size = New System.Drawing.Size(1060, 464)
         Me.dmPanel.TabIndex = 119
+        Me.dmPanel.Visible = False
         '
         'TextBox18
         '
@@ -1502,6 +1509,7 @@ Partial Class admin
         Me.caddPanel.Name = "caddPanel"
         Me.caddPanel.Size = New System.Drawing.Size(1060, 481)
         Me.caddPanel.TabIndex = 120
+        Me.caddPanel.Visible = False
         '
         'clearLinkLabel
         '
@@ -1647,6 +1655,7 @@ Partial Class admin
         Me.daddPanel.Name = "daddPanel"
         Me.daddPanel.Size = New System.Drawing.Size(1060, 481)
         Me.daddPanel.TabIndex = 121
+        Me.daddPanel.Visible = False
         '
         'TextBox16
         '
@@ -1949,6 +1958,7 @@ Partial Class admin
         Me.newuserPanel.Name = "newuserPanel"
         Me.newuserPanel.Size = New System.Drawing.Size(1280, 720)
         Me.newuserPanel.TabIndex = 130
+        Me.newuserPanel.Visible = False
         '
         'logintime
         '
@@ -2065,6 +2075,7 @@ Partial Class admin
         'messPanel
         '
         Me.messPanel.BackColor = System.Drawing.SystemColors.Menu
+        Me.messPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.messPanel.Controls.Add(Me.cmess0)
         Me.messPanel.Controls.Add(Me.wmess0)
         Me.messPanel.Controls.Add(Me.dmess0)
@@ -2150,6 +2161,7 @@ Partial Class admin
         '
         'addPanel
         '
+        Me.addPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.addPanel.Controls.Add(Me.adddmess0)
         Me.addPanel.Controls.Add(Me.addcmess0)
         Me.addPanel.Controls.Add(Me.addcmess1)
@@ -2210,6 +2222,7 @@ Partial Class admin
         'includingPanel
         '
         Me.includingPanel.BackColor = System.Drawing.SystemColors.Menu
+        Me.includingPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.includingPanel.Controls.Add(Me.suggest0)
         Me.includingPanel.Controls.Add(Me.help0)
         Me.includingPanel.Controls.Add(Me.about0)
@@ -2303,6 +2316,7 @@ Partial Class admin
         Me.downPanel.Name = "downPanel"
         Me.downPanel.Size = New System.Drawing.Size(1280, 38)
         Me.downPanel.TabIndex = 135
+        Me.downPanel.Visible = False
         '
         'backgroundLinkLabel
         '
