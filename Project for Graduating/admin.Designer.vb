@@ -312,7 +312,7 @@ Partial Class admin
         Me.版本信息Label.Name = "版本信息Label"
         Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.9.160506.5"
+        Me.版本信息Label.Text = "2.9.160506.7"
         '
         '人员姓名Label
         '
@@ -1077,9 +1077,9 @@ Partial Class admin
         'includingLabel
         '
         Me.includingLabel.AutoSize = True
-        Me.includingLabel.Location = New System.Drawing.Point(150, 120)
+        Me.includingLabel.Location = New System.Drawing.Point(39, 98)
         Me.includingLabel.Name = "includingLabel"
-        Me.includingLabel.Size = New System.Drawing.Size(764, 432)
+        Me.includingLabel.Size = New System.Drawing.Size(980, 486)
         Me.includingLabel.TabIndex = 106
         Me.includingLabel.Text = resources.GetString("includingLabel.Text")
         '
