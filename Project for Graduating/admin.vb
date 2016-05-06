@@ -1,39 +1,47 @@
 ﻿'导入各种库
 
-'导入数据库方面的库
+#Region “导入数据库方面的库“
 Imports MySql.Data.MySqlClient
+#End Region
 
 '-------------------------------------------
 
-'导入串口连接方面的库
+#Region “导入串口连接方面的库”
 Imports System
 Imports System.Threading
 Imports System.IO.Ports
 Imports System.ComponentModel
 Imports System.IO
+#End Region
 
 '-------------------------------------------
 
+#Region “定义全局变量“
 Public Class admin
-    '定义全局变量
 
-    '数据库
+#Region “数据库”
     Dim conn As MySqlConnection
     Dim data As DataTable
     Dim da As MySqlDataAdapter
+#End Region
 
     '-------------------------------------------
 
-    '读取文件
+#Region “读取文件”
     Dim a As OpenFileDialog = New OpenFileDialog
+#End Region
 
-    '-------------------------------------------
+#End Region
 
-    '串口通信
+'-------------------------------------------
+
+#Region “串口通信”
     Dim myPort As Array
     Delegate Sub SetTextCallback(ByVal [text] As String)
+#End Region
 
-    '窗口界面
+'-------------------------------------------
+#Region “窗口界面”
     Private Sub admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '时钟
         Timer1.Interval = 1000
@@ -73,10 +81,11 @@ Public Class admin
         logintime.Text = datestr
         logtime.Text = datestr
     End Sub
+ #End Region
 
-    '-------------------------------------------
+'-------------------------------------------
 
-    '登录界面
+#Region “登录界面“
     '确定按钮
     Private Sub entryButton_Click(sender As Object, e As EventArgs) Handles entryButton.Click
         '数据库操作
@@ -167,12 +176,12 @@ Public Class admin
         menuPanel.Visible = False
 
         downPanel.Visible = False
-
     End Sub
+#End Region
 
-    '-------------------------------------------
+'-------------------------------------------
 
-    '账号注册界面
+#Region “账号注册界面”
     Private Sub newokButton_Click(sender As Object, e As EventArgs) Handles newokButton.Click
         '数据库操作
         Dim dr As MySqlDataReader
@@ -229,7 +238,6 @@ Public Class admin
         Catch myerror As MySqlException
             MsgBox("Error connecting to the server:" & myerror.Message)
         End Try
-
     End Sub
 
     '返回登陆界面
@@ -241,10 +249,11 @@ Public Class admin
         loginPanel.Visible = True
         newuserPanel.Visible = False
     End Sub
+#End Region
 
-    '-------------------------------------------
+'-------------------------------------------
 
-    '管理界面
+#Region “管理界面“
     '点击“管理界面”（未选中）
     Private Sub admin0_Click(sender As Object, e As EventArgs) Handles admin0.Click
         '二级菜单
@@ -276,7 +285,6 @@ Public Class admin
 
         '隐藏修改界面
         modifyPanel.Visible = False
-
     End Sub
 
     '启动按钮
@@ -467,6 +475,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         updateButton.Enabled = False
     End Sub
 
+'-------------------------------------------
+
     '修改车牌号界面
     '打开修改界面
     Private Sub 修改LinkLabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles 修改LinkLabel.LinkClicked
@@ -562,9 +572,42 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         modifyPanel.Visible = False
     End Sub
 
-    '-------------------------------------------
+'-------------------------------------------
 
-    '信息查询界面
+    '后台管理
+    Private Sub backgroundLinkLabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles backgroundLinkLabel.LinkClicked
+        '一级菜单
+        admin0.Visible = True
+        admin1.Visible = False
+        mess0.Visible = True
+        mess1.Visible = False
+        add0.Visible = True
+        add1.Visible = False
+        including0.Visible = True
+        including1.Visible = False
+
+        '二级菜单
+        messPanel.Visible = False
+        addPanel.Visible = False
+        includingPanel.Visible = False
+
+        'panel容器
+        adminPanel.Visible = False
+        wPanel.Visible = False
+        cmPanel.Visible = False
+        dmPanel.Visible = False
+        caddPanel.Visible = False
+        daddPanel.Visible = False
+        helpPanel.Visible = False
+        suggestPanel.Visible = False
+        aboutPanel.Visible = False
+        backgroundPanel.Visible = True
+    End Sub
+#End Region
+
+'-------------------------------------------
+
+#Region “信息查询界面”
     '点击“信息查询”（未选中）
     Private Sub mess0_Click(sender As Object, e As EventArgs) Handles mess0.Click
         '二级菜单
@@ -602,9 +645,9 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         End If
     End Sub
 
-    '-------------------------------------------
+'-------------------------------------------
 
-    '称量信息查询界面
+#Region “称量信息查询界面“
     '点击“称量信息查询界面”（未选中）
     Private Sub wmess0_Click(sender As Object, e As EventArgs) Handles wmess0.Click
         '二级菜单
@@ -682,10 +725,11 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             MsgBox("Error connecting to the server:" & myerror.Message)
         End Try
     End Sub
+#End Region
 
-    '-------------------------------------------
+'-------------------------------------------
 
-    '车辆信息查询界面
+#Region “车辆信息查询界面”
     '点击“车辆信息查询界面”（未选中）
     Private Sub cmess0_Click(sender As Object, e As EventArgs) Handles cmess0.Click
         '二级菜单
@@ -761,10 +805,11 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             MsgBox("Error connecting to the server:" & myerror.Message)
         End Try
     End Sub
+#End Region
 
-    '-------------------------------------------
+'-------------------------------------------
 
-    '司机信息查询界面
+#Region “司机信息查询界面“
     '点击“司机信息查询界面”（未选中）
     Private Sub dmess0_Click(sender As Object, e As EventArgs) Handles dmess0.Click
         '二级菜单
@@ -847,10 +892,13 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             MsgBox("Error connecting to the server:" & myerror.Message)
         End Try
     End Sub
+#End Region
 
-    '-------------------------------------------
+#End Region
 
-    '信息录入界面
+'-------------------------------------------
+
+#Region “信息录入界面”
     '点击“信息录入界面”（未选中）
     Private Sub add0_Click(sender As Object, e As EventArgs) Handles add0.Click
         '二级菜单
@@ -886,9 +934,9 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         End If
     End Sub
 
-    '-------------------------------------------
+'-------------------------------------------
 
-    '车辆信息录入界面
+#Region “车辆信息录入界面“
     '点击“车辆信息录入界面”（未选中）
     Private Sub addcmess0_Click(sender As Object, e As EventArgs) Handles addcmess0.Click
         '二级菜单
@@ -962,10 +1010,11 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         TextBox26.Text = ""
         TextBox28.Text = ""
     End Sub
+#End Region
 
-    '-------------------------------------------
+'-------------------------------------------
 
-    '司机信息录入界面
+#Region “司机信息录入界面”
     '点击“司机信息录入界面”（未选中）
     Private Sub adddmess0_Click(sender As Object, e As EventArgs) Handles adddmess0.Click
         '二级菜单
@@ -995,7 +1044,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         TextBox32.Text = ""
         TextBox33.Text = ""
         TextBox34.Text = ""
-
     End Sub
 
     '点击“司机信息录入界面”（选中）
@@ -1042,10 +1090,13 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         TextBox33.Text = ""
         TextBox34.Text = ""
     End Sub
+#End Region
 
-    '-------------------------------------------
+#End Region
 
-    '系统说明界面
+'-------------------------------------------
+
+#Region “系统说明界面“
     '点击“系统说明界面”（未选中）
     Private Sub including0_Click(sender As Object, e As EventArgs) Handles including0.Click
         '二级菜单
@@ -1083,9 +1134,9 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         End If
     End Sub
 
-    '-------------------------------------------
+'-------------------------------------------
 
-    '使用帮助界面
+#Region “使用帮助界面”
     '点击“使用帮助界面”（未选中）
     Private Sub help0_Click(sender As Object, e As EventArgs) Handles help0.Click
         '二级菜单
@@ -1109,17 +1160,17 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         suggestPanel.Visible = False
         aboutPanel.Visible = False
         backgroundPanel.Visible = False
-
     End Sub
 
     '点击“使用帮助界面”（选中）
     Private Sub help1_Click(sender As Object, e As EventArgs) Handles help1.Click
         includingPanel.Visible = False
     End Sub
+#End Region
 
-    '-------------------------------------------
+'-------------------------------------------
 
-    '意见反馈界面
+#Region “意见反馈界面“
     '点击“意见反馈界面”（未选中）
     Private Sub suggest0_Click(sender As Object, e As EventArgs) Handles suggest0.Click
         '二级菜单
@@ -1189,10 +1240,11 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             mail.Dispose()
         End Try
     End Sub
+#End Region
 
-    '-------------------------------------------
+'-------------------------------------------
 
-    '关于界面
+#Region “关于界面”
     '点击“关于界面”（未选中）
     Private Sub about0_Click(sender As Object, e As EventArgs) Handles about0.Click
         '二级菜单
@@ -1222,34 +1274,10 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
     Private Sub about1_Click(sender As Object, e As EventArgs) Handles about1.Click
         includingPanel.Visible = False
     End Sub
+#End Region
 
-    '后台管理
-    Private Sub backgroundLinkLabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles backgroundLinkLabel.LinkClicked
-        '一级菜单
-        admin0.Visible = True
-        admin1.Visible = False
-        mess0.Visible = True
-        mess1.Visible = False
-        add0.Visible = True
-        add1.Visible = False
-        including0.Visible = True
-        including1.Visible = False
+#End Region
 
-        '二级菜单
-        messPanel.Visible = False
-        addPanel.Visible = False
-        includingPanel.Visible = False
+'-------------------------------------------
 
-        'panel容器
-        adminPanel.Visible = False
-        wPanel.Visible = False
-        cmPanel.Visible = False
-        dmPanel.Visible = False
-        caddPanel.Visible = False
-        daddPanel.Visible = False
-        helpPanel.Visible = False
-        suggestPanel.Visible = False
-        aboutPanel.Visible = False
-        backgroundPanel.Visible = True
-    End Sub
 End Class
