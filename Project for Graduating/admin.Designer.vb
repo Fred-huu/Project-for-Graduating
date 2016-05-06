@@ -229,6 +229,11 @@ Partial Class admin
         Me.backgroundPanel = New System.Windows.Forms.Panel()
         Me.htPictureBox = New System.Windows.Forms.PictureBox()
         Me.dielingWebBrowser = New System.Windows.Forms.WebBrowser()
+        Me.日期格式 = New System.Windows.Forms.Label()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.Label37 = New System.Windows.Forms.Label()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.Label53 = New System.Windows.Forms.Label()
         Me.aboutPanel.SuspendLayout()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.开发人员PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -307,7 +312,7 @@ Partial Class admin
         Me.版本信息Label.Name = "版本信息Label"
         Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.9.160506.3"
+        Me.版本信息Label.Text = "2.9.160506.5"
         '
         '人员姓名Label
         '
@@ -967,7 +972,6 @@ Partial Class admin
         Me.TextBox11.Name = "TextBox11"
         Me.TextBox11.Size = New System.Drawing.Size(176, 28)
         Me.TextBox11.TabIndex = 35
-        Me.TextBox11.Text = "5500"
         '
         'Label10
         '
@@ -1182,6 +1186,8 @@ Partial Class admin
         '
         'cmPanel
         '
+        Me.cmPanel.Controls.Add(Me.Label37)
+        Me.cmPanel.Controls.Add(Me.Label36)
         Me.cmPanel.Controls.Add(Me.cmTextBox)
         Me.cmPanel.Controls.Add(Me.Label12)
         Me.cmPanel.Controls.Add(Me.carselectButton)
@@ -1326,6 +1332,7 @@ Partial Class admin
         '
         'dmPanel
         '
+        Me.dmPanel.Controls.Add(Me.日期格式)
         Me.dmPanel.Controls.Add(Me.TextBox18)
         Me.dmPanel.Controls.Add(Me.dmTextBox)
         Me.dmPanel.Controls.Add(Me.Label29)
@@ -1493,6 +1500,7 @@ Partial Class admin
         '
         'caddPanel
         '
+        Me.caddPanel.Controls.Add(Me.Label38)
         Me.caddPanel.Controls.Add(Me.clearLinkLabel)
         Me.caddPanel.Controls.Add(Me.carupdateButton)
         Me.caddPanel.Controls.Add(Me.TextBox28)
@@ -1634,6 +1642,7 @@ Partial Class admin
         '
         'daddPanel
         '
+        Me.daddPanel.Controls.Add(Me.Label53)
         Me.daddPanel.Controls.Add(Me.TextBox16)
         Me.daddPanel.Controls.Add(Me.Label26)
         Me.daddPanel.Controls.Add(Me.clearLinkLabel2)
@@ -2382,6 +2391,51 @@ Partial Class admin
         Me.dielingWebBrowser.TabIndex = 106
         Me.dielingWebBrowser.Url = New System.Uri("http://vps.dieling.cc/qch/", System.UriKind.Absolute)
         '
+        '日期格式
+        '
+        Me.日期格式.AutoSize = True
+        Me.日期格式.Location = New System.Drawing.Point(657, 315)
+        Me.日期格式.Name = "日期格式"
+        Me.日期格式.Size = New System.Drawing.Size(116, 18)
+        Me.日期格式.TabIndex = 145
+        Me.日期格式.Text = "(YYYY-MM-DD)"
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(650, 339)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(116, 18)
+        Me.Label36.TabIndex = 148
+        Me.Label36.Text = "(YYYY-MM-DD)"
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Location = New System.Drawing.Point(472, 227)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(116, 18)
+        Me.Label37.TabIndex = 149
+        Me.Label37.Text = "(YYYY-MM-DD)"
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Location = New System.Drawing.Point(675, 228)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(116, 18)
+        Me.Label38.TabIndex = 146
+        Me.Label38.Text = "(YYYY-MM-DD)"
+        '
+        'Label53
+        '
+        Me.Label53.AutoSize = True
+        Me.Label53.Location = New System.Drawing.Point(650, 227)
+        Me.Label53.Name = "Label53"
+        Me.Label53.Size = New System.Drawing.Size(116, 18)
+        Me.Label53.TabIndex = 146
+        Me.Label53.Text = "(YYYY-MM-DD)"
+        '
         'admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
@@ -2686,4 +2740,9 @@ Partial Class admin
     Friend WithEvents htPictureBox As PictureBox
     Friend WithEvents backgroundLinkLabel As LinkLabel
     Friend WithEvents ColumnHeader7 As ColumnHeader
+    Friend WithEvents 日期格式 As Label
+    Friend WithEvents Label37 As Label
+    Friend WithEvents Label36 As Label
+    Friend WithEvents Label38 As Label
+    Friend WithEvents Label53 As Label
 End Class

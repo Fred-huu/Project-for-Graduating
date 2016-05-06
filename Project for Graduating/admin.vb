@@ -31,20 +31,15 @@ Public Class admin
 
     '-------------------------------------------
 
-#Region “读取文件”
-    Dim a As OpenFileDialog = New OpenFileDialog
-#End Region
-
-#End Region
-
-    '-------------------------------------------
-
 #Region “串口通信”
     Dim myPort As Array
     Delegate Sub SetTextCallback(ByVal [text] As String)
 #End Region
 
+#End Region
+
     '-------------------------------------------
+
 #Region “窗口界面”
     Private Sub admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '时钟
@@ -317,8 +312,8 @@ Public Class admin
         End If
 
         '串口连接相关
-        SerialPort1.PortName = ComboBox1.Text
-        SerialPort1.BaudRate = ComboBox2.Text
+        SerialPort1.PortName = ComboBox1.Text '端口
+        SerialPort1.BaudRate = ComboBox2.Text '波特率
         SerialPort1.Open()
 
         '称量时间显示
