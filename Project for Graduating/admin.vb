@@ -1,4 +1,8 @@
-﻿'导入各种库
+﻿#Region “汽车衡智能称重系统数据采集的设计与实现“
+
+'-------------------------------------------
+
+'导入各种库
 
 #Region “导入数据库方面的库“
 Imports MySql.Data.MySqlClient
@@ -33,14 +37,14 @@ Public Class admin
 
 #End Region
 
-'-------------------------------------------
+    '-------------------------------------------
 
 #Region “串口通信”
     Dim myPort As Array
     Delegate Sub SetTextCallback(ByVal [text] As String)
 #End Region
 
-'-------------------------------------------
+    '-------------------------------------------
 #Region “窗口界面”
     Private Sub admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '时钟
@@ -81,9 +85,9 @@ Public Class admin
         logintime.Text = datestr
         logtime.Text = datestr
     End Sub
- #End Region
+#End Region
 
-'-------------------------------------------
+    '-------------------------------------------
 
 #Region “登录界面“
     '确定按钮
@@ -179,7 +183,7 @@ Public Class admin
     End Sub
 #End Region
 
-'-------------------------------------------
+    '-------------------------------------------
 
 #Region “账号注册界面”
     Private Sub newokButton_Click(sender As Object, e As EventArgs) Handles newokButton.Click
@@ -251,7 +255,7 @@ Public Class admin
     End Sub
 #End Region
 
-'-------------------------------------------
+    '-------------------------------------------
 
 #Region “管理界面“
     '点击“管理界面”（未选中）
@@ -475,7 +479,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         updateButton.Enabled = False
     End Sub
 
-'-------------------------------------------
+    '-------------------------------------------
 
     '修改车牌号界面
     '打开修改界面
@@ -572,7 +576,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         modifyPanel.Visible = False
     End Sub
 
-'-------------------------------------------
+    '-------------------------------------------
 
     '后台管理
     Private Sub backgroundLinkLabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles backgroundLinkLabel.LinkClicked
@@ -605,7 +609,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
     End Sub
 #End Region
 
-'-------------------------------------------
+    '-------------------------------------------
 
 #Region “信息查询界面”
     '点击“信息查询”（未选中）
@@ -645,7 +649,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         End If
     End Sub
 
-'-------------------------------------------
+    '-------------------------------------------
 
 #Region “称量信息查询界面“
     '点击“称量信息查询界面”（未选中）
@@ -727,7 +731,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
     End Sub
 #End Region
 
-'-------------------------------------------
+    '-------------------------------------------
 
 #Region “车辆信息查询界面”
     '点击“车辆信息查询界面”（未选中）
@@ -807,7 +811,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
     End Sub
 #End Region
 
-'-------------------------------------------
+    '-------------------------------------------
 
 #Region “司机信息查询界面“
     '点击“司机信息查询界面”（未选中）
@@ -896,7 +900,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
 #End Region
 
-'-------------------------------------------
+    '-------------------------------------------
 
 #Region “信息录入界面”
     '点击“信息录入界面”（未选中）
@@ -934,7 +938,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         End If
     End Sub
 
-'-------------------------------------------
+    '-------------------------------------------
 
 #Region “车辆信息录入界面“
     '点击“车辆信息录入界面”（未选中）
@@ -1012,7 +1016,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
     End Sub
 #End Region
 
-'-------------------------------------------
+    '-------------------------------------------
 
 #Region “司机信息录入界面”
     '点击“司机信息录入界面”（未选中）
@@ -1094,7 +1098,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
 #End Region
 
-'-------------------------------------------
+    '-------------------------------------------
 
 #Region “系统说明界面“
     '点击“系统说明界面”（未选中）
@@ -1134,7 +1138,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         End If
     End Sub
 
-'-------------------------------------------
+    '-------------------------------------------
 
 #Region “使用帮助界面”
     '点击“使用帮助界面”（未选中）
@@ -1168,7 +1172,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
     End Sub
 #End Region
 
-'-------------------------------------------
+    '-------------------------------------------
 
 #Region “意见反馈界面“
     '点击“意见反馈界面”（未选中）
@@ -1242,7 +1246,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
     End Sub
 #End Region
 
-'-------------------------------------------
+    '-------------------------------------------
 
 #Region “关于界面”
     '点击“关于界面”（未选中）
@@ -1278,6 +1282,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
 #End Region
 
-'-------------------------------------------
+    '-------------------------------------------
 
 End Class
+#End Region
