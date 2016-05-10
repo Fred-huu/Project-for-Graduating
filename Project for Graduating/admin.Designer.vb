@@ -114,6 +114,7 @@ Partial Class admin
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.signoutLinkLabel = New System.Windows.Forms.LinkLabel()
         Me.cmPanel = New System.Windows.Forms.Panel()
+        Me.Label36 = New System.Windows.Forms.Label()
         Me.cmTextBox = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.carselectButton = New System.Windows.Forms.Button()
@@ -128,6 +129,7 @@ Partial Class admin
         Me.Label28 = New System.Windows.Forms.Label()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.dmPanel = New System.Windows.Forms.Panel()
+        Me.日期格式 = New System.Windows.Forms.Label()
         Me.TextBox18 = New System.Windows.Forms.TextBox()
         Me.dmTextBox = New System.Windows.Forms.TextBox()
         Me.Label29 = New System.Windows.Forms.Label()
@@ -145,6 +147,7 @@ Partial Class admin
         Me.Label35 = New System.Windows.Forms.Label()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.caddPanel = New System.Windows.Forms.Panel()
+        Me.Label38 = New System.Windows.Forms.Label()
         Me.clearLinkLabel = New System.Windows.Forms.LinkLabel()
         Me.carupdateButton = New System.Windows.Forms.Button()
         Me.TextBox28 = New System.Windows.Forms.TextBox()
@@ -159,6 +162,7 @@ Partial Class admin
         Me.Label44 = New System.Windows.Forms.Label()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.daddPanel = New System.Windows.Forms.Panel()
+        Me.Label53 = New System.Windows.Forms.Label()
         Me.TextBox16 = New System.Windows.Forms.TextBox()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.clearLinkLabel2 = New System.Windows.Forms.LinkLabel()
@@ -229,11 +233,7 @@ Partial Class admin
         Me.backgroundPanel = New System.Windows.Forms.Panel()
         Me.htPictureBox = New System.Windows.Forms.PictureBox()
         Me.dielingWebBrowser = New System.Windows.Forms.WebBrowser()
-        Me.日期格式 = New System.Windows.Forms.Label()
-        Me.Label36 = New System.Windows.Forms.Label()
-        Me.Label37 = New System.Windows.Forms.Label()
-        Me.Label38 = New System.Windows.Forms.Label()
-        Me.Label53 = New System.Windows.Forms.Label()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.aboutPanel.SuspendLayout()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.开发人员PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -312,7 +312,7 @@ Partial Class admin
         Me.版本信息Label.Name = "版本信息Label"
         Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.9.160506.7"
+        Me.版本信息Label.Text = "2.9.160510.1"
         '
         '人员姓名Label
         '
@@ -1186,7 +1186,6 @@ Partial Class admin
         '
         'cmPanel
         '
-        Me.cmPanel.Controls.Add(Me.Label37)
         Me.cmPanel.Controls.Add(Me.Label36)
         Me.cmPanel.Controls.Add(Me.cmTextBox)
         Me.cmPanel.Controls.Add(Me.Label12)
@@ -1206,6 +1205,15 @@ Partial Class admin
         Me.cmPanel.Size = New System.Drawing.Size(1060, 472)
         Me.cmPanel.TabIndex = 118
         Me.cmPanel.Visible = False
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(650, 339)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(116, 18)
+        Me.Label36.TabIndex = 148
+        Me.Label36.Text = "(YYYY-MM-DD)"
         '
         'cmTextBox
         '
@@ -1354,6 +1362,15 @@ Partial Class admin
         Me.dmPanel.Size = New System.Drawing.Size(1060, 464)
         Me.dmPanel.TabIndex = 119
         Me.dmPanel.Visible = False
+        '
+        '日期格式
+        '
+        Me.日期格式.AutoSize = True
+        Me.日期格式.Location = New System.Drawing.Point(657, 315)
+        Me.日期格式.Name = "日期格式"
+        Me.日期格式.Size = New System.Drawing.Size(116, 18)
+        Me.日期格式.TabIndex = 145
+        Me.日期格式.Text = "(YYYY-MM-DD)"
         '
         'TextBox18
         '
@@ -1520,6 +1537,15 @@ Partial Class admin
         Me.caddPanel.TabIndex = 120
         Me.caddPanel.Visible = False
         '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Location = New System.Drawing.Point(675, 228)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(116, 18)
+        Me.Label38.TabIndex = 146
+        Me.Label38.Text = "(YYYY-MM-DD)"
+        '
         'clearLinkLabel
         '
         Me.clearLinkLabel.AutoSize = True
@@ -1666,6 +1692,15 @@ Partial Class admin
         Me.daddPanel.Size = New System.Drawing.Size(1060, 481)
         Me.daddPanel.TabIndex = 121
         Me.daddPanel.Visible = False
+        '
+        'Label53
+        '
+        Me.Label53.AutoSize = True
+        Me.Label53.Location = New System.Drawing.Point(650, 227)
+        Me.Label53.Name = "Label53"
+        Me.Label53.Size = New System.Drawing.Size(116, 18)
+        Me.Label53.TabIndex = 146
+        Me.Label53.Text = "(YYYY-MM-DD)"
         '
         'TextBox16
         '
@@ -2362,6 +2397,7 @@ Partial Class admin
         '
         'backgroundPanel
         '
+        Me.backgroundPanel.Controls.Add(Me.LinkLabel1)
         Me.backgroundPanel.Controls.Add(Me.htPictureBox)
         Me.backgroundPanel.Controls.Add(Me.dielingWebBrowser)
         Me.backgroundPanel.Location = New System.Drawing.Point(200, 0)
@@ -2387,54 +2423,19 @@ Partial Class admin
         Me.dielingWebBrowser.Location = New System.Drawing.Point(0, 60)
         Me.dielingWebBrowser.MinimumSize = New System.Drawing.Size(20, 20)
         Me.dielingWebBrowser.Name = "dielingWebBrowser"
-        Me.dielingWebBrowser.Size = New System.Drawing.Size(1060, 568)
+        Me.dielingWebBrowser.Size = New System.Drawing.Size(1060, 524)
         Me.dielingWebBrowser.TabIndex = 106
         Me.dielingWebBrowser.Url = New System.Uri("http://vps.dieling.cc/qch/", System.UriKind.Absolute)
         '
-        '日期格式
+        'LinkLabel1
         '
-        Me.日期格式.AutoSize = True
-        Me.日期格式.Location = New System.Drawing.Point(657, 315)
-        Me.日期格式.Name = "日期格式"
-        Me.日期格式.Size = New System.Drawing.Size(116, 18)
-        Me.日期格式.TabIndex = 145
-        Me.日期格式.Text = "(YYYY-MM-DD)"
-        '
-        'Label36
-        '
-        Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(650, 339)
-        Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(116, 18)
-        Me.Label36.TabIndex = 148
-        Me.Label36.Text = "(YYYY-MM-DD)"
-        '
-        'Label37
-        '
-        Me.Label37.AutoSize = True
-        Me.Label37.Location = New System.Drawing.Point(472, 227)
-        Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(116, 18)
-        Me.Label37.TabIndex = 149
-        Me.Label37.Text = "(YYYY-MM-DD)"
-        '
-        'Label38
-        '
-        Me.Label38.AutoSize = True
-        Me.Label38.Location = New System.Drawing.Point(675, 228)
-        Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(116, 18)
-        Me.Label38.TabIndex = 146
-        Me.Label38.Text = "(YYYY-MM-DD)"
-        '
-        'Label53
-        '
-        Me.Label53.AutoSize = True
-        Me.Label53.Location = New System.Drawing.Point(650, 227)
-        Me.Label53.Name = "Label53"
-        Me.Label53.Size = New System.Drawing.Size(116, 18)
-        Me.Label53.TabIndex = 146
-        Me.Label53.Text = "(YYYY-MM-DD)"
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Location = New System.Drawing.Point(917, 598)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(116, 18)
+        Me.LinkLabel1.TabIndex = 107
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "后台地址管理"
         '
         'admin
         '
@@ -2530,6 +2531,7 @@ Partial Class admin
         Me.downPanel.ResumeLayout(False)
         Me.downPanel.PerformLayout()
         Me.backgroundPanel.ResumeLayout(False)
+        Me.backgroundPanel.PerformLayout()
         CType(Me.htPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -2741,8 +2743,8 @@ Partial Class admin
     Friend WithEvents backgroundLinkLabel As LinkLabel
     Friend WithEvents ColumnHeader7 As ColumnHeader
     Friend WithEvents 日期格式 As Label
-    Friend WithEvents Label37 As Label
     Friend WithEvents Label36 As Label
     Friend WithEvents Label38 As Label
     Friend WithEvents Label53 As Label
+    Friend WithEvents LinkLabel1 As LinkLabel
 End Class
