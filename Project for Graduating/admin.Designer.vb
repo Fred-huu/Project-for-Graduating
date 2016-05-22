@@ -233,7 +233,10 @@ Partial Class admin
         Me.backgroundPanel = New System.Windows.Forms.Panel()
         Me.htPictureBox = New System.Windows.Forms.PictureBox()
         Me.dielingWebBrowser = New System.Windows.Forms.WebBrowser()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.setupLinkLabel = New System.Windows.Forms.LinkLabel()
+        Me.setupPanel = New System.Windows.Forms.Panel()
+        Me.setupOKButton = New System.Windows.Forms.Button()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.aboutPanel.SuspendLayout()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.开发人员PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -289,6 +292,8 @@ Partial Class admin
         Me.downPanel.SuspendLayout()
         Me.backgroundPanel.SuspendLayout()
         CType(Me.htPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.setupPanel.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'aboutPanel
@@ -312,7 +317,7 @@ Partial Class admin
         Me.版本信息Label.Name = "版本信息Label"
         Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.9.160510.1"
+        Me.版本信息Label.Text = "2.9.160523.5"
         '
         '人员姓名Label
         '
@@ -2354,6 +2359,7 @@ Partial Class admin
         'downPanel
         '
         Me.downPanel.BackColor = System.Drawing.Color.Transparent
+        Me.downPanel.Controls.Add(Me.setupLinkLabel)
         Me.downPanel.Controls.Add(Me.backgroundLinkLabel)
         Me.downPanel.Controls.Add(Me.signoutLinkLabel)
         Me.downPanel.Controls.Add(Me.time)
@@ -2397,7 +2403,6 @@ Partial Class admin
         '
         'backgroundPanel
         '
-        Me.backgroundPanel.Controls.Add(Me.LinkLabel1)
         Me.backgroundPanel.Controls.Add(Me.htPictureBox)
         Me.backgroundPanel.Controls.Add(Me.dielingWebBrowser)
         Me.backgroundPanel.Location = New System.Drawing.Point(200, 0)
@@ -2423,19 +2428,51 @@ Partial Class admin
         Me.dielingWebBrowser.Location = New System.Drawing.Point(0, 60)
         Me.dielingWebBrowser.MinimumSize = New System.Drawing.Size(20, 20)
         Me.dielingWebBrowser.Name = "dielingWebBrowser"
-        Me.dielingWebBrowser.Size = New System.Drawing.Size(1060, 524)
+        Me.dielingWebBrowser.Size = New System.Drawing.Size(1060, 568)
         Me.dielingWebBrowser.TabIndex = 106
         Me.dielingWebBrowser.Url = New System.Uri("http://vps.dieling.cc/qch/", System.UriKind.Absolute)
         '
-        'LinkLabel1
+        'setupLinkLabel
         '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(917, 598)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(116, 18)
-        Me.LinkLabel1.TabIndex = 107
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "后台地址管理"
+        Me.setupLinkLabel.AutoSize = True
+        Me.setupLinkLabel.Location = New System.Drawing.Point(870, 10)
+        Me.setupLinkLabel.Name = "setupLinkLabel"
+        Me.setupLinkLabel.Size = New System.Drawing.Size(44, 18)
+        Me.setupLinkLabel.TabIndex = 113
+        Me.setupLinkLabel.TabStop = True
+        Me.setupLinkLabel.Text = "设置"
+        '
+        'setupPanel
+        '
+        Me.setupPanel.Controls.Add(Me.setupOKButton)
+        Me.setupPanel.Controls.Add(Me.PictureBox2)
+        Me.setupPanel.Location = New System.Drawing.Point(200, 0)
+        Me.setupPanel.Name = "setupPanel"
+        Me.setupPanel.Size = New System.Drawing.Size(1060, 530)
+        Me.setupPanel.TabIndex = 137
+        Me.setupPanel.Visible = False
+        '
+        'setupOKButton
+        '
+        Me.setupOKButton.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.setupOKButton.Location = New System.Drawing.Point(483, 484)
+        Me.setupOKButton.Name = "setupOKButton"
+        Me.setupOKButton.Size = New System.Drawing.Size(94, 33)
+        Me.setupOKButton.TabIndex = 51
+        Me.setupOKButton.Text = "确定"
+        Me.setupOKButton.UseVisualStyleBackColor = True
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(1060, 60)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 105
+        Me.PictureBox2.TabStop = False
         '
         'admin
         '
@@ -2451,6 +2488,7 @@ Partial Class admin
         Me.Controls.Add(Me.suggestPanel)
         Me.Controls.Add(Me.helpPanel)
         Me.Controls.Add(Me.wPanel)
+        Me.Controls.Add(Me.setupPanel)
         Me.Controls.Add(Me.dmPanel)
         Me.Controls.Add(Me.cmPanel)
         Me.Controls.Add(Me.caddPanel)
@@ -2531,8 +2569,9 @@ Partial Class admin
         Me.downPanel.ResumeLayout(False)
         Me.downPanel.PerformLayout()
         Me.backgroundPanel.ResumeLayout(False)
-        Me.backgroundPanel.PerformLayout()
         CType(Me.htPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.setupPanel.ResumeLayout(False)
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2746,5 +2785,8 @@ Partial Class admin
     Friend WithEvents Label36 As Label
     Friend WithEvents Label38 As Label
     Friend WithEvents Label53 As Label
-    Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents setupLinkLabel As LinkLabel
+    Friend WithEvents setupPanel As Panel
+    Friend WithEvents setupOKButton As Button
+    Friend WithEvents PictureBox2 As PictureBox
 End Class
