@@ -20,9 +20,9 @@ Imports System.IO
 
 '-------------------------------------------
 
-#Region “定义全局变量“
 Public Class admin
 
+#Region “定义全局变量“
 #Region “数据库”
     Dim conn As New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
     'Dim conn As New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
@@ -497,7 +497,28 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         modifyPanel.Visible = True
 
         '清空数据
-        modifyTextBox.Text = ""
+        modifyComboBox.Items.Clear()
+
+        '数据库连接与操作
+        Try
+            conn.Open()
+
+            com.Connection = conn
+            com.CommandType = CommandType.Text
+            com.CommandText = "Select carnum From car"
+
+            dr = com.ExecuteReader()
+            modifyComboBox.Items.Clear()
+            While dr.Read()
+                modifyComboBox.Items.Add(dr.GetString(0))
+            End While
+
+            conn.Close()
+
+        Catch myerror As MySqlException
+            MsgBox("Error connecting to the server:" & myerror.Message)
+        End Try
+
     End Sub
 
     '确定修改车牌号
@@ -507,9 +528,9 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         addPanel.Visible = False
         includingPanel.Visible = False
 
-        If modifyTextBox.Text <> "" Then
+        If modifyComboBox.SelectedItem.ToString() <> "" Then
             '将修改后的车牌号传输到管理界面上
-            TextBox7.Text = modifyTextBox.Text
+            TextBox7.Text = modifyComboBox.SelectedItem.ToString()
 
             '清空管理界面的值
             If TextBox1.Text <> "" And TextBox2.Text <> "" And TextBox3.Text <> "" And TextBox4.Text <> "" And TextBox5.Text <> "" And TextBox6.Text <> "" And TextBox8.Text <> "" And TextBox10.Text <> "" And TextBox12.Text <> "" Then
@@ -768,11 +789,31 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         backgroundPanel.Visible = False
 
         '清空数据
-        cmTextBox.Text = ""
         TextBox13.Text = ""
         TextBox14.Text = ""
         TextBox15.Text = ""
         TextBox17.Text = ""
+
+        '数据库连接与操作
+        Try
+            conn.Open()
+
+            com.Connection = conn
+            com.CommandType = CommandType.Text
+            com.CommandText = "Select carnum From car"
+
+            dr = com.ExecuteReader()
+            ccComboBox.Items.Clear()
+            While dr.Read()
+                ccComboBox.Items.Add(dr.GetString(0))
+            End While
+
+            conn.Close()
+
+        Catch myerror As MySqlException
+            MsgBox("Error connecting to the server:" & myerror.Message)
+        End Try
+
     End Sub
 
     '点击“车辆信息查询界面”（选中）
@@ -788,7 +829,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         includingPanel.Visible = False
 
         '清除数据
-        If cmTextBox.Text <> "" Then
+        If ccComboBox.SelectedItem.ToString() <> "" Then
             TextBox13.Text = ""
             TextBox14.Text = ""
             TextBox15.Text = ""
@@ -801,7 +842,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
             com.Connection = conn
             com.CommandType = CommandType.Text
-            com.CommandText = "Select * From car Where carnum='" & cmTextBox.Text & "'"
+            com.CommandText = "Select * From car Where carnum='" & ccComboBox.SelectedItem.ToString() & "'"
 
             dr = com.ExecuteReader()
             If dr.Read() Then
@@ -850,13 +891,33 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         backgroundPanel.Visible = False
 
         '清空数据
-        dmTextBox.Text = ""
         TextBox18.Text = ""
         TextBox19.Text = ""
         TextBox20.Text = ""
         TextBox21.Text = ""
         TextBox22.Text = ""
         TextBox23.Text = ""
+
+        '数据库连接与操作
+        Try
+            conn.Open()
+
+            com.Connection = conn
+            com.CommandType = CommandType.Text
+            com.CommandText = "Select driver_id From driver"
+
+            dr = com.ExecuteReader()
+            dcComboBox.Items.Clear()
+            While dr.Read()
+                dcComboBox.Items.Add(dr.GetString(0))
+            End While
+
+            conn.Close()
+
+        Catch myerror As MySqlException
+            MsgBox("Error connecting to the server:" & myerror.Message)
+        End Try
+
     End Sub
 
     '点击“司机信息查询界面”（选中）
@@ -872,7 +933,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         includingPanel.Visible = False
 
         '清除数据
-        If dmTextBox.Text <> "" Then
+        If dcComboBox.SelectedItem.ToString() <> "" Then
             TextBox18.Text = ""
             TextBox19.Text = ""
             TextBox20.Text = ""
@@ -887,7 +948,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
             com.Connection = conn
             com.CommandType = CommandType.Text
-            com.CommandText = "Select * From driver Where driver_id='" & dmTextBox.Text & "'"
+            com.CommandText = "Select * From driver Where driver_id='" & dcComboBox.SelectedItem.ToString() & "'"
 
             dr = com.ExecuteReader()
             If dr.Read() Then
@@ -1060,6 +1121,27 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         TextBox32.Text = ""
         TextBox33.Text = ""
         TextBox34.Text = ""
+
+        '数据库连接与操作
+        Try
+            conn.Open()
+
+            com.Connection = conn
+            com.CommandType = CommandType.Text
+            com.CommandText = "Select carnum From car"
+
+            dr = com.ExecuteReader()
+            dacarComboBox.Items.Clear()
+            While dr.Read()
+                dacarComboBox.Items.Add(dr.GetString(0))
+            End While
+
+            conn.Close()
+
+        Catch myerror As MySqlException
+            MsgBox("Error connecting to the server:" & myerror.Message)
+        End Try
+
     End Sub
 
     '点击“司机信息录入界面”（选中）
@@ -1080,7 +1162,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
             com.Connection = conn
             com.CommandType = CommandType.Text
-            com.CommandText = "Insert Into driver (driver_id,name,bday,dkind,part,telnum,carnum) Values ('" & TextBox29.Text & "','" & TextBox30.Text & "','" & TextBox31.Text & "','" & TextBox32.Text & "','" & TextBox33.Text & "','" & TextBox34.Text & "','" & TextBox16.Text & "')"
+            com.CommandText = "Insert Into driver (driver_id,name,bday,dkind,part,telnum,carnum) Values ('" & TextBox29.Text & "','" & TextBox30.Text & "','" & TextBox31.Text & "','" & TextBox32.Text & "','" & TextBox33.Text & "','" & TextBox34.Text & "','" & dacarComboBox.SelectedItem.ToString() & "')"
 
             dr = com.ExecuteReader
             MessageBox.Show("存储成功！")

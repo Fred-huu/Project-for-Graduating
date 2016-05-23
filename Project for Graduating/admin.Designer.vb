@@ -59,7 +59,6 @@ Partial Class admin
         Me.modifyPanel = New System.Windows.Forms.Panel()
         Me.Cancel = New System.Windows.Forms.Button()
         Me.OK = New System.Windows.Forms.Button()
-        Me.modifyTextBox = New System.Windows.Forms.TextBox()
         Me.Label52 = New System.Windows.Forms.Label()
         Me.复位LinkLabel = New System.Windows.Forms.LinkLabel()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
@@ -115,7 +114,6 @@ Partial Class admin
         Me.signoutLinkLabel = New System.Windows.Forms.LinkLabel()
         Me.cmPanel = New System.Windows.Forms.Panel()
         Me.Label36 = New System.Windows.Forms.Label()
-        Me.cmTextBox = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.carselectButton = New System.Windows.Forms.Button()
         Me.TextBox17 = New System.Windows.Forms.TextBox()
@@ -131,7 +129,6 @@ Partial Class admin
         Me.dmPanel = New System.Windows.Forms.Panel()
         Me.日期格式 = New System.Windows.Forms.Label()
         Me.TextBox18 = New System.Windows.Forms.TextBox()
-        Me.dmTextBox = New System.Windows.Forms.TextBox()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.driverselectButton = New System.Windows.Forms.Button()
         Me.TextBox23 = New System.Windows.Forms.TextBox()
@@ -163,7 +160,6 @@ Partial Class admin
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.daddPanel = New System.Windows.Forms.Panel()
         Me.Label53 = New System.Windows.Forms.Label()
-        Me.TextBox16 = New System.Windows.Forms.TextBox()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.clearLinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.driverupdateButton = New System.Windows.Forms.Button()
@@ -237,6 +233,10 @@ Partial Class admin
         Me.setupPanel = New System.Windows.Forms.Panel()
         Me.setupOKButton = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.dacarComboBox = New System.Windows.Forms.ComboBox()
+        Me.modifyComboBox = New System.Windows.Forms.ComboBox()
+        Me.dcComboBox = New System.Windows.Forms.ComboBox()
+        Me.ccComboBox = New System.Windows.Forms.ComboBox()
         Me.aboutPanel.SuspendLayout()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.开发人员PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -315,9 +315,9 @@ Partial Class admin
         Me.版本信息Label.AutoSize = True
         Me.版本信息Label.Location = New System.Drawing.Point(110, 385)
         Me.版本信息Label.Name = "版本信息Label"
-        Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
+        Me.版本信息Label.Size = New System.Drawing.Size(125, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.9.160523.5"
+        Me.版本信息Label.Text = "2.9.160523.10"
         '
         '人员姓名Label
         '
@@ -683,9 +683,9 @@ Partial Class admin
         '
         Me.modifyPanel.BackColor = System.Drawing.SystemColors.Control
         Me.modifyPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.modifyPanel.Controls.Add(Me.modifyComboBox)
         Me.modifyPanel.Controls.Add(Me.Cancel)
         Me.modifyPanel.Controls.Add(Me.OK)
-        Me.modifyPanel.Controls.Add(Me.modifyTextBox)
         Me.modifyPanel.Controls.Add(Me.Label52)
         Me.modifyPanel.Location = New System.Drawing.Point(816, 266)
         Me.modifyPanel.Name = "modifyPanel"
@@ -717,13 +717,6 @@ Partial Class admin
         Me.OK.Text = "确定"
         Me.OK.UseVisualStyleBackColor = False
         '
-        'modifyTextBox
-        '
-        Me.modifyTextBox.Location = New System.Drawing.Point(71, 68)
-        Me.modifyTextBox.Name = "modifyTextBox"
-        Me.modifyTextBox.Size = New System.Drawing.Size(112, 28)
-        Me.modifyTextBox.TabIndex = 41
-        '
         'Label52
         '
         Me.Label52.AutoSize = True
@@ -731,7 +724,7 @@ Partial Class admin
         Me.Label52.Name = "Label52"
         Me.Label52.Size = New System.Drawing.Size(116, 54)
         Me.Label52.TabIndex = 7
-        Me.Label52.Text = "请输入正确的" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "车牌号"
+        Me.Label52.Text = "请选择正确的" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "车牌号"
         '
         '复位LinkLabel
         '
@@ -1071,8 +1064,8 @@ Partial Class admin
         '
         'helpPanel
         '
-        Me.helpPanel.Controls.Add(Me.includingLabel)
         Me.helpPanel.Controls.Add(Me.PictureBox11)
+        Me.helpPanel.Controls.Add(Me.includingLabel)
         Me.helpPanel.Location = New System.Drawing.Point(200, 0)
         Me.helpPanel.Name = "helpPanel"
         Me.helpPanel.Size = New System.Drawing.Size(1060, 628)
@@ -1191,8 +1184,8 @@ Partial Class admin
         '
         'cmPanel
         '
+        Me.cmPanel.Controls.Add(Me.ccComboBox)
         Me.cmPanel.Controls.Add(Me.Label36)
-        Me.cmPanel.Controls.Add(Me.cmTextBox)
         Me.cmPanel.Controls.Add(Me.Label12)
         Me.cmPanel.Controls.Add(Me.carselectButton)
         Me.cmPanel.Controls.Add(Me.TextBox17)
@@ -1220,15 +1213,6 @@ Partial Class admin
         Me.Label36.TabIndex = 148
         Me.Label36.Text = "(YYYY-MM-DD)"
         '
-        'cmTextBox
-        '
-        Me.cmTextBox.Location = New System.Drawing.Point(474, 184)
-        Me.cmTextBox.MaxLength = 13
-        Me.cmTextBox.Multiline = True
-        Me.cmTextBox.Name = "cmTextBox"
-        Me.cmTextBox.Size = New System.Drawing.Size(170, 28)
-        Me.cmTextBox.TabIndex = 61
-        '
         'Label12
         '
         Me.Label12.AutoSize = True
@@ -1237,7 +1221,7 @@ Partial Class admin
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(304, 21)
         Me.Label12.TabIndex = 147
-        Me.Label12.Text = "请输入需要查询的汽车的车牌号"
+        Me.Label12.Text = "请选择需要查询的汽车的车牌号"
         '
         'carselectButton
         '
@@ -1345,9 +1329,9 @@ Partial Class admin
         '
         'dmPanel
         '
+        Me.dmPanel.Controls.Add(Me.dcComboBox)
         Me.dmPanel.Controls.Add(Me.日期格式)
         Me.dmPanel.Controls.Add(Me.TextBox18)
-        Me.dmPanel.Controls.Add(Me.dmTextBox)
         Me.dmPanel.Controls.Add(Me.Label29)
         Me.dmPanel.Controls.Add(Me.driverselectButton)
         Me.dmPanel.Controls.Add(Me.TextBox23)
@@ -1385,15 +1369,6 @@ Partial Class admin
         Me.TextBox18.Size = New System.Drawing.Size(187, 28)
         Me.TextBox18.TabIndex = 144
         '
-        'dmTextBox
-        '
-        Me.dmTextBox.Location = New System.Drawing.Point(464, 159)
-        Me.dmTextBox.MaxLength = 18
-        Me.dmTextBox.Multiline = True
-        Me.dmTextBox.Name = "dmTextBox"
-        Me.dmTextBox.Size = New System.Drawing.Size(187, 28)
-        Me.dmTextBox.TabIndex = 71
-        '
         'Label29
         '
         Me.Label29.AutoSize = True
@@ -1402,7 +1377,7 @@ Partial Class admin
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(325, 21)
         Me.Label29.TabIndex = 143
-        Me.Label29.Text = "请输入需要查询的司机的驾驶证号"
+        Me.Label29.Text = "请选择需要查询的司机的驾驶证号"
         '
         'driverselectButton
         '
@@ -1673,8 +1648,8 @@ Partial Class admin
         '
         'daddPanel
         '
+        Me.daddPanel.Controls.Add(Me.dacarComboBox)
         Me.daddPanel.Controls.Add(Me.Label53)
-        Me.daddPanel.Controls.Add(Me.TextBox16)
         Me.daddPanel.Controls.Add(Me.Label26)
         Me.daddPanel.Controls.Add(Me.clearLinkLabel2)
         Me.daddPanel.Controls.Add(Me.driverupdateButton)
@@ -1706,13 +1681,6 @@ Partial Class admin
         Me.Label53.Size = New System.Drawing.Size(116, 18)
         Me.Label53.TabIndex = 146
         Me.Label53.Text = "(YYYY-MM-DD)"
-        '
-        'TextBox16
-        '
-        Me.TextBox16.Location = New System.Drawing.Point(474, 292)
-        Me.TextBox16.Name = "TextBox16"
-        Me.TextBox16.Size = New System.Drawing.Size(170, 28)
-        Me.TextBox16.TabIndex = 95
         '
         'Label26
         '
@@ -2474,6 +2442,40 @@ Partial Class admin
         Me.PictureBox2.TabIndex = 105
         Me.PictureBox2.TabStop = False
         '
+        'dacarComboBox
+        '
+        Me.dacarComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.dacarComboBox.FormattingEnabled = True
+        Me.dacarComboBox.Location = New System.Drawing.Point(474, 293)
+        Me.dacarComboBox.Name = "dacarComboBox"
+        Me.dacarComboBox.Size = New System.Drawing.Size(170, 26)
+        Me.dacarComboBox.TabIndex = 147
+        '
+        'modifyComboBox
+        '
+        Me.modifyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.modifyComboBox.FormattingEnabled = True
+        Me.modifyComboBox.Location = New System.Drawing.Point(71, 72)
+        Me.modifyComboBox.Name = "modifyComboBox"
+        Me.modifyComboBox.Size = New System.Drawing.Size(112, 26)
+        Me.modifyComboBox.TabIndex = 44
+        '
+        'dcComboBox
+        '
+        Me.dcComboBox.FormattingEnabled = True
+        Me.dcComboBox.Location = New System.Drawing.Point(464, 161)
+        Me.dcComboBox.Name = "dcComboBox"
+        Me.dcComboBox.Size = New System.Drawing.Size(187, 26)
+        Me.dcComboBox.TabIndex = 146
+        '
+        'ccComboBox
+        '
+        Me.ccComboBox.FormattingEnabled = True
+        Me.ccComboBox.Location = New System.Drawing.Point(474, 186)
+        Me.ccComboBox.Name = "ccComboBox"
+        Me.ccComboBox.Size = New System.Drawing.Size(170, 26)
+        Me.ccComboBox.TabIndex = 149
+        '
         'admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
@@ -2602,7 +2604,6 @@ Partial Class admin
     Friend WithEvents modifyPanel As Panel
     Friend WithEvents Cancel As Button
     Friend WithEvents OK As Button
-    Friend WithEvents modifyTextBox As TextBox
     Friend WithEvents Label52 As Label
     Friend WithEvents 复位LinkLabel As LinkLabel
     Friend WithEvents PictureBox4 As PictureBox
@@ -2653,7 +2654,6 @@ Partial Class admin
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents signoutLinkLabel As LinkLabel
     Friend WithEvents cmPanel As Panel
-    Friend WithEvents cmTextBox As TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents carselectButton As Button
     Friend WithEvents TextBox17 As TextBox
@@ -2668,7 +2668,6 @@ Partial Class admin
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents dmPanel As Panel
     Friend WithEvents TextBox18 As TextBox
-    Friend WithEvents dmTextBox As TextBox
     Friend WithEvents Label29 As Label
     Friend WithEvents driverselectButton As Button
     Friend WithEvents TextBox23 As TextBox
@@ -2774,7 +2773,6 @@ Partial Class admin
     Friend WithEvents includingLabel As Label
     Friend WithEvents Label25 As Label
     Friend WithEvents UserLabel As Label
-    Friend WithEvents TextBox16 As TextBox
     Friend WithEvents Label26 As Label
     Friend WithEvents backgroundPanel As Panel
     Friend WithEvents dielingWebBrowser As WebBrowser
@@ -2789,4 +2787,8 @@ Partial Class admin
     Friend WithEvents setupPanel As Panel
     Friend WithEvents setupOKButton As Button
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents dacarComboBox As ComboBox
+    Friend WithEvents modifyComboBox As ComboBox
+    Friend WithEvents dcComboBox As ComboBox
+    Friend WithEvents ccComboBox As ComboBox
 End Class
