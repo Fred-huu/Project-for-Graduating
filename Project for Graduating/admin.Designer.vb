@@ -57,6 +57,7 @@ Partial Class admin
         Me.kindTextBox = New System.Windows.Forms.TextBox()
         Me.修改LinkLabel = New System.Windows.Forms.LinkLabel()
         Me.modifyPanel = New System.Windows.Forms.Panel()
+        Me.modifyComboBox = New System.Windows.Forms.ComboBox()
         Me.Cancel = New System.Windows.Forms.Button()
         Me.OK = New System.Windows.Forms.Button()
         Me.Label52 = New System.Windows.Forms.Label()
@@ -98,8 +99,8 @@ Partial Class admin
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.helpPanel = New System.Windows.Forms.Panel()
-        Me.includingLabel = New System.Windows.Forms.Label()
         Me.PictureBox11 = New System.Windows.Forms.PictureBox()
+        Me.includingLabel = New System.Windows.Forms.Label()
         Me.wPanel = New System.Windows.Forms.Panel()
         Me.selectButton = New System.Windows.Forms.Button()
         Me.ListView1 = New System.Windows.Forms.ListView()
@@ -113,6 +114,7 @@ Partial Class admin
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.signoutLinkLabel = New System.Windows.Forms.LinkLabel()
         Me.cmPanel = New System.Windows.Forms.Panel()
+        Me.ccComboBox = New System.Windows.Forms.ComboBox()
         Me.Label36 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.carselectButton = New System.Windows.Forms.Button()
@@ -127,6 +129,7 @@ Partial Class admin
         Me.Label28 = New System.Windows.Forms.Label()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.dmPanel = New System.Windows.Forms.Panel()
+        Me.dcComboBox = New System.Windows.Forms.ComboBox()
         Me.日期格式 = New System.Windows.Forms.Label()
         Me.TextBox18 = New System.Windows.Forms.TextBox()
         Me.Label29 = New System.Windows.Forms.Label()
@@ -159,6 +162,7 @@ Partial Class admin
         Me.Label44 = New System.Windows.Forms.Label()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.daddPanel = New System.Windows.Forms.Panel()
+        Me.dacarComboBox = New System.Windows.Forms.ComboBox()
         Me.Label53 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.clearLinkLabel2 = New System.Windows.Forms.LinkLabel()
@@ -178,6 +182,7 @@ Partial Class admin
         Me.Label51 = New System.Windows.Forms.Label()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.loginPanel = New System.Windows.Forms.Panel()
+        Me.setupLinkLabel = New System.Windows.Forms.LinkLabel()
         Me.logtime = New System.Windows.Forms.Label()
         Me.账号注册LinkLabel = New System.Windows.Forms.LinkLabel()
         Me.offButton = New System.Windows.Forms.Button()
@@ -229,14 +234,19 @@ Partial Class admin
         Me.backgroundPanel = New System.Windows.Forms.Panel()
         Me.htPictureBox = New System.Windows.Forms.PictureBox()
         Me.dielingWebBrowser = New System.Windows.Forms.WebBrowser()
-        Me.setupLinkLabel = New System.Windows.Forms.LinkLabel()
         Me.setupPanel = New System.Windows.Forms.Panel()
+        Me.connectButton = New System.Windows.Forms.Button()
+        Me.databaseList = New System.Windows.Forms.ComboBox()
+        Me.UserIDTextBox = New System.Windows.Forms.TextBox()
+        Me.InitialCatalogTextBox = New System.Windows.Forms.TextBox()
+        Me.PWDTextBox = New System.Windows.Forms.TextBox()
+        Me.UserIDLabel = New System.Windows.Forms.Label()
+        Me.PWDLabel = New System.Windows.Forms.Label()
+        Me.InitialCatalogLabel = New System.Windows.Forms.Label()
+        Me.DataSourceTextBox = New System.Windows.Forms.TextBox()
+        Me.DataSourceLabel = New System.Windows.Forms.Label()
         Me.setupOKButton = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.dacarComboBox = New System.Windows.Forms.ComboBox()
-        Me.modifyComboBox = New System.Windows.Forms.ComboBox()
-        Me.dcComboBox = New System.Windows.Forms.ComboBox()
-        Me.ccComboBox = New System.Windows.Forms.ComboBox()
         Me.aboutPanel.SuspendLayout()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.开发人员PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -315,9 +325,9 @@ Partial Class admin
         Me.版本信息Label.AutoSize = True
         Me.版本信息Label.Location = New System.Drawing.Point(110, 385)
         Me.版本信息Label.Name = "版本信息Label"
-        Me.版本信息Label.Size = New System.Drawing.Size(125, 18)
+        Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.9.160523.10"
+        Me.版本信息Label.Text = "2.9.160607.4"
         '
         '人员姓名Label
         '
@@ -692,6 +702,15 @@ Partial Class admin
         Me.modifyPanel.Size = New System.Drawing.Size(200, 215)
         Me.modifyPanel.TabIndex = 107
         Me.modifyPanel.Visible = False
+        '
+        'modifyComboBox
+        '
+        Me.modifyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.modifyComboBox.FormattingEnabled = True
+        Me.modifyComboBox.Location = New System.Drawing.Point(71, 72)
+        Me.modifyComboBox.Name = "modifyComboBox"
+        Me.modifyComboBox.Size = New System.Drawing.Size(112, 26)
+        Me.modifyComboBox.TabIndex = 44
         '
         'Cancel
         '
@@ -1072,15 +1091,6 @@ Partial Class admin
         Me.helpPanel.TabIndex = 114
         Me.helpPanel.Visible = False
         '
-        'includingLabel
-        '
-        Me.includingLabel.AutoSize = True
-        Me.includingLabel.Location = New System.Drawing.Point(39, 98)
-        Me.includingLabel.Name = "includingLabel"
-        Me.includingLabel.Size = New System.Drawing.Size(980, 486)
-        Me.includingLabel.TabIndex = 106
-        Me.includingLabel.Text = resources.GetString("includingLabel.Text")
-        '
         'PictureBox11
         '
         Me.PictureBox11.BackColor = System.Drawing.SystemColors.HotTrack
@@ -1092,6 +1102,15 @@ Partial Class admin
         Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox11.TabIndex = 105
         Me.PictureBox11.TabStop = False
+        '
+        'includingLabel
+        '
+        Me.includingLabel.AutoSize = True
+        Me.includingLabel.Location = New System.Drawing.Point(39, 98)
+        Me.includingLabel.Name = "includingLabel"
+        Me.includingLabel.Size = New System.Drawing.Size(980, 486)
+        Me.includingLabel.TabIndex = 106
+        Me.includingLabel.Text = resources.GetString("includingLabel.Text")
         '
         'wPanel
         '
@@ -1203,6 +1222,14 @@ Partial Class admin
         Me.cmPanel.Size = New System.Drawing.Size(1060, 472)
         Me.cmPanel.TabIndex = 118
         Me.cmPanel.Visible = False
+        '
+        'ccComboBox
+        '
+        Me.ccComboBox.FormattingEnabled = True
+        Me.ccComboBox.Location = New System.Drawing.Point(474, 186)
+        Me.ccComboBox.Name = "ccComboBox"
+        Me.ccComboBox.Size = New System.Drawing.Size(170, 26)
+        Me.ccComboBox.TabIndex = 149
         '
         'Label36
         '
@@ -1351,6 +1378,14 @@ Partial Class admin
         Me.dmPanel.Size = New System.Drawing.Size(1060, 464)
         Me.dmPanel.TabIndex = 119
         Me.dmPanel.Visible = False
+        '
+        'dcComboBox
+        '
+        Me.dcComboBox.FormattingEnabled = True
+        Me.dcComboBox.Location = New System.Drawing.Point(464, 161)
+        Me.dcComboBox.Name = "dcComboBox"
+        Me.dcComboBox.Size = New System.Drawing.Size(187, 26)
+        Me.dcComboBox.TabIndex = 146
         '
         '日期格式
         '
@@ -1673,6 +1708,15 @@ Partial Class admin
         Me.daddPanel.TabIndex = 121
         Me.daddPanel.Visible = False
         '
+        'dacarComboBox
+        '
+        Me.dacarComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.dacarComboBox.FormattingEnabled = True
+        Me.dacarComboBox.Location = New System.Drawing.Point(474, 293)
+        Me.dacarComboBox.Name = "dacarComboBox"
+        Me.dacarComboBox.Size = New System.Drawing.Size(170, 26)
+        Me.dacarComboBox.TabIndex = 147
+        '
         'Label53
         '
         Me.Label53.AutoSize = True
@@ -1835,6 +1879,7 @@ Partial Class admin
         '
         Me.loginPanel.BackgroundImage = CType(resources.GetObject("loginPanel.BackgroundImage"), System.Drawing.Image)
         Me.loginPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.loginPanel.Controls.Add(Me.setupLinkLabel)
         Me.loginPanel.Controls.Add(Me.logtime)
         Me.loginPanel.Controls.Add(Me.账号注册LinkLabel)
         Me.loginPanel.Controls.Add(Me.offButton)
@@ -1849,6 +1894,17 @@ Partial Class admin
         Me.loginPanel.Name = "loginPanel"
         Me.loginPanel.Size = New System.Drawing.Size(1280, 720)
         Me.loginPanel.TabIndex = 129
+        '
+        'setupLinkLabel
+        '
+        Me.setupLinkLabel.AutoSize = True
+        Me.setupLinkLabel.BackColor = System.Drawing.Color.Transparent
+        Me.setupLinkLabel.Location = New System.Drawing.Point(832, 638)
+        Me.setupLinkLabel.Name = "setupLinkLabel"
+        Me.setupLinkLabel.Size = New System.Drawing.Size(134, 18)
+        Me.setupLinkLabel.TabIndex = 116
+        Me.setupLinkLabel.TabStop = True
+        Me.setupLinkLabel.Text = "设置数据库地址"
         '
         'logtime
         '
@@ -2327,7 +2383,6 @@ Partial Class admin
         'downPanel
         '
         Me.downPanel.BackColor = System.Drawing.Color.Transparent
-        Me.downPanel.Controls.Add(Me.setupLinkLabel)
         Me.downPanel.Controls.Add(Me.backgroundLinkLabel)
         Me.downPanel.Controls.Add(Me.signoutLinkLabel)
         Me.downPanel.Controls.Add(Me.time)
@@ -2400,18 +2455,18 @@ Partial Class admin
         Me.dielingWebBrowser.TabIndex = 106
         Me.dielingWebBrowser.Url = New System.Uri("http://vps.dieling.cc/qch/", System.UriKind.Absolute)
         '
-        'setupLinkLabel
-        '
-        Me.setupLinkLabel.AutoSize = True
-        Me.setupLinkLabel.Location = New System.Drawing.Point(870, 10)
-        Me.setupLinkLabel.Name = "setupLinkLabel"
-        Me.setupLinkLabel.Size = New System.Drawing.Size(44, 18)
-        Me.setupLinkLabel.TabIndex = 113
-        Me.setupLinkLabel.TabStop = True
-        Me.setupLinkLabel.Text = "设置"
-        '
         'setupPanel
         '
+        Me.setupPanel.Controls.Add(Me.connectButton)
+        Me.setupPanel.Controls.Add(Me.databaseList)
+        Me.setupPanel.Controls.Add(Me.UserIDTextBox)
+        Me.setupPanel.Controls.Add(Me.InitialCatalogTextBox)
+        Me.setupPanel.Controls.Add(Me.PWDTextBox)
+        Me.setupPanel.Controls.Add(Me.UserIDLabel)
+        Me.setupPanel.Controls.Add(Me.PWDLabel)
+        Me.setupPanel.Controls.Add(Me.InitialCatalogLabel)
+        Me.setupPanel.Controls.Add(Me.DataSourceTextBox)
+        Me.setupPanel.Controls.Add(Me.DataSourceLabel)
         Me.setupPanel.Controls.Add(Me.setupOKButton)
         Me.setupPanel.Controls.Add(Me.PictureBox2)
         Me.setupPanel.Location = New System.Drawing.Point(200, 0)
@@ -2419,6 +2474,95 @@ Partial Class admin
         Me.setupPanel.Size = New System.Drawing.Size(1060, 530)
         Me.setupPanel.TabIndex = 137
         Me.setupPanel.Visible = False
+        '
+        'connectButton
+        '
+        Me.connectButton.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.connectButton.Location = New System.Drawing.Point(474, 286)
+        Me.connectButton.Name = "connectButton"
+        Me.connectButton.Size = New System.Drawing.Size(94, 33)
+        Me.connectButton.TabIndex = 115
+        Me.connectButton.Text = "连接"
+        Me.connectButton.UseVisualStyleBackColor = True
+        '
+        'databaseList
+        '
+        Me.databaseList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.databaseList.FormattingEnabled = True
+        Me.databaseList.Items.AddRange(New Object() {"qicheheng"})
+        Me.databaseList.Location = New System.Drawing.Point(454, 376)
+        Me.databaseList.Name = "databaseList"
+        Me.databaseList.Size = New System.Drawing.Size(170, 26)
+        Me.databaseList.TabIndex = 114
+        '
+        'UserIDTextBox
+        '
+        Me.UserIDTextBox.Location = New System.Drawing.Point(439, 203)
+        Me.UserIDTextBox.Name = "UserIDTextBox"
+        Me.UserIDTextBox.Size = New System.Drawing.Size(170, 28)
+        Me.UserIDTextBox.TabIndex = 113
+        Me.UserIDTextBox.Text = "test"
+        '
+        'InitialCatalogTextBox
+        '
+        Me.InitialCatalogTextBox.Location = New System.Drawing.Point(454, 325)
+        Me.InitialCatalogTextBox.Name = "InitialCatalogTextBox"
+        Me.InitialCatalogTextBox.Size = New System.Drawing.Size(170, 28)
+        Me.InitialCatalogTextBox.TabIndex = 112
+        Me.InitialCatalogTextBox.Text = "qicheheng"
+        '
+        'PWDTextBox
+        '
+        Me.PWDTextBox.Location = New System.Drawing.Point(449, 251)
+        Me.PWDTextBox.Name = "PWDTextBox"
+        Me.PWDTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.PWDTextBox.Size = New System.Drawing.Size(170, 28)
+        Me.PWDTextBox.TabIndex = 111
+        Me.PWDTextBox.Text = "1004426187"
+        '
+        'UserIDLabel
+        '
+        Me.UserIDLabel.AutoSize = True
+        Me.UserIDLabel.Location = New System.Drawing.Point(287, 207)
+        Me.UserIDLabel.Name = "UserIDLabel"
+        Me.UserIDLabel.Size = New System.Drawing.Size(62, 18)
+        Me.UserIDLabel.TabIndex = 110
+        Me.UserIDLabel.Text = "用户名"
+        '
+        'PWDLabel
+        '
+        Me.PWDLabel.AutoSize = True
+        Me.PWDLabel.Location = New System.Drawing.Point(278, 240)
+        Me.PWDLabel.Name = "PWDLabel"
+        Me.PWDLabel.Size = New System.Drawing.Size(44, 18)
+        Me.PWDLabel.TabIndex = 109
+        Me.PWDLabel.Text = "密码"
+        '
+        'InitialCatalogLabel
+        '
+        Me.InitialCatalogLabel.AutoSize = True
+        Me.InitialCatalogLabel.Location = New System.Drawing.Point(280, 374)
+        Me.InitialCatalogLabel.Name = "InitialCatalogLabel"
+        Me.InitialCatalogLabel.Size = New System.Drawing.Size(62, 18)
+        Me.InitialCatalogLabel.TabIndex = 108
+        Me.InitialCatalogLabel.Text = "数据库"
+        '
+        'DataSourceTextBox
+        '
+        Me.DataSourceTextBox.Location = New System.Drawing.Point(429, 167)
+        Me.DataSourceTextBox.Name = "DataSourceTextBox"
+        Me.DataSourceTextBox.Size = New System.Drawing.Size(170, 28)
+        Me.DataSourceTextBox.TabIndex = 107
+        Me.DataSourceTextBox.Text = "vps.dieling.cc"
+        '
+        'DataSourceLabel
+        '
+        Me.DataSourceLabel.AutoSize = True
+        Me.DataSourceLabel.Location = New System.Drawing.Point(287, 173)
+        Me.DataSourceLabel.Name = "DataSourceLabel"
+        Me.DataSourceLabel.Size = New System.Drawing.Size(134, 18)
+        Me.DataSourceLabel.TabIndex = 106
+        Me.DataSourceLabel.Text = "主机名或IP地址"
         '
         'setupOKButton
         '
@@ -2442,40 +2586,6 @@ Partial Class admin
         Me.PictureBox2.TabIndex = 105
         Me.PictureBox2.TabStop = False
         '
-        'dacarComboBox
-        '
-        Me.dacarComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.dacarComboBox.FormattingEnabled = True
-        Me.dacarComboBox.Location = New System.Drawing.Point(474, 293)
-        Me.dacarComboBox.Name = "dacarComboBox"
-        Me.dacarComboBox.Size = New System.Drawing.Size(170, 26)
-        Me.dacarComboBox.TabIndex = 147
-        '
-        'modifyComboBox
-        '
-        Me.modifyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.modifyComboBox.FormattingEnabled = True
-        Me.modifyComboBox.Location = New System.Drawing.Point(71, 72)
-        Me.modifyComboBox.Name = "modifyComboBox"
-        Me.modifyComboBox.Size = New System.Drawing.Size(112, 26)
-        Me.modifyComboBox.TabIndex = 44
-        '
-        'dcComboBox
-        '
-        Me.dcComboBox.FormattingEnabled = True
-        Me.dcComboBox.Location = New System.Drawing.Point(464, 161)
-        Me.dcComboBox.Name = "dcComboBox"
-        Me.dcComboBox.Size = New System.Drawing.Size(187, 26)
-        Me.dcComboBox.TabIndex = 146
-        '
-        'ccComboBox
-        '
-        Me.ccComboBox.FormattingEnabled = True
-        Me.ccComboBox.Location = New System.Drawing.Point(474, 186)
-        Me.ccComboBox.Name = "ccComboBox"
-        Me.ccComboBox.Size = New System.Drawing.Size(170, 26)
-        Me.ccComboBox.TabIndex = 149
-        '
         'admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
@@ -2490,13 +2600,13 @@ Partial Class admin
         Me.Controls.Add(Me.suggestPanel)
         Me.Controls.Add(Me.helpPanel)
         Me.Controls.Add(Me.wPanel)
+        Me.Controls.Add(Me.newuserPanel)
+        Me.Controls.Add(Me.loginPanel)
         Me.Controls.Add(Me.setupPanel)
         Me.Controls.Add(Me.dmPanel)
         Me.Controls.Add(Me.cmPanel)
         Me.Controls.Add(Me.caddPanel)
         Me.Controls.Add(Me.daddPanel)
-        Me.Controls.Add(Me.newuserPanel)
-        Me.Controls.Add(Me.loginPanel)
         Me.Controls.Add(Me.adminPanel)
         Me.Controls.Add(Me.backgroundPanel)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -2573,6 +2683,7 @@ Partial Class admin
         Me.backgroundPanel.ResumeLayout(False)
         CType(Me.htPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.setupPanel.ResumeLayout(False)
+        Me.setupPanel.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -2783,7 +2894,6 @@ Partial Class admin
     Friend WithEvents Label36 As Label
     Friend WithEvents Label38 As Label
     Friend WithEvents Label53 As Label
-    Friend WithEvents setupLinkLabel As LinkLabel
     Friend WithEvents setupPanel As Panel
     Friend WithEvents setupOKButton As Button
     Friend WithEvents PictureBox2 As PictureBox
@@ -2791,4 +2901,15 @@ Partial Class admin
     Friend WithEvents modifyComboBox As ComboBox
     Friend WithEvents dcComboBox As ComboBox
     Friend WithEvents ccComboBox As ComboBox
+    Friend WithEvents UserIDLabel As Label
+    Friend WithEvents PWDLabel As Label
+    Friend WithEvents InitialCatalogLabel As Label
+    Friend WithEvents DataSourceTextBox As TextBox
+    Friend WithEvents DataSourceLabel As Label
+    Friend WithEvents UserIDTextBox As TextBox
+    Friend WithEvents InitialCatalogTextBox As TextBox
+    Friend WithEvents PWDTextBox As TextBox
+    Friend WithEvents databaseList As ComboBox
+    Friend WithEvents connectButton As Button
+    Friend WithEvents setupLinkLabel As LinkLabel
 End Class

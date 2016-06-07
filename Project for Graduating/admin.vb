@@ -24,8 +24,9 @@ Public Class admin
 
 #Region “定义全局变量“
 #Region “数据库”
-    Dim conn As New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
-    'Dim conn As New MySqlConnection("Data source=localhost;Initial Catalog=car;" + "User ID=root;PWD=admin")
+    'Dim conn As New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
+    'Dim conn As New MySqlConnection("Data source={0};Initial Catalog={1};User ID={2};PWD={3};pooling = True", DataSourceTextBox.Text, UserIDTextBox.Text, PWDTextBox.Text)
+    Dim conn As MySqlConnection
 
     Dim com As New MySqlCommand
     Dim dr As MySqlDataReader
@@ -97,7 +98,7 @@ Public Class admin
             MessageBox.Show("有数据没有输入，请输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             Try
-                conn.Open()
+                'conn.Open()
 
                 com.Connection = conn
                 com.CommandType = CommandType.Text
@@ -120,7 +121,7 @@ Public Class admin
                     PasswordTextBox.Text = ""
                 End If
 
-                conn.Close()
+                'conn.Close()
 
             Catch myerror As MySqlException
                 MsgBox("Error connecting to the server:" & myerror.Message)
@@ -132,6 +133,79 @@ Public Class admin
     Private Sub offButton_Click(sender As Object, e As EventArgs) Handles offButton.Click
         Me.Close()
     End Sub
+
+    '-------------------------------------------
+
+#Region “设置数据库地址”
+    '设置数据库地址
+    Private Sub setupLinkLabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles setupLinkLabel.LinkClicked
+        'panel容器
+        loginPanel.Visible = False
+        adminPanel.Visible = False
+        wPanel.Visible = False
+        cmPanel.Visible = False
+        dmPanel.Visible = False
+        caddPanel.Visible = False
+        daddPanel.Visible = False
+        helpPanel.Visible = False
+        suggestPanel.Visible = False
+        aboutPanel.Visible = False
+        backgroundPanel.Visible = False
+        setupPanel.Visible = True
+    End Sub
+
+    Private Sub setupOKButton_Click(sender As Object, e As EventArgs) Handles setupOKButton.Click
+        setupPanel.Visible = False
+        loginPanel.Visible = True
+    End Sub
+
+    Private Sub connectButton_Click(sender As Object, e As EventArgs) Handles connectButton.Click
+        If Not conn Is Nothing Then conn.Close()
+
+        Dim connStr As String
+        connStr = String.Format("server={0};user id={1}; password={2}; database=qicheheng; pooling=false",
+                DataSourceTextBox.Text, UserIDTextBox.Text, PWDTextBox.Text)
+
+        Try
+            conn = New MySqlConnection(connStr)
+            conn.Open()
+
+            GetDatabases()
+        Catch ex As MySqlException
+            MessageBox.Show("Error connecting to the server: " + ex.Message)
+        End Try
+    End Sub
+
+    Private Sub GetDatabases()
+        Dim reader As MySqlDataReader
+        reader = Nothing
+
+        Dim cmd As New MySqlCommand("SHOW DATABASES", conn)
+        Try
+            reader = cmd.ExecuteReader()
+            databaseList.Items.Clear()
+
+            While (reader.Read())
+                databaseList.Items.Add(reader.GetString(0))
+            End While
+        Catch ex As MySqlException
+            MessageBox.Show("Failed to populate database list: " + ex.Message)
+        Finally
+            If Not reader Is Nothing Then reader.Close()
+        End Try
+
+    End Sub
+
+
+    Private Sub databaseList_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles databaseList.SelectedIndexChanged
+
+        conn.ChangeDatabase(databaseList.SelectedItem.ToString())
+
+    End Sub
+
+#End Region
+
+    '-------------------------------------------
 
     '忘记密码
     Private Sub 忘记密码LinkLabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles 忘记密码LinkLabel.LinkClicked
@@ -178,6 +252,7 @@ Public Class admin
         suggestPanel.Visible = False
         aboutPanel.Visible = False
         backgroundPanel.Visible = False
+        setupPanel.Visible = False
 
         menuPanel.Visible = False
 
@@ -191,7 +266,7 @@ Public Class admin
     Private Sub newokButton_Click(sender As Object, e As EventArgs) Handles newokButton.Click
         '数据库操作
         Try
-            conn.Open()
+            'conn.Open()
 
             com.Connection = conn
             com.CommandType = CommandType.Text
@@ -213,7 +288,7 @@ Public Class admin
                 End If
             End If
 
-            conn.Close()
+            'conn.Close()
 
         Catch myerror As MySqlException
             MsgBox("Error connecting to the server:" & myerror.Message)
@@ -290,6 +365,7 @@ Public Class admin
         suggestPanel.Visible = False
         aboutPanel.Visible = False
         backgroundPanel.Visible = False
+        setupPanel.Visible = False
 
         '隐藏修改界面
         modifyPanel.Visible = False
@@ -332,7 +408,7 @@ Public Class admin
 
         '数据库相关
         Try
-            conn.Open()
+            'conn.Open()
 
             com.Connection = conn
             com.CommandType = CommandType.Text
@@ -350,7 +426,7 @@ Public Class admin
                 TextBox10.AppendText(dr!fload & vbCrLf)
             End While
 
-            conn.Close()
+            'conn.Close()
 
         Catch myerror As MySqlException
             MsgBox("Error connecting to the server:" & myerror.Message)
@@ -410,7 +486,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         Else
             '数据库连接与操作
             Try
-                conn.Open()
+                'conn.Open()
 
                 com.Connection = conn
                 com.CommandType = CommandType.Text
@@ -418,7 +494,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
                 dr = com.ExecuteReader
 
-                conn.Close()
+                'conn.Close()
 
                 MsgBox("上传成功")
 
@@ -501,7 +577,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
         '数据库连接与操作
         Try
-            conn.Open()
+            'conn.Open()
 
             com.Connection = conn
             com.CommandType = CommandType.Text
@@ -513,7 +589,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
                 modifyComboBox.Items.Add(dr.GetString(0))
             End While
 
-            conn.Close()
+            'conn.Close()
 
         Catch myerror As MySqlException
             MsgBox("Error connecting to the server:" & myerror.Message)
@@ -633,6 +709,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         suggestPanel.Visible = False
         aboutPanel.Visible = False
         backgroundPanel.Visible = True
+        setupPanel.Visible = False
+
     End Sub
 #End Region
 
@@ -702,6 +780,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         suggestPanel.Visible = False
         aboutPanel.Visible = False
         backgroundPanel.Visible = False
+        setupPanel.Visible = False
 
         '清空数据
         ListView1.Items.Clear()
@@ -787,6 +866,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         suggestPanel.Visible = False
         aboutPanel.Visible = False
         backgroundPanel.Visible = False
+        setupPanel.Visible = False
 
         '清空数据
         TextBox13.Text = ""
@@ -889,6 +969,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         suggestPanel.Visible = False
         aboutPanel.Visible = False
         backgroundPanel.Visible = False
+        setupPanel.Visible = False
 
         '清空数据
         TextBox18.Text = ""
@@ -1035,6 +1116,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         suggestPanel.Visible = False
         aboutPanel.Visible = False
         backgroundPanel.Visible = False
+        setupPanel.Visible = False
 
         '清空数据
         TextBox24.Text = ""
@@ -1113,6 +1195,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         suggestPanel.Visible = False
         aboutPanel.Visible = False
         backgroundPanel.Visible = False
+        setupPanel.Visible = False
 
         '清空数据
         TextBox29.Text = ""
@@ -1259,6 +1342,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         suggestPanel.Visible = False
         aboutPanel.Visible = False
         backgroundPanel.Visible = False
+        setupPanel.Visible = False
     End Sub
 
     '点击“使用帮助界面”（选中）
@@ -1293,6 +1377,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         suggestPanel.Visible = True
         aboutPanel.Visible = False
         backgroundPanel.Visible = False
+        setupPanel.Visible = False
 
         '清空数据
         suggestTextBox.Text = ""
@@ -1367,12 +1452,14 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         suggestPanel.Visible = False
         aboutPanel.Visible = True
         backgroundPanel.Visible = False
+        setupPanel.Visible = False
     End Sub
 
     '点击“关于界面”（选中）
     Private Sub about1_Click(sender As Object, e As EventArgs) Handles about1.Click
         includingPanel.Visible = False
     End Sub
+
 #End Region
 
 #End Region
