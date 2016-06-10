@@ -235,8 +235,6 @@ Partial Class admin
         Me.htPictureBox = New System.Windows.Forms.PictureBox()
         Me.dielingWebBrowser = New System.Windows.Forms.WebBrowser()
         Me.setupPanel = New System.Windows.Forms.Panel()
-        Me.connectButton = New System.Windows.Forms.Button()
-        Me.databaseList = New System.Windows.Forms.ComboBox()
         Me.UserIDTextBox = New System.Windows.Forms.TextBox()
         Me.InitialCatalogTextBox = New System.Windows.Forms.TextBox()
         Me.PWDTextBox = New System.Windows.Forms.TextBox()
@@ -327,7 +325,7 @@ Partial Class admin
         Me.版本信息Label.Name = "版本信息Label"
         Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.9.160607.4"
+        Me.版本信息Label.Text = "2.9.160610.3"
         '
         '人员姓名Label
         '
@@ -2457,8 +2455,6 @@ Partial Class admin
         '
         'setupPanel
         '
-        Me.setupPanel.Controls.Add(Me.connectButton)
-        Me.setupPanel.Controls.Add(Me.databaseList)
         Me.setupPanel.Controls.Add(Me.UserIDTextBox)
         Me.setupPanel.Controls.Add(Me.InitialCatalogTextBox)
         Me.setupPanel.Controls.Add(Me.PWDTextBox)
@@ -2475,55 +2471,35 @@ Partial Class admin
         Me.setupPanel.TabIndex = 137
         Me.setupPanel.Visible = False
         '
-        'connectButton
-        '
-        Me.connectButton.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.connectButton.Location = New System.Drawing.Point(474, 286)
-        Me.connectButton.Name = "connectButton"
-        Me.connectButton.Size = New System.Drawing.Size(94, 33)
-        Me.connectButton.TabIndex = 115
-        Me.connectButton.Text = "连接"
-        Me.connectButton.UseVisualStyleBackColor = True
-        '
-        'databaseList
-        '
-        Me.databaseList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.databaseList.FormattingEnabled = True
-        Me.databaseList.Items.AddRange(New Object() {"qicheheng"})
-        Me.databaseList.Location = New System.Drawing.Point(454, 376)
-        Me.databaseList.Name = "databaseList"
-        Me.databaseList.Size = New System.Drawing.Size(170, 26)
-        Me.databaseList.TabIndex = 114
-        '
         'UserIDTextBox
         '
-        Me.UserIDTextBox.Location = New System.Drawing.Point(439, 203)
+        Me.UserIDTextBox.Location = New System.Drawing.Point(521, 210)
         Me.UserIDTextBox.Name = "UserIDTextBox"
         Me.UserIDTextBox.Size = New System.Drawing.Size(170, 28)
-        Me.UserIDTextBox.TabIndex = 113
+        Me.UserIDTextBox.TabIndex = 301
         Me.UserIDTextBox.Text = "test"
         '
         'InitialCatalogTextBox
         '
-        Me.InitialCatalogTextBox.Location = New System.Drawing.Point(454, 325)
+        Me.InitialCatalogTextBox.Location = New System.Drawing.Point(521, 290)
         Me.InitialCatalogTextBox.Name = "InitialCatalogTextBox"
         Me.InitialCatalogTextBox.Size = New System.Drawing.Size(170, 28)
-        Me.InitialCatalogTextBox.TabIndex = 112
+        Me.InitialCatalogTextBox.TabIndex = 303
         Me.InitialCatalogTextBox.Text = "qicheheng"
         '
         'PWDTextBox
         '
-        Me.PWDTextBox.Location = New System.Drawing.Point(449, 251)
+        Me.PWDTextBox.Location = New System.Drawing.Point(521, 250)
         Me.PWDTextBox.Name = "PWDTextBox"
         Me.PWDTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.PWDTextBox.Size = New System.Drawing.Size(170, 28)
-        Me.PWDTextBox.TabIndex = 111
+        Me.PWDTextBox.TabIndex = 302
         Me.PWDTextBox.Text = "1004426187"
         '
         'UserIDLabel
         '
         Me.UserIDLabel.AutoSize = True
-        Me.UserIDLabel.Location = New System.Drawing.Point(287, 207)
+        Me.UserIDLabel.Location = New System.Drawing.Point(381, 210)
         Me.UserIDLabel.Name = "UserIDLabel"
         Me.UserIDLabel.Size = New System.Drawing.Size(62, 18)
         Me.UserIDLabel.TabIndex = 110
@@ -2532,7 +2508,7 @@ Partial Class admin
         'PWDLabel
         '
         Me.PWDLabel.AutoSize = True
-        Me.PWDLabel.Location = New System.Drawing.Point(278, 240)
+        Me.PWDLabel.Location = New System.Drawing.Point(381, 250)
         Me.PWDLabel.Name = "PWDLabel"
         Me.PWDLabel.Size = New System.Drawing.Size(44, 18)
         Me.PWDLabel.TabIndex = 109
@@ -2541,7 +2517,7 @@ Partial Class admin
         'InitialCatalogLabel
         '
         Me.InitialCatalogLabel.AutoSize = True
-        Me.InitialCatalogLabel.Location = New System.Drawing.Point(280, 374)
+        Me.InitialCatalogLabel.Location = New System.Drawing.Point(381, 290)
         Me.InitialCatalogLabel.Name = "InitialCatalogLabel"
         Me.InitialCatalogLabel.Size = New System.Drawing.Size(62, 18)
         Me.InitialCatalogLabel.TabIndex = 108
@@ -2549,16 +2525,16 @@ Partial Class admin
         '
         'DataSourceTextBox
         '
-        Me.DataSourceTextBox.Location = New System.Drawing.Point(429, 167)
+        Me.DataSourceTextBox.Location = New System.Drawing.Point(521, 170)
         Me.DataSourceTextBox.Name = "DataSourceTextBox"
         Me.DataSourceTextBox.Size = New System.Drawing.Size(170, 28)
-        Me.DataSourceTextBox.TabIndex = 107
+        Me.DataSourceTextBox.TabIndex = 300
         Me.DataSourceTextBox.Text = "vps.dieling.cc"
         '
         'DataSourceLabel
         '
         Me.DataSourceLabel.AutoSize = True
-        Me.DataSourceLabel.Location = New System.Drawing.Point(287, 173)
+        Me.DataSourceLabel.Location = New System.Drawing.Point(381, 170)
         Me.DataSourceLabel.Name = "DataSourceLabel"
         Me.DataSourceLabel.Size = New System.Drawing.Size(134, 18)
         Me.DataSourceLabel.TabIndex = 106
@@ -2567,10 +2543,10 @@ Partial Class admin
         'setupOKButton
         '
         Me.setupOKButton.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.setupOKButton.Location = New System.Drawing.Point(483, 484)
+        Me.setupOKButton.Location = New System.Drawing.Point(490, 350)
         Me.setupOKButton.Name = "setupOKButton"
         Me.setupOKButton.Size = New System.Drawing.Size(94, 33)
-        Me.setupOKButton.TabIndex = 51
+        Me.setupOKButton.TabIndex = 304
         Me.setupOKButton.Text = "确定"
         Me.setupOKButton.UseVisualStyleBackColor = True
         '
@@ -2909,7 +2885,5 @@ Partial Class admin
     Friend WithEvents UserIDTextBox As TextBox
     Friend WithEvents InitialCatalogTextBox As TextBox
     Friend WithEvents PWDTextBox As TextBox
-    Friend WithEvents databaseList As ComboBox
-    Friend WithEvents connectButton As Button
     Friend WithEvents setupLinkLabel As LinkLabel
 End Class
