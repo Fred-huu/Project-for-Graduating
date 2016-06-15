@@ -115,7 +115,6 @@ Partial Class admin
         Me.signoutLinkLabel = New System.Windows.Forms.LinkLabel()
         Me.cmPanel = New System.Windows.Forms.Panel()
         Me.ccComboBox = New System.Windows.Forms.ComboBox()
-        Me.Label36 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.carselectButton = New System.Windows.Forms.Button()
         Me.TextBox17 = New System.Windows.Forms.TextBox()
@@ -130,7 +129,6 @@ Partial Class admin
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.dmPanel = New System.Windows.Forms.Panel()
         Me.dcComboBox = New System.Windows.Forms.ComboBox()
-        Me.日期格式 = New System.Windows.Forms.Label()
         Me.TextBox18 = New System.Windows.Forms.TextBox()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.driverselectButton = New System.Windows.Forms.Button()
@@ -147,13 +145,11 @@ Partial Class admin
         Me.Label35 = New System.Windows.Forms.Label()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.caddPanel = New System.Windows.Forms.Panel()
-        Me.Label38 = New System.Windows.Forms.Label()
         Me.clearLinkLabel = New System.Windows.Forms.LinkLabel()
         Me.carupdateButton = New System.Windows.Forms.Button()
         Me.TextBox28 = New System.Windows.Forms.TextBox()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.Label40 = New System.Windows.Forms.Label()
-        Me.TextBox26 = New System.Windows.Forms.TextBox()
         Me.TextBox24 = New System.Windows.Forms.TextBox()
         Me.TextBox25 = New System.Windows.Forms.TextBox()
         Me.Label41 = New System.Windows.Forms.Label()
@@ -163,14 +159,12 @@ Partial Class admin
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.daddPanel = New System.Windows.Forms.Panel()
         Me.dacarComboBox = New System.Windows.Forms.ComboBox()
-        Me.Label53 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.clearLinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.driverupdateButton = New System.Windows.Forms.Button()
         Me.TextBox34 = New System.Windows.Forms.TextBox()
         Me.TextBox33 = New System.Windows.Forms.TextBox()
         Me.TextBox32 = New System.Windows.Forms.TextBox()
-        Me.TextBox31 = New System.Windows.Forms.TextBox()
         Me.TextBox30 = New System.Windows.Forms.TextBox()
         Me.TextBox29 = New System.Windows.Forms.TextBox()
         Me.Label45 = New System.Windows.Forms.Label()
@@ -235,6 +229,7 @@ Partial Class admin
         Me.htPictureBox = New System.Windows.Forms.PictureBox()
         Me.dielingWebBrowser = New System.Windows.Forms.WebBrowser()
         Me.setupPanel = New System.Windows.Forms.Panel()
+        Me.setupcancelButton = New System.Windows.Forms.Button()
         Me.UserIDTextBox = New System.Windows.Forms.TextBox()
         Me.InitialCatalogTextBox = New System.Windows.Forms.TextBox()
         Me.PWDTextBox = New System.Windows.Forms.TextBox()
@@ -245,7 +240,8 @@ Partial Class admin
         Me.DataSourceLabel = New System.Windows.Forms.Label()
         Me.setupOKButton = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.setupcancelButton = New System.Windows.Forms.Button()
+        Me.carDateTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.driverDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.aboutPanel.SuspendLayout()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.开发人员PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -326,7 +322,7 @@ Partial Class admin
         Me.版本信息Label.Name = "版本信息Label"
         Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.9.160615.6"
+        Me.版本信息Label.Text = "2.9.160615.9"
         '
         '人员姓名Label
         '
@@ -1203,7 +1199,6 @@ Partial Class admin
         'cmPanel
         '
         Me.cmPanel.Controls.Add(Me.ccComboBox)
-        Me.cmPanel.Controls.Add(Me.Label36)
         Me.cmPanel.Controls.Add(Me.Label12)
         Me.cmPanel.Controls.Add(Me.carselectButton)
         Me.cmPanel.Controls.Add(Me.TextBox17)
@@ -1229,15 +1224,6 @@ Partial Class admin
         Me.ccComboBox.Name = "ccComboBox"
         Me.ccComboBox.Size = New System.Drawing.Size(170, 26)
         Me.ccComboBox.TabIndex = 149
-        '
-        'Label36
-        '
-        Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(650, 339)
-        Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(116, 18)
-        Me.Label36.TabIndex = 148
-        Me.Label36.Text = "(YYYY-MM-DD)"
         '
         'Label12
         '
@@ -1356,7 +1342,6 @@ Partial Class admin
         'dmPanel
         '
         Me.dmPanel.Controls.Add(Me.dcComboBox)
-        Me.dmPanel.Controls.Add(Me.日期格式)
         Me.dmPanel.Controls.Add(Me.TextBox18)
         Me.dmPanel.Controls.Add(Me.Label29)
         Me.dmPanel.Controls.Add(Me.driverselectButton)
@@ -1385,15 +1370,6 @@ Partial Class admin
         Me.dcComboBox.Name = "dcComboBox"
         Me.dcComboBox.Size = New System.Drawing.Size(187, 26)
         Me.dcComboBox.TabIndex = 146
-        '
-        '日期格式
-        '
-        Me.日期格式.AutoSize = True
-        Me.日期格式.Location = New System.Drawing.Point(657, 315)
-        Me.日期格式.Name = "日期格式"
-        Me.日期格式.Size = New System.Drawing.Size(116, 18)
-        Me.日期格式.TabIndex = 145
-        Me.日期格式.Text = "(YYYY-MM-DD)"
         '
         'TextBox18
         '
@@ -1531,13 +1507,12 @@ Partial Class admin
         '
         'caddPanel
         '
-        Me.caddPanel.Controls.Add(Me.Label38)
+        Me.caddPanel.Controls.Add(Me.carDateTimePicker)
         Me.caddPanel.Controls.Add(Me.clearLinkLabel)
         Me.caddPanel.Controls.Add(Me.carupdateButton)
         Me.caddPanel.Controls.Add(Me.TextBox28)
         Me.caddPanel.Controls.Add(Me.Label39)
         Me.caddPanel.Controls.Add(Me.Label40)
-        Me.caddPanel.Controls.Add(Me.TextBox26)
         Me.caddPanel.Controls.Add(Me.TextBox24)
         Me.caddPanel.Controls.Add(Me.TextBox25)
         Me.caddPanel.Controls.Add(Me.Label41)
@@ -1550,15 +1525,6 @@ Partial Class admin
         Me.caddPanel.Size = New System.Drawing.Size(1060, 481)
         Me.caddPanel.TabIndex = 120
         Me.caddPanel.Visible = False
-        '
-        'Label38
-        '
-        Me.Label38.AutoSize = True
-        Me.Label38.Location = New System.Drawing.Point(675, 228)
-        Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(116, 18)
-        Me.Label38.TabIndex = 146
-        Me.Label38.Text = "(YYYY-MM-DD)"
         '
         'clearLinkLabel
         '
@@ -1606,13 +1572,6 @@ Partial Class admin
         Me.Label40.Size = New System.Drawing.Size(32, 21)
         Me.Label40.TabIndex = 121
         Me.Label40.Text = "kg"
-        '
-        'TextBox26
-        '
-        Me.TextBox26.Location = New System.Drawing.Point(499, 225)
-        Me.TextBox26.Name = "TextBox26"
-        Me.TextBox26.Size = New System.Drawing.Size(170, 28)
-        Me.TextBox26.TabIndex = 83
         '
         'TextBox24
         '
@@ -1682,15 +1641,14 @@ Partial Class admin
         '
         'daddPanel
         '
+        Me.daddPanel.Controls.Add(Me.driverDateTimePicker)
         Me.daddPanel.Controls.Add(Me.dacarComboBox)
-        Me.daddPanel.Controls.Add(Me.Label53)
         Me.daddPanel.Controls.Add(Me.Label26)
         Me.daddPanel.Controls.Add(Me.clearLinkLabel2)
         Me.daddPanel.Controls.Add(Me.driverupdateButton)
         Me.daddPanel.Controls.Add(Me.TextBox34)
         Me.daddPanel.Controls.Add(Me.TextBox33)
         Me.daddPanel.Controls.Add(Me.TextBox32)
-        Me.daddPanel.Controls.Add(Me.TextBox31)
         Me.daddPanel.Controls.Add(Me.TextBox30)
         Me.daddPanel.Controls.Add(Me.TextBox29)
         Me.daddPanel.Controls.Add(Me.Label45)
@@ -1715,15 +1673,6 @@ Partial Class admin
         Me.dacarComboBox.Name = "dacarComboBox"
         Me.dacarComboBox.Size = New System.Drawing.Size(170, 26)
         Me.dacarComboBox.TabIndex = 147
-        '
-        'Label53
-        '
-        Me.Label53.AutoSize = True
-        Me.Label53.Location = New System.Drawing.Point(650, 227)
-        Me.Label53.Name = "Label53"
-        Me.Label53.Size = New System.Drawing.Size(116, 18)
-        Me.Label53.TabIndex = 146
-        Me.Label53.Text = "(YYYY-MM-DD)"
         '
         'Label26
         '
@@ -1774,13 +1723,6 @@ Partial Class admin
         Me.TextBox32.Name = "TextBox32"
         Me.TextBox32.Size = New System.Drawing.Size(170, 28)
         Me.TextBox32.TabIndex = 94
-        '
-        'TextBox31
-        '
-        Me.TextBox31.Location = New System.Drawing.Point(474, 222)
-        Me.TextBox31.Name = "TextBox31"
-        Me.TextBox31.Size = New System.Drawing.Size(170, 28)
-        Me.TextBox31.TabIndex = 93
         '
         'TextBox30
         '
@@ -2473,6 +2415,16 @@ Partial Class admin
         Me.setupPanel.TabIndex = 137
         Me.setupPanel.Visible = False
         '
+        'setupcancelButton
+        '
+        Me.setupcancelButton.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.setupcancelButton.Location = New System.Drawing.Point(686, 412)
+        Me.setupcancelButton.Name = "setupcancelButton"
+        Me.setupcancelButton.Size = New System.Drawing.Size(94, 33)
+        Me.setupcancelButton.TabIndex = 305
+        Me.setupcancelButton.Text = "取消"
+        Me.setupcancelButton.UseVisualStyleBackColor = True
+        '
         'UserIDTextBox
         '
         Me.UserIDTextBox.Location = New System.Drawing.Point(632, 275)
@@ -2564,15 +2516,21 @@ Partial Class admin
         Me.PictureBox2.TabIndex = 105
         Me.PictureBox2.TabStop = False
         '
-        'setupcancelButton
+        'carDateTimePicker
         '
-        Me.setupcancelButton.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.setupcancelButton.Location = New System.Drawing.Point(686, 412)
-        Me.setupcancelButton.Name = "setupcancelButton"
-        Me.setupcancelButton.Size = New System.Drawing.Size(94, 33)
-        Me.setupcancelButton.TabIndex = 305
-        Me.setupcancelButton.Text = "取消"
-        Me.setupcancelButton.UseVisualStyleBackColor = True
+        Me.carDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.carDateTimePicker.Location = New System.Drawing.Point(499, 225)
+        Me.carDateTimePicker.Name = "carDateTimePicker"
+        Me.carDateTimePicker.Size = New System.Drawing.Size(170, 28)
+        Me.carDateTimePicker.TabIndex = 83
+        '
+        'driverDateTimePicker
+        '
+        Me.driverDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.driverDateTimePicker.Location = New System.Drawing.Point(474, 222)
+        Me.driverDateTimePicker.Name = "driverDateTimePicker"
+        Me.driverDateTimePicker.Size = New System.Drawing.Size(170, 28)
+        Me.driverDateTimePicker.TabIndex = 93
         '
         'admin
         '
@@ -2784,7 +2742,6 @@ Partial Class admin
     Friend WithEvents caddPanel As Panel
     Friend WithEvents clearLinkLabel As LinkLabel
     Friend WithEvents carupdateButton As Button
-    Friend WithEvents TextBox26 As TextBox
     Friend WithEvents TextBox24 As TextBox
     Friend WithEvents TextBox25 As TextBox
     Friend WithEvents Label41 As Label
@@ -2798,7 +2755,6 @@ Partial Class admin
     Friend WithEvents TextBox34 As TextBox
     Friend WithEvents TextBox33 As TextBox
     Friend WithEvents TextBox32 As TextBox
-    Friend WithEvents TextBox31 As TextBox
     Friend WithEvents TextBox30 As TextBox
     Friend WithEvents TextBox29 As TextBox
     Friend WithEvents Label45 As Label
@@ -2878,10 +2834,6 @@ Partial Class admin
     Friend WithEvents htPictureBox As PictureBox
     Friend WithEvents backgroundLinkLabel As LinkLabel
     Friend WithEvents ColumnHeader7 As ColumnHeader
-    Friend WithEvents 日期格式 As Label
-    Friend WithEvents Label36 As Label
-    Friend WithEvents Label38 As Label
-    Friend WithEvents Label53 As Label
     Friend WithEvents setupPanel As Panel
     Friend WithEvents setupOKButton As Button
     Friend WithEvents PictureBox2 As PictureBox
@@ -2899,4 +2851,6 @@ Partial Class admin
     Friend WithEvents PWDTextBox As TextBox
     Friend WithEvents setupLinkLabel As LinkLabel
     Friend WithEvents setupcancelButton As Button
+    Friend WithEvents carDateTimePicker As DateTimePicker
+    Friend WithEvents driverDateTimePicker As DateTimePicker
 End Class

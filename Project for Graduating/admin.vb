@@ -1150,8 +1150,11 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '清空数据
         TextBox24.Text = ""
         TextBox25.Text = ""
-        TextBox26.Text = ""
+        carDateTimePicker.Value = Now
         TextBox28.Text = ""
+
+        '日历控件
+        carDateTimePicker.CustomFormat = "yyyy-MM-dd"
     End Sub
 
     '点击“车辆信息录入界面”（选中）
@@ -1179,7 +1182,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
             com.Connection = conn
             com.CommandType = CommandType.Text
-            com.CommandText = "Insert Into car (carnum,model,pdtime,fload) Values ('" & TextBox24.Text & "','" & TextBox25.Text & "','" & TextBox26.Text & "','" & TextBox28.Text & "')"
+            com.CommandText = "Insert Into car (carnum,model,pdtime,fload) Values ('" & TextBox24.Text & "','" & TextBox25.Text & "','" & carDateTimePicker.Value & "','" & TextBox28.Text & "')"
 
             dr = com.ExecuteReader
 
@@ -1202,7 +1205,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '清空数据
         TextBox24.Text = ""
         TextBox25.Text = ""
-        TextBox26.Text = ""
+        carDateTimePicker.Value = Now
         TextBox28.Text = ""
     End Sub
 #End Region
@@ -1236,7 +1239,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '清空数据
         TextBox29.Text = ""
         TextBox30.Text = ""
-        TextBox31.Text = ""
+        driverDateTimePicker.Value = Now
         TextBox32.Text = ""
         TextBox33.Text = ""
         TextBox34.Text = ""
@@ -1261,6 +1264,8 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             MsgBox("Error connecting to the server:" & myerror.Message)
         End Try
 
+        '日历控件
+        driverDateTimePicker.CustomFormat = "yyyy-MM-dd"
     End Sub
 
     '点击“司机信息录入界面”（选中）
@@ -1288,7 +1293,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
             com.Connection = conn
             com.CommandType = CommandType.Text
-            com.CommandText = "Insert Into driver (driver_id,name,bday,dkind,part,telnum,carnum) Values ('" & TextBox29.Text & "','" & TextBox30.Text & "','" & TextBox31.Text & "','" & TextBox32.Text & "','" & TextBox33.Text & "','" & TextBox34.Text & "','" & dacarComboBox.SelectedItem.ToString() & "')"
+            com.CommandText = "Insert Into driver (driver_id,name,bday,dkind,part,telnum,carnum) Values ('" & TextBox29.Text & "','" & TextBox30.Text & "','" & driverDateTimePicker.Value & "','" & TextBox32.Text & "','" & TextBox33.Text & "','" & TextBox34.Text & "','" & dacarComboBox.SelectedItem.ToString() & "')"
 
             dr = com.ExecuteReader
             MessageBox.Show("存储成功！")
@@ -1310,7 +1315,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '清空数据
         TextBox29.Text = ""
         TextBox30.Text = ""
-        TextBox31.Text = ""
+        driverDateTimePicker.Value = Now
         TextBox32.Text = ""
         TextBox33.Text = ""
         TextBox34.Text = ""
