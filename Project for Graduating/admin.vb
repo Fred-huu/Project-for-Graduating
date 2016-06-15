@@ -441,11 +441,22 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
     End Sub
 
     Private Sub ReceivedText(ByVal [text] As String)
+        Dim instr As String  '存从串口读入的数据
+        Dim info() As String
+
         If Me.TextBox11.InvokeRequired Then
             Dim x As New SetTextCallback(AddressOf ReceivedText)
             Me.Invoke(x, New Object() {(text)})
         Else
-            Me.TextBox11.Text = [text] '录入数据
+            'Me.TextBox11.Text = [text] '录入数据
+
+            instr = [text]
+            If instr.Length <> 0 Then
+                info = instr.Split("#")    '将instr以#分割
+                TextBox7.Text = info(0)
+                TextBox11.Text = info(1)
+            End If
+
         End If
     End Sub
 
