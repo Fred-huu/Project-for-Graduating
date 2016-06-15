@@ -245,6 +245,7 @@ Partial Class admin
         Me.DataSourceLabel = New System.Windows.Forms.Label()
         Me.setupOKButton = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.setupcancelButton = New System.Windows.Forms.Button()
         Me.aboutPanel.SuspendLayout()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.开发人员PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -325,7 +326,7 @@ Partial Class admin
         Me.版本信息Label.Name = "版本信息Label"
         Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.9.160615.3"
+        Me.版本信息Label.Text = "2.9.160615.6"
         '
         '人员姓名Label
         '
@@ -2455,6 +2456,7 @@ Partial Class admin
         '
         'setupPanel
         '
+        Me.setupPanel.Controls.Add(Me.setupcancelButton)
         Me.setupPanel.Controls.Add(Me.UserIDTextBox)
         Me.setupPanel.Controls.Add(Me.InitialCatalogTextBox)
         Me.setupPanel.Controls.Add(Me.PWDTextBox)
@@ -2465,15 +2467,15 @@ Partial Class admin
         Me.setupPanel.Controls.Add(Me.DataSourceLabel)
         Me.setupPanel.Controls.Add(Me.setupOKButton)
         Me.setupPanel.Controls.Add(Me.PictureBox2)
-        Me.setupPanel.Location = New System.Drawing.Point(200, 0)
+        Me.setupPanel.Location = New System.Drawing.Point(0, 0)
         Me.setupPanel.Name = "setupPanel"
-        Me.setupPanel.Size = New System.Drawing.Size(1060, 530)
+        Me.setupPanel.Size = New System.Drawing.Size(1280, 530)
         Me.setupPanel.TabIndex = 137
         Me.setupPanel.Visible = False
         '
         'UserIDTextBox
         '
-        Me.UserIDTextBox.Location = New System.Drawing.Point(521, 210)
+        Me.UserIDTextBox.Location = New System.Drawing.Point(632, 275)
         Me.UserIDTextBox.Name = "UserIDTextBox"
         Me.UserIDTextBox.Size = New System.Drawing.Size(170, 28)
         Me.UserIDTextBox.TabIndex = 301
@@ -2481,7 +2483,7 @@ Partial Class admin
         '
         'InitialCatalogTextBox
         '
-        Me.InitialCatalogTextBox.Location = New System.Drawing.Point(521, 290)
+        Me.InitialCatalogTextBox.Location = New System.Drawing.Point(632, 355)
         Me.InitialCatalogTextBox.Name = "InitialCatalogTextBox"
         Me.InitialCatalogTextBox.Size = New System.Drawing.Size(170, 28)
         Me.InitialCatalogTextBox.TabIndex = 303
@@ -2489,7 +2491,7 @@ Partial Class admin
         '
         'PWDTextBox
         '
-        Me.PWDTextBox.Location = New System.Drawing.Point(521, 250)
+        Me.PWDTextBox.Location = New System.Drawing.Point(632, 315)
         Me.PWDTextBox.Name = "PWDTextBox"
         Me.PWDTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.PWDTextBox.Size = New System.Drawing.Size(170, 28)
@@ -2499,7 +2501,7 @@ Partial Class admin
         'UserIDLabel
         '
         Me.UserIDLabel.AutoSize = True
-        Me.UserIDLabel.Location = New System.Drawing.Point(381, 210)
+        Me.UserIDLabel.Location = New System.Drawing.Point(492, 275)
         Me.UserIDLabel.Name = "UserIDLabel"
         Me.UserIDLabel.Size = New System.Drawing.Size(62, 18)
         Me.UserIDLabel.TabIndex = 110
@@ -2508,7 +2510,7 @@ Partial Class admin
         'PWDLabel
         '
         Me.PWDLabel.AutoSize = True
-        Me.PWDLabel.Location = New System.Drawing.Point(381, 250)
+        Me.PWDLabel.Location = New System.Drawing.Point(492, 315)
         Me.PWDLabel.Name = "PWDLabel"
         Me.PWDLabel.Size = New System.Drawing.Size(44, 18)
         Me.PWDLabel.TabIndex = 109
@@ -2517,7 +2519,7 @@ Partial Class admin
         'InitialCatalogLabel
         '
         Me.InitialCatalogLabel.AutoSize = True
-        Me.InitialCatalogLabel.Location = New System.Drawing.Point(381, 290)
+        Me.InitialCatalogLabel.Location = New System.Drawing.Point(492, 355)
         Me.InitialCatalogLabel.Name = "InitialCatalogLabel"
         Me.InitialCatalogLabel.Size = New System.Drawing.Size(62, 18)
         Me.InitialCatalogLabel.TabIndex = 108
@@ -2525,7 +2527,7 @@ Partial Class admin
         '
         'DataSourceTextBox
         '
-        Me.DataSourceTextBox.Location = New System.Drawing.Point(521, 170)
+        Me.DataSourceTextBox.Location = New System.Drawing.Point(632, 235)
         Me.DataSourceTextBox.Name = "DataSourceTextBox"
         Me.DataSourceTextBox.Size = New System.Drawing.Size(170, 28)
         Me.DataSourceTextBox.TabIndex = 300
@@ -2534,7 +2536,7 @@ Partial Class admin
         'DataSourceLabel
         '
         Me.DataSourceLabel.AutoSize = True
-        Me.DataSourceLabel.Location = New System.Drawing.Point(381, 170)
+        Me.DataSourceLabel.Location = New System.Drawing.Point(492, 235)
         Me.DataSourceLabel.Name = "DataSourceLabel"
         Me.DataSourceLabel.Size = New System.Drawing.Size(134, 18)
         Me.DataSourceLabel.TabIndex = 106
@@ -2543,7 +2545,7 @@ Partial Class admin
         'setupOKButton
         '
         Me.setupOKButton.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.setupOKButton.Location = New System.Drawing.Point(490, 350)
+        Me.setupOKButton.Location = New System.Drawing.Point(511, 413)
         Me.setupOKButton.Name = "setupOKButton"
         Me.setupOKButton.Size = New System.Drawing.Size(94, 33)
         Me.setupOKButton.TabIndex = 304
@@ -2557,10 +2559,20 @@ Partial Class admin
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
         Me.PictureBox2.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(1060, 60)
+        Me.PictureBox2.Size = New System.Drawing.Size(1280, 60)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 105
         Me.PictureBox2.TabStop = False
+        '
+        'setupcancelButton
+        '
+        Me.setupcancelButton.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.setupcancelButton.Location = New System.Drawing.Point(686, 412)
+        Me.setupcancelButton.Name = "setupcancelButton"
+        Me.setupcancelButton.Size = New System.Drawing.Size(94, 33)
+        Me.setupcancelButton.TabIndex = 305
+        Me.setupcancelButton.Text = "取消"
+        Me.setupcancelButton.UseVisualStyleBackColor = True
         '
         'admin
         '
@@ -2886,4 +2898,5 @@ Partial Class admin
     Friend WithEvents InitialCatalogTextBox As TextBox
     Friend WithEvents PWDTextBox As TextBox
     Friend WithEvents setupLinkLabel As LinkLabel
+    Friend WithEvents setupcancelButton As Button
 End Class

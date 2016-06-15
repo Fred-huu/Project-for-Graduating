@@ -216,7 +216,14 @@ Public Class admin
     '-------------------------------------------
 
 #Region “设置数据库地址”
+    '确定按钮
     Private Sub setupOKButton_Click(sender As Object, e As EventArgs) Handles setupOKButton.Click
+        setupPanel.Visible = False
+        loginPanel.Visible = True
+    End Sub
+
+    '取消按钮
+    Private Sub setupcancelButton_Click(sender As Object, e As EventArgs) Handles setupcancelButton.Click
         setupPanel.Visible = False
         loginPanel.Visible = True
     End Sub
@@ -1497,7 +1504,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
     End Sub
 
 #End Region
-
 #End Region
 
     '-------------------------------------------
