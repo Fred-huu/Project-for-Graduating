@@ -1319,6 +1319,26 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         TextBox32.Text = ""
         TextBox33.Text = ""
         TextBox34.Text = ""
+
+        '数据库连接与操作
+        Try
+            conn.Open()
+
+            com.Connection = conn
+            com.CommandType = CommandType.Text
+            com.CommandText = "Select carnum From car"
+
+            dr = com.ExecuteReader()
+            dacarComboBox.Items.Clear()
+            While dr.Read()
+                dacarComboBox.Items.Add(dr.GetString(0))
+            End While
+
+            conn.Close()
+
+        Catch myerror As MySqlException
+            MsgBox("Error connecting to the server:" & myerror.Message)
+        End Try
     End Sub
 #End Region
 
