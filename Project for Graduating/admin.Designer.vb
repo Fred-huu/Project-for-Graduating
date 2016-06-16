@@ -322,7 +322,7 @@ Partial Class admin
         Me.版本信息Label.Name = "版本信息Label"
         Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.9.160616.3"
+        Me.版本信息Label.Text = "2.9.160616.4"
         '
         '人员姓名Label
         '
@@ -871,7 +871,7 @@ Partial Class admin
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(770, 440)
+        Me.Label20.Location = New System.Drawing.Point(776, 440)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(26, 18)
         Me.Label20.TabIndex = 97
@@ -889,7 +889,7 @@ Partial Class admin
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(770, 475)
+        Me.Label4.Location = New System.Drawing.Point(776, 475)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(26, 18)
         Me.Label4.TabIndex = 96
@@ -907,7 +907,7 @@ Partial Class admin
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(770, 510)
+        Me.Label3.Location = New System.Drawing.Point(776, 510)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(26, 18)
         Me.Label3.TabIndex = 95
@@ -2550,11 +2550,11 @@ Partial Class admin
         Me.Controls.Add(Me.newuserPanel)
         Me.Controls.Add(Me.loginPanel)
         Me.Controls.Add(Me.setupPanel)
+        Me.Controls.Add(Me.adminPanel)
         Me.Controls.Add(Me.dmPanel)
         Me.Controls.Add(Me.cmPanel)
         Me.Controls.Add(Me.caddPanel)
         Me.Controls.Add(Me.daddPanel)
-        Me.Controls.Add(Me.adminPanel)
         Me.Controls.Add(Me.backgroundPanel)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
