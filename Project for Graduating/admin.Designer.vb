@@ -145,6 +145,7 @@ Partial Class admin
         Me.Label35 = New System.Windows.Forms.Label()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.caddPanel = New System.Windows.Forms.Panel()
+        Me.carDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.clearLinkLabel = New System.Windows.Forms.LinkLabel()
         Me.carupdateButton = New System.Windows.Forms.Button()
         Me.TextBox28 = New System.Windows.Forms.TextBox()
@@ -158,6 +159,7 @@ Partial Class admin
         Me.Label44 = New System.Windows.Forms.Label()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.daddPanel = New System.Windows.Forms.Panel()
+        Me.driverDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.dacarComboBox = New System.Windows.Forms.ComboBox()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.clearLinkLabel2 = New System.Windows.Forms.LinkLabel()
@@ -240,8 +242,6 @@ Partial Class admin
         Me.DataSourceLabel = New System.Windows.Forms.Label()
         Me.setupOKButton = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.carDateTimePicker = New System.Windows.Forms.DateTimePicker()
-        Me.driverDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.aboutPanel.SuspendLayout()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.开发人员PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -320,9 +320,9 @@ Partial Class admin
         Me.版本信息Label.AutoSize = True
         Me.版本信息Label.Location = New System.Drawing.Point(110, 385)
         Me.版本信息Label.Name = "版本信息Label"
-        Me.版本信息Label.Size = New System.Drawing.Size(125, 18)
+        Me.版本信息Label.Size = New System.Drawing.Size(116, 18)
         Me.版本信息Label.TabIndex = 110
-        Me.版本信息Label.Text = "2.9.160615.12"
+        Me.版本信息Label.Text = "2.9.160616.3"
         '
         '人员姓名Label
         '
@@ -671,6 +671,7 @@ Partial Class admin
         '
         Me.kindTextBox.Location = New System.Drawing.Point(593, 400)
         Me.kindTextBox.Name = "kindTextBox"
+        Me.kindTextBox.ReadOnly = True
         Me.kindTextBox.Size = New System.Drawing.Size(176, 28)
         Me.kindTextBox.TabIndex = 33
         '
@@ -835,9 +836,9 @@ Partial Class admin
         '
         'TextBox2
         '
-        Me.TextBox2.Enabled = False
         Me.TextBox2.Location = New System.Drawing.Point(333, 330)
         Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.ReadOnly = True
         Me.TextBox2.Size = New System.Drawing.Size(150, 28)
         Me.TextBox2.TabIndex = 25
         '
@@ -852,9 +853,9 @@ Partial Class admin
         '
         'TextBox1
         '
-        Me.TextBox1.Enabled = False
         Me.TextBox1.Location = New System.Drawing.Point(333, 295)
         Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
         Me.TextBox1.Size = New System.Drawing.Size(150, 28)
         Me.TextBox1.TabIndex = 24
         '
@@ -941,10 +942,10 @@ Partial Class admin
         '
         'TextBox12
         '
-        Me.TextBox12.Enabled = False
         Me.TextBox12.ImeMode = System.Windows.Forms.ImeMode.Disable
         Me.TextBox12.Location = New System.Drawing.Point(593, 505)
         Me.TextBox12.Name = "TextBox12"
+        Me.TextBox12.ReadOnly = True
         Me.TextBox12.Size = New System.Drawing.Size(176, 28)
         Me.TextBox12.TabIndex = 36
         '
@@ -978,10 +979,10 @@ Partial Class admin
         '
         'TextBox11
         '
-        Me.TextBox11.Enabled = False
         Me.TextBox11.ImeMode = System.Windows.Forms.ImeMode.Disable
         Me.TextBox11.Location = New System.Drawing.Point(593, 470)
         Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.ReadOnly = True
         Me.TextBox11.Size = New System.Drawing.Size(176, 28)
         Me.TextBox11.TabIndex = 35
         '
@@ -1014,65 +1015,65 @@ Partial Class admin
         '
         'TextBox10
         '
-        Me.TextBox10.Enabled = False
         Me.TextBox10.Location = New System.Drawing.Point(593, 435)
         Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.ReadOnly = True
         Me.TextBox10.Size = New System.Drawing.Size(176, 28)
         Me.TextBox10.TabIndex = 34
         '
         'TextBox8
         '
-        Me.TextBox8.Enabled = False
         Me.TextBox8.Location = New System.Drawing.Point(593, 330)
         Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.ReadOnly = True
         Me.TextBox8.Size = New System.Drawing.Size(176, 28)
         Me.TextBox8.TabIndex = 31
         '
         'TextBox6
         '
-        Me.TextBox6.Enabled = False
         Me.TextBox6.Location = New System.Drawing.Point(333, 470)
         Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.ReadOnly = True
         Me.TextBox6.Size = New System.Drawing.Size(150, 28)
         Me.TextBox6.TabIndex = 29
         '
         'TextBox7
         '
-        Me.TextBox7.Enabled = False
         Me.TextBox7.Location = New System.Drawing.Point(593, 295)
         Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.ReadOnly = True
         Me.TextBox7.Size = New System.Drawing.Size(176, 28)
         Me.TextBox7.TabIndex = 30
         '
         'TextBox5
         '
-        Me.TextBox5.Enabled = False
         Me.TextBox5.Location = New System.Drawing.Point(333, 435)
         Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.ReadOnly = True
         Me.TextBox5.Size = New System.Drawing.Size(150, 28)
         Me.TextBox5.TabIndex = 28
         '
         'TextBox9
         '
-        Me.TextBox9.Enabled = False
         Me.TextBox9.Location = New System.Drawing.Point(593, 365)
         Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.ReadOnly = True
         Me.TextBox9.Size = New System.Drawing.Size(176, 28)
         Me.TextBox9.TabIndex = 32
         '
         'TextBox4
         '
-        Me.TextBox4.Enabled = False
         Me.TextBox4.Location = New System.Drawing.Point(333, 400)
         Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.ReadOnly = True
         Me.TextBox4.Size = New System.Drawing.Size(150, 28)
         Me.TextBox4.TabIndex = 27
         '
         'TextBox3
         '
-        Me.TextBox3.Enabled = False
         Me.TextBox3.Location = New System.Drawing.Point(333, 365)
         Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.ReadOnly = True
         Me.TextBox3.Size = New System.Drawing.Size(150, 28)
         Me.TextBox3.TabIndex = 26
         '
@@ -1247,9 +1248,9 @@ Partial Class admin
         '
         'TextBox17
         '
-        Me.TextBox17.Enabled = False
         Me.TextBox17.Location = New System.Drawing.Point(474, 371)
         Me.TextBox17.Name = "TextBox17"
+        Me.TextBox17.ReadOnly = True
         Me.TextBox17.Size = New System.Drawing.Size(170, 28)
         Me.TextBox17.TabIndex = 143
         '
@@ -1275,25 +1276,25 @@ Partial Class admin
         '
         'TextBox15
         '
-        Me.TextBox15.Enabled = False
         Me.TextBox15.Location = New System.Drawing.Point(474, 336)
         Me.TextBox15.Name = "TextBox15"
+        Me.TextBox15.ReadOnly = True
         Me.TextBox15.Size = New System.Drawing.Size(170, 28)
         Me.TextBox15.TabIndex = 139
         '
         'TextBox13
         '
-        Me.TextBox13.Enabled = False
         Me.TextBox13.Location = New System.Drawing.Point(474, 266)
         Me.TextBox13.Name = "TextBox13"
+        Me.TextBox13.ReadOnly = True
         Me.TextBox13.Size = New System.Drawing.Size(170, 28)
         Me.TextBox13.TabIndex = 138
         '
         'TextBox14
         '
-        Me.TextBox14.Enabled = False
         Me.TextBox14.Location = New System.Drawing.Point(474, 301)
         Me.TextBox14.Name = "TextBox14"
+        Me.TextBox14.ReadOnly = True
         Me.TextBox14.Size = New System.Drawing.Size(170, 28)
         Me.TextBox14.TabIndex = 137
         '
@@ -1373,9 +1374,9 @@ Partial Class admin
         '
         'TextBox18
         '
-        Me.TextBox18.Enabled = False
         Me.TextBox18.Location = New System.Drawing.Point(464, 241)
         Me.TextBox18.Name = "TextBox18"
+        Me.TextBox18.ReadOnly = True
         Me.TextBox18.Size = New System.Drawing.Size(187, 28)
         Me.TextBox18.TabIndex = 144
         '
@@ -1401,41 +1402,41 @@ Partial Class admin
         '
         'TextBox23
         '
-        Me.TextBox23.Enabled = False
         Me.TextBox23.Location = New System.Drawing.Point(464, 416)
         Me.TextBox23.Name = "TextBox23"
+        Me.TextBox23.ReadOnly = True
         Me.TextBox23.Size = New System.Drawing.Size(187, 28)
         Me.TextBox23.TabIndex = 141
         '
         'TextBox22
         '
-        Me.TextBox22.Enabled = False
         Me.TextBox22.Location = New System.Drawing.Point(464, 381)
         Me.TextBox22.Name = "TextBox22"
+        Me.TextBox22.ReadOnly = True
         Me.TextBox22.Size = New System.Drawing.Size(187, 28)
         Me.TextBox22.TabIndex = 140
         '
         'TextBox21
         '
-        Me.TextBox21.Enabled = False
         Me.TextBox21.Location = New System.Drawing.Point(464, 347)
         Me.TextBox21.Name = "TextBox21"
+        Me.TextBox21.ReadOnly = True
         Me.TextBox21.Size = New System.Drawing.Size(187, 28)
         Me.TextBox21.TabIndex = 139
         '
         'TextBox20
         '
-        Me.TextBox20.Enabled = False
         Me.TextBox20.Location = New System.Drawing.Point(464, 312)
         Me.TextBox20.Name = "TextBox20"
+        Me.TextBox20.ReadOnly = True
         Me.TextBox20.Size = New System.Drawing.Size(187, 28)
         Me.TextBox20.TabIndex = 138
         '
         'TextBox19
         '
-        Me.TextBox19.Enabled = False
         Me.TextBox19.Location = New System.Drawing.Point(464, 276)
         Me.TextBox19.Name = "TextBox19"
+        Me.TextBox19.ReadOnly = True
         Me.TextBox19.Size = New System.Drawing.Size(187, 28)
         Me.TextBox19.TabIndex = 137
         '
@@ -1525,6 +1526,14 @@ Partial Class admin
         Me.caddPanel.Size = New System.Drawing.Size(1060, 481)
         Me.caddPanel.TabIndex = 120
         Me.caddPanel.Visible = False
+        '
+        'carDateTimePicker
+        '
+        Me.carDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.carDateTimePicker.Location = New System.Drawing.Point(499, 225)
+        Me.carDateTimePicker.Name = "carDateTimePicker"
+        Me.carDateTimePicker.Size = New System.Drawing.Size(170, 28)
+        Me.carDateTimePicker.TabIndex = 83
         '
         'clearLinkLabel
         '
@@ -1664,6 +1673,14 @@ Partial Class admin
         Me.daddPanel.Size = New System.Drawing.Size(1060, 481)
         Me.daddPanel.TabIndex = 121
         Me.daddPanel.Visible = False
+        '
+        'driverDateTimePicker
+        '
+        Me.driverDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.driverDateTimePicker.Location = New System.Drawing.Point(474, 222)
+        Me.driverDateTimePicker.Name = "driverDateTimePicker"
+        Me.driverDateTimePicker.Size = New System.Drawing.Size(170, 28)
+        Me.driverDateTimePicker.TabIndex = 93
         '
         'dacarComboBox
         '
@@ -2515,22 +2532,6 @@ Partial Class admin
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 105
         Me.PictureBox2.TabStop = False
-        '
-        'carDateTimePicker
-        '
-        Me.carDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.carDateTimePicker.Location = New System.Drawing.Point(499, 225)
-        Me.carDateTimePicker.Name = "carDateTimePicker"
-        Me.carDateTimePicker.Size = New System.Drawing.Size(170, 28)
-        Me.carDateTimePicker.TabIndex = 83
-        '
-        'driverDateTimePicker
-        '
-        Me.driverDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.driverDateTimePicker.Location = New System.Drawing.Point(474, 222)
-        Me.driverDateTimePicker.Name = "driverDateTimePicker"
-        Me.driverDateTimePicker.Size = New System.Drawing.Size(170, 28)
-        Me.driverDateTimePicker.TabIndex = 93
         '
         'admin
         '

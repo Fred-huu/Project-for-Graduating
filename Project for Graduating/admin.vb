@@ -24,12 +24,9 @@ Public Class admin
 
 #Region “定义全局变量“
 #Region “数据库”
-    'Dim conn As New MySqlConnection("Data source=vps.dieling.cc;Initial Catalog=qicheheng;User ID=test;PWD=1004426187;pooling = True")
     Dim conn As MySqlConnection
-
     Dim com As New MySqlCommand
     Dim dr As MySqlDataReader
-
     Dim data As DataTable
     Dim da As MySqlDataAdapter
 #End Region
@@ -74,7 +71,6 @@ Public Class admin
         add1.Visible = False
         including0.Visible = True
         including1.Visible = False
-
     End Sub
 
     '时钟显示
@@ -1020,7 +1016,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         Catch myerror As MySqlException
             MsgBox("Error connecting to the server:" & myerror.Message)
         End Try
-
     End Sub
 
     '点击“司机信息查询界面”（选中）
