@@ -37,7 +37,6 @@ Public Class admin
     Dim myPort As Array
     Delegate Sub SetTextCallback(ByVal [text] As String)
 #End Region
-
 #End Region
 
     '-------------------------------------------
@@ -81,81 +80,8 @@ Public Class admin
         logintime.Text = datestr
         logtime.Text = datestr
     End Sub
-#End Region
 
     '-------------------------------------------
-
-#Region “登录界面“
-    '确定按钮
-    Private Sub entryButton_Click(sender As Object, e As EventArgs) Handles entryButton.Click
-        '数据库操作
-        If USERTextBox.Text = "" Or PasswordTextBox.Text = "" Then
-            MessageBox.Show("有数据没有输入，请输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Else
-
-            If Not conn Is Nothing Then conn.Close()
-
-            Dim connStr As String
-            connStr = String.Format("server={0};user id={1}; password={2}; database={3}; pooling=false",
-            DataSourceTextBox.Text, UserIDTextBox.Text, PWDTextBox.Text, InitialCatalogTextBox.Text)
-
-            Try
-                conn = New MySqlConnection(connStr)
-                conn.Open()
-
-                com.Connection = conn
-                com.CommandType = CommandType.Text
-                com.CommandText = "Select * From users Where user_id='" & USERTextBox.Text & "' And password='" & PasswordTextBox.Text & "'"
-
-                dr = com.ExecuteReader()
-                If dr.Read() Then ' 表示有找到通过验证
-                    loginPanel.Visible = False
-                    menuPanel.Visible = True
-                    adminPanel.Visible = True
-                    downPanel.Visible = True
-                    UsernameLabel.Text = dr!username & vbCrLf
-                    UserLabel.Text = dr!user_id & vbCrLf
-
-                    '定义窗口有边框
-                    Me.FormBorderStyle = 1
-
-                Else
-                    MessageBox.Show("密码或用户名错误，请重新输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    PasswordTextBox.Text = ""
-                End If
-
-                conn.Close()
-
-            Catch myerror As MySqlException
-                MsgBox("Error connecting to the server:" & myerror.Message)
-            End Try
-        End If
-    End Sub
-
-    '取消按钮
-    Private Sub offButton_Click(sender As Object, e As EventArgs) Handles offButton.Click
-        Me.Close()
-    End Sub
-
-    '-------------------------------------------
-
-    '忘记密码
-    Private Sub 忘记密码LinkLabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles 忘记密码LinkLabel.LinkClicked
-        MessageBox.Show("请联系管理员找回密码！")
-    End Sub
-
-    '注册
-    Private Sub 账号注册LinkLabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles 账号注册LinkLabel.LinkClicked
-        '进入注册界面
-        newuserPanel.Visible = True
-        loginPanel.Visible = False
-
-        '清除注册界面数据
-        newuserTextBox.Text = ""
-        newpasswTextBox.Text = ""
-        newapasswTextBox.Text = ""
-        newnameTextBox.Text = ""
-    End Sub
 
     '注销账号
     Private Sub signoutLinkLabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles signoutLinkLabel.LinkClicked
@@ -185,10 +111,73 @@ Public Class admin
         aboutPanel.Visible = False
         backgroundPanel.Visible = False
         setupPanel.Visible = False
-
         menuPanel.Visible = False
-
         downPanel.Visible = False
+    End Sub
+#End Region
+
+    '-------------------------------------------
+
+#Region “登录界面“
+    '确定按钮
+    Private Sub entryButton_Click(sender As Object, e As EventArgs) Handles entryButton.Click
+        '数据库操作
+        If USERTextBox.Text = "" Or PasswordTextBox.Text = "" Then
+            MessageBox.Show("有数据没有输入，请输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            If Not conn Is Nothing Then conn.Close()
+            Dim connStr As String
+            connStr = String.Format("server={0};user id={1}; password={2}; database={3}; pooling=false",
+            DataSourceTextBox.Text, UserIDTextBox.Text, PWDTextBox.Text, InitialCatalogTextBox.Text)
+            Try
+                conn = New MySqlConnection(connStr)
+                conn.Open()
+                com.Connection = conn
+                com.CommandType = CommandType.Text
+                com.CommandText = "Select * From users Where user_id='" & USERTextBox.Text & "' And password='" & PasswordTextBox.Text & "'"
+                dr = com.ExecuteReader()
+                If dr.Read() Then ' 表示有找到通过验证
+                    loginPanel.Visible = False
+                    menuPanel.Visible = True
+                    adminPanel.Visible = True
+                    downPanel.Visible = True
+                    UsernameLabel.Text = dr!username & vbCrLf
+                    UserLabel.Text = dr!user_id & vbCrLf
+                    Me.FormBorderStyle = 1 '定义窗口有边框
+                Else
+                    MessageBox.Show("密码或用户名错误，请重新输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    PasswordTextBox.Text = ""
+                End If
+                conn.Close()
+            Catch myerror As MySqlException
+                MsgBox("Error connecting to the server:" & myerror.Message)
+            End Try
+        End If
+    End Sub
+
+    '取消按钮
+    Private Sub offButton_Click(sender As Object, e As EventArgs) Handles offButton.Click
+        Me.Close()
+    End Sub
+
+    '-------------------------------------------
+
+    '忘记密码
+    Private Sub 忘记密码LinkLabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles 忘记密码LinkLabel.LinkClicked
+        MessageBox.Show("请联系管理员找回密码！")
+    End Sub
+
+    '注册
+    Private Sub 账号注册LinkLabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles 账号注册LinkLabel.LinkClicked
+        '进入注册界面
+        newuserPanel.Visible = True
+        loginPanel.Visible = False
+
+        '清除注册界面数据
+        newuserTextBox.Text = ""
+        newpasswTextBox.Text = ""
+        newapasswTextBox.Text = ""
+        newnameTextBox.Text = ""
     End Sub
 
     '设置数据库地址
@@ -231,21 +220,16 @@ Public Class admin
     Private Sub newokButton_Click(sender As Object, e As EventArgs) Handles newokButton.Click
         '数据库操作
         If Not conn Is Nothing Then conn.Close()
-
         Dim connStr As String
         connStr = String.Format("server={0};user id={1}; password={2}; database={3}; pooling=false",
         DataSourceTextBox.Text, UserIDTextBox.Text, PWDTextBox.Text, InitialCatalogTextBox.Text)
-
         Try
             conn = New MySqlConnection(connStr)
             conn.Open()
-
             com.Connection = conn
             com.CommandType = CommandType.Text
             com.CommandText = "Select * From users Where user_id='" & newuserTextBox.Text & "'"
-
             dr = com.ExecuteReader()
-
             If newnameTextBox.Text = "" Or newuserTextBox.Text = "" Or newpasswTextBox.Text = "" Or newapasswTextBox.Text = "" Or newapasswTextBox.Text = "" Then
                 MessageBox.Show("有数据没有输入，请输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
             ElseIf dr.Read() Then ' 表示有找到通过验证
@@ -256,12 +240,9 @@ Public Class admin
                     MessageBox.Show("两次密码输入不一致，请重新输入!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Else
                     insertuser()
-
                 End If
             End If
-
             conn.Close()
-
         Catch myerror As MySqlException
             MsgBox("Error connecting to the server:" & myerror.Message)
         End Try
@@ -270,23 +251,17 @@ Public Class admin
     Private Sub insertuser()
         '数据库连接与操作
         If Not conn Is Nothing Then conn.Close()
-
         Dim connStr As String
         connStr = String.Format("server={0};user id={1}; password={2}; database={3}; pooling=false",
         DataSourceTextBox.Text, UserIDTextBox.Text, PWDTextBox.Text, InitialCatalogTextBox.Text)
-
         Try
             conn = New MySqlConnection(connStr)
             conn.Open()
-
             com.Connection = conn
             com.CommandType = CommandType.Text
             com.CommandText = "Insert Into users (username,user_id,password,perm) Values ('" & newnameTextBox.Text & "','" & newuserTextBox.Text & "','" & newapasswTextBox.Text & "',' 0 ')"
-
             dr = com.ExecuteReader
-
             conn.Close()
-
             MessageBox.Show("账号注册成功！")
 
             '清除登录界面的数据
@@ -388,11 +363,9 @@ Public Class admin
         '数据库相关
         Try
             conn.Open()
-
             com.Connection = conn
             com.CommandType = CommandType.Text
             com.CommandText = "Select * From car,driver Where car.carnum='" & TextBox7.Text & "' and driver.carnum='" & TextBox7.Text & "'"
-
             dr = com.ExecuteReader()
             While dr.Read()
                 TextBox1.AppendText(dr!driver_id & vbCrLf)
@@ -404,9 +377,7 @@ Public Class admin
                 TextBox8.AppendText(dr!model & vbCrLf)
                 TextBox10.AppendText(dr!fload & vbCrLf)
             End While
-
             conn.Close()
-
         Catch myerror As MySqlException
             MsgBox("Error connecting to the server:" & myerror.Message)
         End Try
@@ -434,7 +405,6 @@ Public Class admin
 
     Private Sub ShowRecieveData(ByVal str As String)
         On Error GoTo Err
-
         Exit Sub
 Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
     End Sub
@@ -446,7 +416,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
     Private Sub ReceivedText(ByVal [text] As String)
         Dim instr As String  '存从串口读入的数据
         Dim info() As String
-
         If Me.TextBox11.InvokeRequired Then
             Dim x As New SetTextCallback(AddressOf ReceivedText)
             Me.Invoke(x, New Object() {(text)})
@@ -472,20 +441,15 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
         If kindTextBox.Text = "" Then
             MessageBox.Show("请输入货物类型!", "错误提示!", MessageBoxButtons.OK, MessageBoxIcon.Error)
-
         Else
             '数据库连接与操作
             Try
                 conn.Open()
-
                 com.Connection = conn
                 com.CommandType = CommandType.Text
                 com.CommandText = "Insert Into manage (carnum,weight,time,user_id,kind,remarks) Values ('" & TextBox7.Text & "','" & TextBox12.Text & "','" & TextBox9.Text & "','" & USERTextBox.Text & "','" & kindTextBox.Text & "','" & adminremarkTextBox.Text & "')"
-
                 dr = com.ExecuteReader
-
                 conn.Close()
-
                 MsgBox("上传成功")
 
                 '按钮
@@ -567,31 +531,24 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
         '数据库连接与操作
         If Not conn Is Nothing Then conn.Close()
-
         Dim connStr As String
         connStr = String.Format("server={0};user id={1}; password={2}; database={3}; pooling=false",
         DataSourceTextBox.Text, UserIDTextBox.Text, PWDTextBox.Text, InitialCatalogTextBox.Text)
-
         Try
             conn = New MySqlConnection(connStr)
             conn.Open()
-
             com.Connection = conn
             com.CommandType = CommandType.Text
             com.CommandText = "Select carnum From car"
-
             dr = com.ExecuteReader()
             modifyComboBox.Items.Clear()
             While dr.Read()
                 modifyComboBox.Items.Add(dr.GetString(0))
             End While
-
             conn.Close()
-
         Catch myerror As MySqlException
             MsgBox("Error connecting to the server:" & myerror.Message)
         End Try
-
     End Sub
 
     '确定修改车牌号
@@ -630,11 +587,9 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             Try
                 conn = New MySqlConnection(connStr)
                 conn.Open()
-
                 com.Connection = conn
                 com.CommandType = CommandType.Text
                 com.CommandText = "Select * From car,driver Where car.carnum='" & TextBox7.Text & "' and driver.carnum='" & TextBox7.Text & "'"
-
                 dr = com.ExecuteReader()
                 While dr.Read()
                     TextBox1.AppendText(dr!driver_id & vbCrLf)
@@ -646,9 +601,7 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
                     TextBox8.AppendText(dr!model & vbCrLf)
                     TextBox10.AppendText(dr!fload & vbCrLf)
                 End While
-
                 conn.Close()
-
             Catch myerror As MySqlException
                 MsgBox("Error connecting to the server:" & myerror.Message)
             End Try
@@ -714,7 +667,6 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         aboutPanel.Visible = False
         backgroundPanel.Visible = True
         setupPanel.Visible = False
-
     End Sub
 #End Region
 
@@ -810,24 +762,18 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         Dim TABLE As New DataTable
         Dim adapter As New MySqlDataAdapter
         Dim cmd As MySqlCommand
-
         If Not conn Is Nothing Then conn.Close()
-
         Dim connStr As String
         connStr = String.Format("server={0};user id={1}; password={2}; database={3}; pooling=false",
         DataSourceTextBox.Text, UserIDTextBox.Text, PWDTextBox.Text, InitialCatalogTextBox.Text)
-
         Try
             conn = New MySqlConnection(connStr)
             conn.Open()
-
             cmd = New MySqlCommand("Select * From manage", conn)
-
             With adapter
                 .SelectCommand = cmd
                 .Fill(TABLE)
             End With
-
             For i = 0 To TABLE.Rows.Count - 1
                 With ListView1
                     .Items.Add(TABLE.Rows(i)("manage_id"))
@@ -841,13 +787,10 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
                     End With
                 End With
             Next
-
             conn.Close()
-
         Catch myerror As MySqlException
             MsgBox("Error connecting to the server:" & myerror.Message)
         End Try
-
     End Sub
 #End Region
 
@@ -888,23 +831,18 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '数据库连接与操作
         Try
             conn.Open()
-
             com.Connection = conn
             com.CommandType = CommandType.Text
             com.CommandText = "Select carnum From car"
-
             dr = com.ExecuteReader()
             ccComboBox.Items.Clear()
             While dr.Read()
                 ccComboBox.Items.Add(dr.GetString(0))
             End While
-
             conn.Close()
-
         Catch myerror As MySqlException
             MsgBox("Error connecting to the server:" & myerror.Message)
         End Try
-
     End Sub
 
     '点击“车辆信息查询界面”（选中）
@@ -929,19 +867,15 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
         '数据库连接与操作
         If Not conn Is Nothing Then conn.Close()
-
         Dim connStr As String
         connStr = String.Format("server={0};user id={1}; password={2}; database={3}; pooling=false",
         DataSourceTextBox.Text, UserIDTextBox.Text, PWDTextBox.Text, InitialCatalogTextBox.Text)
-
         Try
             conn = New MySqlConnection(connStr)
             conn.Open()
-
             com.Connection = conn
             com.CommandType = CommandType.Text
             com.CommandText = "Select * From car Where carnum='" & ccComboBox.SelectedItem.ToString() & "'"
-
             dr = com.ExecuteReader()
             If dr.Read() Then
                 TextBox13.AppendText(dr!carnum & vbCrLf)
@@ -951,13 +885,10 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             Else
                 MsgBox("车牌号输错啦！  ╮(╯▽╰)╭ ")
             End If
-
             conn.Close()
-
         Catch myerror As MySqlException
             MsgBox("Error connecting to the server:" & myerror.Message)
         End Try
-
     End Sub
 #End Region
 
@@ -1000,19 +931,15 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '数据库连接与操作
         Try
             conn.Open()
-
             com.Connection = conn
             com.CommandType = CommandType.Text
             com.CommandText = "Select driver_id From driver"
-
             dr = com.ExecuteReader()
             dcComboBox.Items.Clear()
             While dr.Read()
                 dcComboBox.Items.Add(dr.GetString(0))
             End While
-
             conn.Close()
-
         Catch myerror As MySqlException
             MsgBox("Error connecting to the server:" & myerror.Message)
         End Try
@@ -1042,19 +969,15 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
         '数据库连接与操作
         If Not conn Is Nothing Then conn.Close()
-
         Dim connStr As String
         connStr = String.Format("server={0};user id={1}; password={2}; database={3}; pooling=false",
         DataSourceTextBox.Text, UserIDTextBox.Text, PWDTextBox.Text, InitialCatalogTextBox.Text)
-
         Try
             conn = New MySqlConnection(connStr)
             conn.Open()
-
             com.Connection = conn
             com.CommandType = CommandType.Text
             com.CommandText = "Select * From driver Where driver_id='" & dcComboBox.SelectedItem.ToString() & "'"
-
             dr = com.ExecuteReader()
             If dr.Read() Then
                 TextBox18.AppendText(dr!driver_id & vbCrLf)
@@ -1066,13 +989,10 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
             Else
                 MsgBox("驾驶证号输错啦！  ╮(╯▽╰)╭ ")
             End If
-
             conn.Close()
-
         Catch myerror As MySqlException
             MsgBox("Error connecting to the server:" & myerror.Message)
         End Try
-
     End Sub
 #End Region
 
@@ -1166,25 +1086,18 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
         '数据库连接与操作
         If Not conn Is Nothing Then conn.Close()
-
         Dim connStr As String
         connStr = String.Format("server={0};user id={1}; password={2}; database={3}; pooling=false",
         DataSourceTextBox.Text, UserIDTextBox.Text, PWDTextBox.Text, InitialCatalogTextBox.Text)
-
         Try
             conn = New MySqlConnection(connStr)
             conn.Open()
-
             com.Connection = conn
             com.CommandType = CommandType.Text
             com.CommandText = "Insert Into car (carnum,model,pdtime,fload) Values ('" & TextBox24.Text & "','" & TextBox25.Text & "','" & carDateTimePicker.Value & "','" & TextBox28.Text & "')"
-
             dr = com.ExecuteReader
-
             MessageBox.Show("数据存储成功！")
-
             conn.Close()
-
         Catch myerror As MySqlException
             MsgBox("Error connecting to the server:" & myerror.Message)
         End Try
@@ -1242,19 +1155,15 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '数据库连接与操作
         Try
             conn.Open()
-
             com.Connection = conn
             com.CommandType = CommandType.Text
             com.CommandText = "Select carnum From car"
-
             dr = com.ExecuteReader()
             dacarComboBox.Items.Clear()
             While dr.Read()
                 dacarComboBox.Items.Add(dr.GetString(0))
             End While
-
             conn.Close()
-
         Catch myerror As MySqlException
             MsgBox("Error connecting to the server:" & myerror.Message)
         End Try
@@ -1277,24 +1186,18 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
         '数据库连接与操作
         If Not conn Is Nothing Then conn.Close()
-
         Dim connStr As String
         connStr = String.Format("server={0};user id={1}; password={2}; database={3}; pooling=false",
         DataSourceTextBox.Text, UserIDTextBox.Text, PWDTextBox.Text, InitialCatalogTextBox.Text)
-
         Try
             conn = New MySqlConnection(connStr)
             conn.Open()
-
             com.Connection = conn
             com.CommandType = CommandType.Text
             com.CommandText = "Insert Into driver (driver_id,name,bday,dkind,part,telnum,carnum) Values ('" & TextBox29.Text & "','" & TextBox30.Text & "','" & driverDateTimePicker.Value & "','" & TextBox32.Text & "','" & TextBox33.Text & "','" & TextBox34.Text & "','" & dacarComboBox.SelectedItem.ToString() & "')"
-
             dr = com.ExecuteReader
             MessageBox.Show("存储成功！")
-
             conn.Close()
-
         Catch myerror As MySqlException
             MsgBox("Error connecting to the server:" & myerror.Message)
         End Try
@@ -1318,25 +1221,20 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
         '数据库连接与操作
         Try
             conn.Open()
-
             com.Connection = conn
             com.CommandType = CommandType.Text
             com.CommandText = "Select carnum From car"
-
             dr = com.ExecuteReader()
             dacarComboBox.Items.Clear()
             While dr.Read()
                 dacarComboBox.Items.Add(dr.GetString(0))
             End While
-
             conn.Close()
-
         Catch myerror As MySqlException
             MsgBox("Error connecting to the server:" & myerror.Message)
         End Try
     End Sub
 #End Region
-
 #End Region
 
     '-------------------------------------------
@@ -1453,34 +1351,22 @@ Err:    MsgBox("数据接收或显示错误！" + vbNewLine + ErrorToString())
 
     '发送邮件
     Private Sub suggestButton_Click(sender As Object, e As EventArgs) Handles suggestButton.Click
-        '创建发件连接,邮箱的SMTP设置填充
-        Dim smtp As New System.Net.Mail.SmtpClient("smtp.163.com", 25)
-        '发件邮箱身份验证,发件邮箱登录名和密码
-        smtp.Credentials = New System.Net.NetworkCredential("huu_007@163.com", "huan19931224")
-        '创建邮件
-        Dim mail As New System.Net.Mail.MailMessage()
-        '主题
-        mail.Subject = "意见反馈"
-        '主题编码
-        mail.SubjectEncoding = System.Text.Encoding.GetEncoding("GB2312")
-        '正文件编码
-        mail.BodyEncoding = System.Text.Encoding.GetEncoding("GB2312")
-        '发件人邮箱
-        mail.From = New System.Net.Mail.MailAddress("huu_007@163.com")
-        '邮件优先级
-        mail.Priority = System.Net.Mail.MailPriority.Normal
-        'HTML格式的邮件,为false则发送纯文本邮箱
-        mail.IsBodyHtml = True
-        '邮件内容
-        mail.Body = suggestTextBox.Text
-        '添加收件人
-        mail.To.Add("369964831@qq.com")
+        Dim smtp As New System.Net.Mail.SmtpClient("smtp.163.com", 25) '创建发件连接,邮箱的SMTP设置填充
+        smtp.Credentials = New System.Net.NetworkCredential("huu_007@163.com", "huan19931224") '发件邮箱身份验证,发件邮箱登录名和密码
+        Dim mail As New System.Net.Mail.MailMessage() '创建邮件
+        mail.Subject = "意见反馈" '主题
+        mail.SubjectEncoding = System.Text.Encoding.GetEncoding("GB2312") '主题编码
+        mail.BodyEncoding = System.Text.Encoding.GetEncoding("GB2312") '正文件编码
+        mail.From = New System.Net.Mail.MailAddress("huu_007@163.com") '发件人邮箱
+        mail.Priority = System.Net.Mail.MailPriority.Normal '邮件优先级
+        mail.IsBodyHtml = True 'HTML格式的邮件,为false则发送纯文本邮箱
+        mail.Body = suggestTextBox.Text '邮件内容
+        mail.To.Add("369964831@qq.com") '添加收件人
         '发送邮件
         Try
             smtp.Send(mail)
             MessageBox.Show("发送成功")
-            '发送完成清除建议框中的内容
-            suggestTextBox.Text = ""
+            suggestTextBox.Text = "" '发送完成清除建议框中的内容
         Catch
             MessageBox.Show("发送失败")
         Finally
